@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なべの教科書【YouTube編】 - 再現性のあるYouTube攻略法</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #00BFFF; /* DeepSkyBlue */
+            --text-color: #f0f0f0;
+            --bg-color: #121212;
+            --card-bg-color: rgba(30, 30, 30, 0.7);
+            --white: #fff;
+            --gray: #aaa;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 300;
+            line-height: 1.9;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow-x: hidden;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+        }
+        .main-banner-wrapper {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .main-banner {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.6s ease-out;
+        }
+        .section {
+            padding: 50px 0;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        }
+        h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        .intro-text {
+            font-size: 1.2em;
+            text-align: center;
+            background: linear-gradient(145deg, rgba(0, 191, 255, 0.1), rgba(0, 191, 255, 0));
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            margin: 40px 0;
+        }
+        .merit-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .merit-list li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300BFFF"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+            background-size: 28px;
+            padding-left: 45px;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+        .merit-list li:hover { transform: translateX(5px); }
+        .testimonial {
+            background: var(--card-bg-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+        }
+        .testimonial p:first-child { margin-top: 0; }
+        .testimonial .author {
+            text-align: right;
+            font-weight: 700;
+            margin-top: 20px;
+            color: var(--gray);
+        }
+        .cta-button {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            background: var(--accent-color);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.8em;
+            font-weight: 700;
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 50px rgba(0, 191, 255, 0.8);
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .image-gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover { transform: scale(1.05); }
+        .footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer a { color: var(--accent-color); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header fade-in">
+            <div class="main-banner-wrapper">
+                <img src="images/image-98-1-1024x536.jpg" alt="なべの教科書 YouTube編" class="main-banner">
+            </div>
+        </header>
+
+        <section class="section fade-in">
+            <h1>なべの教科書【YouTube編】</h1>
+            <p class="intro-text">どうもみなさんはじめまして料理系YouTubeを運営しているなべと申します。</p>
+
+            <h2>絶望からのスタート</h2>
+            <p>私は「会社員やめてぇぇｗｗ」という単純な理由で副業でYouTubeをはじめ週2本投稿を6ヶ月続けてなんと登録者80人ｗｗｗ（恥ずかしながらその80人もほぼTwitterの企画で増やしたｗｗ）「ま、、まじか。。。みんな見る目ないな（ドヤ）」</p>
+            <p>と強がることもなくその時に冷静に考えました。</p>
+            <p>「このままYouTubeやってても意味がないな←（遅い）」「こ、、これじゃ会社やめれねぇぇｗｗ」「そんなのまじむりぃぃぃ！！！」</p>
+            <p>と、このときはじめて気づきそこからYouTubeに本気で向き合い研究を開始しました。</p>
+            <p><a href="https://twitter.com/nabeno_kitchen/status/1421344414887079936?s=20&t=IMc-x6S4kE50Fo-tHd5hfA" target="_blank">当時のツイートはこちら</a></p>
+
+            <h2>研究と成長の軌跡</h2>
+            <p>な、なんと嬉しいことに研究のかいもあってそこから少しづつ伸びはじめYouTubeをはじめて1年で収益化達成！</p>
+            <p>そして2年半で登録者50,000人を達成することもできました！！！</p>
+            <p>なべ「うぉぉぉぉ！！」</p>
+            <p>低空飛行ながすぎｗｗｗ</p>
+            <p>【追記】おかげさまで100,000人突破しました（令和5年8月現在）</p>
+
+            <h2>人生を変えたYouTube</h2>
+            <p>伸びはじめてから本当に人生がかわりました。</p>
+            <ul>
+                <li>クックパッド 注目の料理系YouTuber</li>
+                <li>雑誌 クックチャンネル 掲載</li>
+                <li>有名チェーン店へ動画提供</li>
+                <li>各種メディアの取材や商品提供…レシピ作成や企業の商品動画作成などなど</li>
+            </ul>
+            <p>最近も有名大企業から有償で動画を提供してほしいとお話が。。。うれしすぎる･･･！！</p>
+            <p>し、、しかも・・・2022年1月に目標だった「脱会社員」を達成することもできました！！！！</p>
+            <p><a href="https://twitter.com/nabeno_kitchen/status/1484013049958723588" target="_blank">脱会社員達成のツイートはこちら</a></p>
+
+            <h2>この教科書が生まれた理由</h2>
+            <p>話はもどり</p>
+            <p>YouTube登録者80人のときにそのまま突っ走ってたらきっといまごろYouTubeを辞めてたか</p>
+            <p>本数だけ多くて再生回数は2ケタ…登録者数も1,000人ぐらいそんなチャンネルだったと自信があります。そして、もちろん会社員（ぴえん）</p>
+            <p>この記事では「わたしが研究を開始してから、ここまで伸ばせた理由とやってきたことを解説します」</p>
+            <p>伸ばせずに苦しんでたあのころの自分に向けてコツコツと５万字超かきました。</p>
+            <p>きっと、あのころの自分がみたら最高の記事だと感じるでしょう。</p>
+            <p>だって私がこの内容を始めたときに知っていれば無駄な6ヶ月（動画約100本以上←消した）をショートカットすることができるからです。</p>
+            <p>そしてもっと早く会社員を辞めれたからｗｗ←コレ大事ｗ</p>
+
+            <h2>こんなあなたにおすすめ</h2>
+            <ul>
+                <li>本気で料理系YouTubeで勝負したい！</li>
+                <li>いまやってるけど全然のびねぇぇ！！</li>
+                <li>YouTubeで人生かえたいんじゃー！！</li>
+            </ul>
+            <p>こういうひとにだけ読んでいただきたいです。</p>
+
+            <h2>こんな方にはおすすめできません</h2>
+            <ul>
+                <li>魔法のようにすぐ伸びる方法が知りたい</li>
+                <li>すでにチャンネルが成長している</li>
+                <li>努力するのは嫌いだ</li>
+            </ul>
+            <p>こういうひとにはおすすめできません。</p>
+
+            <h2>YouTube攻略の真実</h2>
+            <p>注意してほしいのはどれだけ有益な情報をもっていても</p>
+            <p>「じぶんで行動して継続しなければ結果がでない」</p>
+            <p>それがYouTubeです。</p>
+            <p>このnoteを読んだからと</p>
+            <ul>
+                <li>つぎの動画10万再生！</li>
+                <li>1ヶ月後に1,000人達成！</li>
+            </ul>
+            <p>とはならないので注意してください。</p>
+
+            <h2>伸びないチャンネルの共通点</h2>
+            <p>これまでYouTubeを研究して思ったことは「伸びる方法は確立されていないが伸びない方法は確立されている」です。</p>
+            <p>私のチャンネルもそうでしたがたくさんのチャンネルをリサーチして感じることが</p>
+            <p>「伸びない要素が必ずある」これです。</p>
+            <ul>
+                <li>音量</li>
+                <li>編集</li>
+                <li>タイトル</li>
+                <li>サムネ</li>
+                <li>戦略</li>
+            </ul>
+            <p>などなど</p>
+            <p>伸びてないチャンネルにはかならず「伸びない要素」がはいってます。</p>
+            <p>今回の記事で伸びない要素を1つづつ潰していきましょう。</p>
+
+            <h2>弱小YouTuberが検索上位を取り続けた秘密</h2>
+            <p>そして、他の情報発信では絶対に話したことがない</p>
+            <p>なぜ弱小YouTuberでも料理の検索上位を取り続けたかも今回の記事ではじめて書きました。</p>
+            <p>正直この考えに気づけたから今があります。</p>
+            <p>料理系で伸ばすには検索流入がとても大切です。</p>
+            <p>カレーシチューみそ汁</p>
+            <p>みんなが検索したいキーワードで検索上位がとれればそれだけで毎日、数千回再生稼いでくれます。</p>
+            <p>これは最初に検索上位をとった牛丼です。</p>
+            <p>当時、登録者は100人以下で研究を開始して数本目の動画でした。</p>
+            <p>それから2年以上たちますがずーーっと再生されつづけてます。こんな動画が何本あるかでチャンネルの安定感がかわります。</p>
+            <p>バズりって響きはいいですがバズは必ず終わります。しかし検索は一度上位にあがればなかなか落ちることはありません。</p>
+            <p>が、しかし人気検索ワードにはもちろん大物YouTuberがドンとかまえています。</p>
+            <ul>
+                <li>料理研究家リュウジのバズレシピさん</li>
+                <li>料理研究家コウケンテツ公式チャンネルさん</li>
+                <li>こっタソの自由気ままにさん</li>
+                <li>kurashiru [クラシル] さん</li>
+                <li>クキパパ料理チャンネルさん</li>
+            </ul>
+            <p>などなど・・・</p>
+            <p>30万？50万？100万？そんな大物YouTuberたちと勝負しないといけないんです。</p>
+            <p>じゃ〜あきらめる？それはNOでした。</p>
+            <ul>
+                <li>牛丼</li>
+                <li>豚丼</li>
+                <li>カレー</li>
+                <li>ガーリックライス</li>
+                <li>ガーリックチャーハン</li>
+                <li>シチュー</li>
+                <li>ハヤシライス</li>
+                <li>みそ汁</li>
+            </ul>
+            <p>登録者がすくなくても少しづつ検索上位がとれるようになり</p>
+            <ul>
+                <li>牛丼</li>
+                <li>豚丼</li>
+                <li>親子丼</li>
+                <li>カレー</li>
+                <li>みそ汁</li>
+                <li>ハヤシライス</li>
+                <li>シチュー</li>
+                <li>ガーリックライス</li>
+                <li>ガーリックチャーハン</li>
+            </ul>
+            <p>など超がつくほど人気ワードにも大物に並んで上位がとれるようになりました。</p>
+            <p><a href="https://twitter.com/nabeno_kitchen/status/1512753043489509378?s=20&t=uwTlZoUN6EffzrbbcO8jVQ" target="_blank">当時のツイートはこちら</a></p>
+            <p>こういうキーワードははっきりいってお宝です。</p>
+            <p>毎日毎日検索してくれるひとがいるので新規の動画がまわらなくても再生回数がふえつづけます。</p>
+            <p>これがマジででかいんです。</p>
+            <p>【食べる】ということが無くならないかぎりこの需要はつねにあります。</p>
+            <p>だからこそ検索上位をとれれば寝てても遊んでるときでも過去の自分の動画が再生されます。</p>
+            <p>バズりは一時的ですので安定感にはつながりません。</p>
+            <p>料理系YouTubeを長期で攻略したいなら</p>
+            <p>絶対に検索を攻略しなければなりません。</p>
+            <p>今回の記事をとおしてはじめてわたしが考える「検索上位のとりかた」もお話しようと思っております。</p>
+            <p>はっきりいってここまで伸ばしてこれたのは「ほぼ検索流入のちから」です。</p>
+            <p>そしてこれからも検索流入をわたしの主軸とすることはかわりありません。</p>
+
+            <h2>最後に</h2>
+            <p>ここまで読んで「わたしは絶対やるぞ！！」「絶対に脱サラしてぇぇ！！」</p>
+            <p>っというひとだけぜひ続きを読んでみてください！</p>
+        </section>
+
+        <section id="purchase" class="section fade-in">
+            <h2>あなたの未来を変える投資</h2>
+            <p>この教科書で手に入るのは、単なるノウハウではありません。あなたのチャンネルが伸び悩む時間をショートカットし、最速で成功にたどり着くための「未来への投資」です。</p>
+            <p>もう一人で悩み、時間を無駄にするのは終わりにしませんか？</p>
+            <p>僕が半年間、遠回りして手に入れた知識と戦略の全てを、あなたにお渡しします。</p>
+            <a href="YOUR_PURCHASE_LINK_HERE" class="cta-button">今すぐYouTube攻略の全てを手に入れる</a>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 なべのブログ. All Rights Reserved.</p>
+        <p><a href="index.html">トップページへ戻る</a></p>
+    </footer>
+
+    <script>
+        // Fade-in animation
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+
+        // Parallax effect for banner
+        const banner = document.querySelector('.main-banner');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (banner) {
+                banner.style.transform = `translateY(${scrollY * 0.2}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>

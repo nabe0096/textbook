@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なべの教科書 - YouTube & Instagram完全攻略</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /*==================================================
+         *  Global Styles & Variables
+         *==================================================*/
+        :root {
+            --font-serif: 'Noto Serif JP', serif;
+            --accent-gold: #D4AF37;
+            --accent-youtube: #4A90E2;
+            --accent-instagram: #C13584;
+            --accent-tiktok: #00f2ea; /* TikTok Teal */
+            --text-primary: #F0F0F0;
+            --text-secondary: #A0A0A0;
+            --bg-dark: #121212;
+            --bg-light: #1E1E1E;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+        
+        /* Prevent horizontal overflow on all elements */
+        * {
+            max-width: 100%;
+        }
+        
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Force images to load properly on mobile */
+        .product-image img {
+            background: var(--bg-light) !important;
+            border: 1px solid var(--border-color);
+        }
+
+        body {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-width: 320px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .button {
+            display: inline-block;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.1em; /* Increased font size */
+            text-decoration: none;
+            border-radius: 50px;
+            padding: 18px 48px; /* Increased padding */
+            letter-spacing: 1.2px; /* Increased spacing */
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Base shadow for depth + inner highlight for 3D effect */
+            box-shadow: 
+                inset 0 1px 1px rgba(255, 255, 255, 0.15),
+                0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .button:active {
+            transform: translateY(2px) scale(0.98);
+            box-shadow: 
+                inset 0 1px 1px rgba(255, 255, 255, 0.15),
+                0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .button.youtube {
+            background: linear-gradient(45deg, #3a7bc8, #4A90E2);
+            color: var(--text-primary);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button.youtube:hover {
+            background: linear-gradient(45deg, #4a8ce0, #5a9eef);
+            transform: translateY(-4px);
+            box-shadow: 
+                inset 0 1px 1px rgba(255, 255, 255, 0.2),
+                0 12px 35px rgba(74, 144, 226, 0.4);
+        }
+
+        .button.instagram {
+            background: linear-gradient(45deg, #833AB4, #C13584);
+            color: var(--text-primary);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button.instagram:hover {
+            background: linear-gradient(45deg, #9b4bc8, #d94a9a);
+            transform: translateY(-4px);
+            box-shadow: 
+                inset 0 1px 1px rgba(255, 255, 255, 0.2),
+                0 12px 35px rgba(193, 53, 132, 0.4);
+        }
+
+        /* --- Fade-in Animation (Bowan Effect) --- */
+        .fade-in {
+            opacity: 0;
+            /* Start slightly scaled down, moved down, and blurred */
+            transform: translateY(40px) scale(0.95);
+            filter: blur(5px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out, filter 0.9s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            /* Animate to normal state */
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        /*==================================================
+         *  Full-width Sections
+         *==================================================*/
+        .section-colored {
+            background-color: var(--bg-light);
+        }
+
+        /* The about-section was a card. Now it's a content block inside a colored section. */
+        .about-section {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        /*==================================================
+         *  Hero Section
+         *==================================================*/
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 60px 20px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/IMG_9401.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll; /* Better for mobile */
+            animation: kenburns 20s ease-out infinite alternate;
+            z-index: -2;
+        }
+        
+        /* Mobile hero background fix */
+        @media (max-width: 768px) {
+            .hero::before {
+                background-attachment: scroll;
+                background-position: center center;
+                animation: none; /* Disable animation on mobile for performance */
+            }
+        }
+
+        @keyframes kenburns {
+            0% { transform: scale(1.05) translate(0, 0); }
+            100% { transform: scale(1.2) translate(5%, -5%); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(18,18,18,0.3) 0%, rgba(18,18,18,0.95) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 4em;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            letter-spacing: 3px;
+            text-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+            margin: 0;
+            word-break: keep-all; /* Prevent unintended line breaks */
+        }
+
+        .hero-content p {
+            font-size: 1.4em;
+            color: var(--text-secondary);
+            margin-top: 25px;
+            letter-spacing: 1px;
+        }
+
+        /*==================================================
+         *  Products Section
+         *==================================================*/
+        .products-inner {
+            display: flex;
+            flex-direction: column; /* Stack cards vertically */
+            align-items: center; /* Center cards horizontally */
+            gap: 80px; /* Space between cards */
+        }
+
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 900px; /* Control max width */
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            overflow: hidden; /* Hide overflowing content from gallery */
+        }
+        
+        /* In a colored section, the product card should use the darker background for contrast */
+        .section-colored .product-card {
+            background: var(--bg-dark);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+        }
+
+        .product-card h3 {
+            font-size: 3.5em;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            text-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.4),
+                0 0 40px rgba(255, 255, 255, 0.2),
+                2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ffffff, #f8f8f8, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transform: skew(-8deg, 0deg);
+            position: relative;
+            overflow: hidden;
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+
+        .product-card h3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.8), 
+                rgba(255, 255, 255, 0.6), 
+                transparent);
+            transform: skew(20deg);
+            animation: sparkle 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .product-card h3::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -10px;
+            right: -10px;
+            bottom: -5px;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                transparent);
+            border-radius: 10px;
+            z-index: -1;
+            opacity: 0;
+            animation: titleGlow 5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0% { 
+                left: -100%;
+                opacity: 0;
+            }
+            10% { 
+                opacity: 1;
+            }
+            90% { 
+                opacity: 1;
+            }
+            100% { 
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { 
+                transform: skew(-8deg, 0deg) translateY(0px);
+            }
+            50% { 
+                transform: skew(-8deg, 0deg) translateY(-3px);
+            }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /*==================================================
+         *  YouTube Popular Badge
+         *==================================================*/
+        .popular-badge-youtube {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 15px auto;
+            color: var(--accent-gold);
+            font-size: 2em;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .popular-badge-instagram {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 15px auto;
+            color: var(--accent-gold);
+            font-size: 2em;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        /* Mobile badges */
+        @media (max-width: 768px) {
+            .popular-badge-youtube,
+            .popular-badge-instagram {
+                font-size: 1.5em;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .popular-badge-youtube,
+            .popular-badge-instagram {
+                font-size: 1.3em;
+                letter-spacing: 0.5px;
+            }
+        }
+        
+        .product-card .product-image {
+            max-width: 700px;
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            overflow: hidden; /* Ensures image respects border radius */
+            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+        }
+
+        .product-card .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            min-height: 200px;
+            background-color: var(--bg-light);
+        }
+        
+        /* Mobile image fixes */
+        @media (max-width: 768px) {
+            .product-card .product-image {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .product-card .product-image img {
+                min-height: 150px;
+                max-height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .product-card .product-image img {
+                min-height: 120px;
+                max-height: 250px;
+            }
+        }
+
+        .product-card p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        /*==================================================
+         *  Testimonial Gallery (Inside Product Card)
+         *==================================================*/
+        .testimonial-gallery {
+            width: 100%;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .testimonial-gallery h4 {
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .testimonial-scroll-wrapper {
+            width: 100%;
+            overflow: hidden; /* Hides parts of images outside the container */
+        }
+
+        .testimonial-scroll-container {
+            display: flex;
+            gap: 20px;
+            animation-name: scroll-gallery;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        #card-youtube .testimonial-scroll-container {
+            width: calc(280px * 14); /* 7 images * 2 */
+            animation-duration: 25s; /* Faster animation */
+        }
+
+        #card-instagram .testimonial-scroll-container {
+            width: calc(280px * 12); /* 6 images * 2 */
+            animation-duration: 20s; /* Faster animation */
+        }
+        
+        /* Mobile testimonial speed */
+        @media (max-width: 768px) {
+            #card-youtube .testimonial-scroll-container {
+                animation-duration: 20s;
+            }
+            
+            #card-instagram .testimonial-scroll-container {
+                animation-duration: 15s;
+            }
+        }
+
+        .testimonial-gallery:hover .testimonial-scroll-container {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-gallery {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move by half the track's width for seamless loop */
+            }
+        }
+
+        .testimonial-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden; /* Ensures icon stays within rounded corners */
+        }
+
+        .testimonial-image-wrapper .testimonial-img {
+            height: 400px; /* Fixed height */
+            width: auto; /* Auto width to maintain aspect ratio */
+            display: block; /* Remove bottom space under image */
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .testimonial-image-wrapper:hover .testimonial-img {
+            transform: scale(1.03);
+        }
+
+        .zoom-icon {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1;
+            pointer-events: none; /* Lets the click go through to the image */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            z-index: 2;
+        }
+
+        .testimonial-image-wrapper:hover .zoom-icon {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /*==================================================
+         *  Video Section
+         *==================================================*/
+        .video-section {
+            width: 100%;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .video-section h4 {
+            font-size: 1.6em;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            background: var(--bg-light);
+            aspect-ratio: 16/9;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-description {
+            margin: 20px auto 0 auto;
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            font-style: italic;
+            text-align: center;
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        /*==================================================
+         *  Premium Bundle Section
+         *==================================================*/
+        #bundle-premium {
+            position: relative;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(90deg, transparent, var(--accent-gold), transparent) 1;
+        }
+
+        .premium-bundle-card {
+            position: relative;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 24px;
+            padding: 60px 40px;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 
+                0 25px 70px rgba(0,0,0,0.5),
+                0 0 0 3px rgba(212, 175, 55, 0.3);
+            transition: all 0.6s ease;
+            overflow: visible;
+            animation: glowPulse 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 
+                    0 25px 70px rgba(0,0,0,0.5),
+                    0 0 0 3px rgba(212, 175, 55, 0.3),
+                    0 0 40px rgba(212, 175, 55, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 30px 80px rgba(0,0,0,0.6),
+                    0 0 0 3px rgba(212, 175, 55, 0.6),
+                    0 0 60px rgba(212, 175, 55, 0.4);
+            }
+        }
+
+        .premium-bundle-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+            box-shadow: 
+                0 40px 100px rgba(0,0,0,0.7),
+                0 0 0 3px rgba(212, 175, 55, 0.8),
+                0 0 80px rgba(212, 175, 55, 0.6);
+        }
+
+        /*==================================================
+         *  Popular Ribbon
+         *==================================================*/
+        .popular-ribbon {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: linear-gradient(45deg, #ff3030, #ff6060, #ff4040);
+            color: white;
+            padding: 12px 50px;
+            font-size: 1.2em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transform: rotate(45deg);
+            box-shadow: 
+                0 8px 25px rgba(255, 48, 48, 0.6),
+                0 0 30px rgba(255, 48, 48, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            z-index: 15;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: ribbonPulse 3s ease-in-out infinite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes ribbonPulse {
+            0%, 100% { 
+                transform: rotate(45deg) scale(1);
+                box-shadow: 
+                    0 8px 25px rgba(255, 48, 48, 0.6),
+                    0 0 30px rgba(255, 48, 48, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: rotate(45deg) scale(1.05);
+                box-shadow: 
+                    0 12px 35px rgba(255, 48, 48, 0.8),
+                    0 0 40px rgba(255, 48, 48, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .popular-ribbon::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(45deg, #cc2020, #dd3030);
+            transform: skewY(45deg);
+            border-radius: 2px 0 0 2px;
+        }
+
+        .popular-ribbon::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(45deg, #cc2020, #dd3030);
+            transform: skewY(-45deg);
+            border-radius: 0 2px 2px 0;
+        }
+
+        /*==================================================
+         *  Limited Time Banner
+         *==================================================*/
+        .limited-time-banner {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #ff1744, #ff5722, #ff1744);
+            color: white;
+            padding: 20px 80px;
+            font-size: 1.8em;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 30px;
+            box-shadow: 
+                0 10px 30px rgba(255, 23, 68, 0.7),
+                0 0 50px rgba(255, 23, 68, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            z-index: 20;
+            letter-spacing: 2px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+            animation: limitedBannerPulse 2s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+            max-width: 90vw;
+        }
+
+        .limited-time-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: bannerShimmer 2.5s ease-in-out infinite;
+        }
+
+
+        @keyframes limitedBannerPulse {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+                box-shadow: 
+                    0 10px 30px rgba(255, 23, 68, 0.7),
+                    0 0 50px rgba(255, 23, 68, 0.4),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.08);
+                box-shadow: 
+                    0 15px 40px rgba(255, 23, 68, 0.9),
+                    0 0 70px rgba(255, 23, 68, 0.6),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        @keyframes bannerShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+            50% { opacity: 0.7; transform: translateY(-50%) scale(1.2); }
+        }
+
+        
+
+        .premium-bundle-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .premium-bundle-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        .premium-bundle-text h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+        }
+
+        .premium-bundle-text h2::after {
+           display: none; /* Remove default separator */
+        }
+
+        .premium-bundle-text h3 {
+            font-size: 3.8em;
+            color: var(--accent-gold);
+            margin: 0 0 20px 0;
+            text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .premium-bundle-text .price {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            background: rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .premium-bundle-text .price strong {
+            color: var(--accent-gold);
+            font-size: 1.4em;
+            margin: 0 5px;
+        }
+
+        .premium-bundle-text p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.9;
+            margin: 0 auto 40px auto;
+        }
+
+        .premium-bundle-image {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .premium-bundle-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            transition: transform 0.4s ease;
+        }
+
+        .premium-bundle-card:hover .premium-bundle-image img {
+            transform: scale(1.05);
+        }
+
+        /*==================================================
+         *  Enhanced Price Section
+         *==================================================*/
+        .simple-price {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .breakdown-text {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            padding: 15px 0;
+        }
+        
+        /* Mobile breakdown text */
+        @media (max-width: 768px) {
+            .breakdown-text {
+                font-size: 0.95em;
+                line-height: 1.5;
+                padding: 8px 5px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .breakdown-text {
+                font-size: 0.85em;
+                margin-bottom: 15px;
+                padding: 5px;
+                line-height: 1.4;
+            }
+        }
+
+        .set-price-large {
+            font-size: 4.5em;
+            font-weight: 900;
+            color: var(--accent-gold);
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            line-height: 1;
+            margin: 25px 0;
+            animation: priceGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes priceGlow {
+            0% {
+                text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 
+                    0 0 50px rgba(212, 175, 55, 0.8),
+                    0 0 80px rgba(212, 175, 55, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        .savings-text {
+            font-size: 1.8em;
+            font-weight: 900;
+            color: #ff4444;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, rgba(255, 68, 68, 0.2), rgba(255, 68, 68, 0.1));
+            padding: 15px 30px;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 68, 68, 0.3);
+            margin-top: 25px;
+            display: inline-block;
+            animation: savingsShine 2s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .savings-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: savingsShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes savingsShine {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 68, 68, 0.5);
+            }
+        }
+
+        @keyframes savingsShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .button.bundle.premium {
+            font-size: 1.3em;
+            padding: 22px 55px;
+            background: linear-gradient(45deg, #D4AF37, #EACD6E);
+            color: var(--bg-dark);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            border: none;
+        }
+
+        .button.bundle.premium:hover {
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /*==================================================
+         *  Lightbox Styles
+         *==================================================*/
+        .lightbox {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            animation: fadeInLightbox 0.3s ease;
+        }
+
+        @keyframes fadeInLightbox {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomInLightbox 0.3s ease;
+        }
+
+        @keyframes zoomInLightbox {
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        /*==================================================
+         *  About & Stats Section
+         *==================================================*/
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 900px; /* Match product cards */
+            margin: 0 auto; /* Center the card itself */
+        }
+
+        .about-section h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .about-section h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--accent-gold);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
+            margin-bottom: 20px;
+        }
+
+        .profile-title {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .about-section .about-text {
+            max-width: 700px;
+            color: var(--text-secondary);
+            font-size: 1.2em;
+            line-height: 1.9;
+        }
+
+        /*==================================================
+         *  Enhanced Achievements Section
+         *==================================================*/
+        .achievements-hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .achievements-hero h2 {
+            font-size: 3.2em;
+            background: linear-gradient(45deg, var(--accent-gold), #ffffff, var(--accent-gold));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShine 4s ease-in-out infinite;
+            margin-bottom: 15px;
+        }
+
+        .achievements-subtitle {
+            font-size: 1.3em;
+            color: var(--text-secondary);
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .click-hint-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .click-hint {
+            font-size: 1em;
+            color: var(--accent-gold);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 12px 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            animation: hintPulse 3s ease-in-out infinite;
+            margin: 0;
+        }
+
+        @keyframes hintPulse {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* メイン実績カード */
+        .main-achievement-card {
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.6),
+                0 0 50px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: cardGlow 6s ease-in-out infinite;
+        }
+
+
+        .achievement-content h3 {
+            font-size: 2em;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .big-number {
+            font-size: 5em;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .achievement-content p {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+
+        /* プラットフォームカード */
+        .platform-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .platform-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px 35px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .platform-card:hover::before {
+            left: 100%;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 
+                0 35px 80px rgba(0,0,0,0.3),
+                0 0 40px rgba(255,255,255,0.1);
+        }
+
+        .platform-card.youtube:hover {
+            box-shadow: 
+                0 35px 80px rgba(74, 144, 226, 0.2),
+                0 0 50px rgba(74, 144, 226, 0.15);
+        }
+
+        .platform-card.instagram:hover {
+            box-shadow: 
+                0 35px 80px rgba(193, 53, 132, 0.2),
+                0 0 50px rgba(193, 53, 132, 0.15);
+        }
+
+        .platform-card.tiktok:hover {
+            box-shadow: 
+                0 35px 80px rgba(0, 242, 234, 0.2),
+                0 0 50px rgba(0, 242, 234, 0.15);
+        }
+
+        .platform-icon {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            margin-bottom: 8px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .platform-card:hover .platform-icon {
+            transform: scale(1.1) rotate(-5deg);
+            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08));
+        }
+
+        .platform-icon svg {
+            width: 75px;
+            height: 75px;
+            transition: all 0.4s ease;
+        }
+
+        .platform-card.youtube .platform-icon { 
+            color: inherit;
+        }
+        .platform-card.instagram .platform-icon { 
+            color: var(--accent-instagram);
+        }
+        .platform-card.tiktok .platform-icon { 
+            color: var(--accent-tiktok);
+        }
+
+        .platform-info h4 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .platform-number {
+            font-size: 3.2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f4e575 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .platform-label {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        /* 追加実績カード */
+        .additional-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-item {
+            background: linear-gradient(145deg, #232323, #1a1a1a);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .achievement-number {
+            font-size: 2.2em;
+            font-weight: 900;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .achievement-desc {
+            font-size: 1em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* アニメーション */
+        @keyframes cardGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+
+        /*==================================================
+         *  Footer
+         *==================================================*/
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /*==================================================
+         *  Responsive Design
+         *==================================================*/
+        
+        /* Large tablets and small desktops */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 20px;
+            }
+            .premium-bundle-card {
+                padding: 50px 30px;
+            }
+        }
+        
+        /* Tablets */
+        @media (max-width: 992px) {
+            .hero-content h1 { 
+                font-size: 3.2em; 
+                line-height: 1.3;
+            }
+            .hero-content p { 
+                font-size: 1.2em; 
+            }
+            h2 { 
+                font-size: 2.4em; 
+                margin-bottom: 60px;
+            }
+            .premium-bundle-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .premium-bundle-text {
+                text-align: center;
+            }
+            .premium-bundle-text h2, .premium-bundle-text h3 {
+                text-align: center;
+            }
+            .premium-bundle-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .product-card {
+                padding: 40px 30px;
+            }
+            .platform-cards {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+                min-width: 320px;
+            }
+            
+            .container {
+                padding: 0 10px;
+                max-width: 100%;
+                overflow-x: hidden;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .section { 
+                padding: 60px 0; 
+            }
+            
+            .hero {
+                min-height: 80vh;
+                padding: 40px 16px;
+            }
+            
+            .hero-content h1 { 
+                font-size: 2.2em; 
+                letter-spacing: 1px;
+                line-height: 1.3;
+                margin-bottom: 20px;
+            }
+            
+            .hero-content p { 
+                font-size: 1em;
+                line-height: 1.6;
+            }
+            
+            h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+            
+            .products-inner {
+                gap: 50px;
+            }
+            
+            .product-card {
+                padding: 25px 15px;
+                max-width: 100%;
+                width: calc(100vw - 30px);
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+            
+            .product-card h3 {
+                font-size: 2.2em;
+                margin-bottom: 15px;
+                padding: 0 5px;
+                word-wrap: break-word;
+                line-height: 1.2;
+            }
+            
+            .product-card p {
+                font-size: 1em;
+                margin-bottom: 25px;
+                padding: 0 5px;
+                word-wrap: break-word;
+                line-height: 1.5;
+            }
+            
+            .button {
+                font-size: 1em;
+                padding: 16px 32px;
+                letter-spacing: 1px;
+            }
+            
+            /* Premium Bundle Mobile */
+            .premium-bundle-card {
+                padding: 30px 10px;
+                margin: 0;
+                overflow: hidden;
+                max-width: 100%;
+                width: calc(100vw - 20px);
+                box-sizing: border-box;
+            }
+            
+            .limited-time-banner {
+                font-size: 1.2em;
+                padding: 12px 20px;
+                top: -12px;
+                white-space: normal;
+                text-align: center;
+                line-height: 1.3;
+                max-width: calc(100vw - 40px);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .popular-ribbon {
+                font-size: 0.9em;
+                padding: 8px 30px;
+                top: 8px;
+                right: -20px;
+            }
+            
+            .premium-bundle-text h2 {
+                font-size: 1.8em;
+            }
+            
+            .premium-bundle-text h3 {
+                font-size: 2.8em;
+            }
+            
+            .set-price-large {
+                font-size: 3.2em;
+            }
+            
+            .savings-text {
+                font-size: 1.4em;
+                padding: 12px 24px;
+            }
+            
+            .button.bundle.premium {
+                font-size: 1.1em;
+                padding: 18px 40px;
+            }
+            
+            /* Video Section Mobile */
+            .video-section h4 {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                padding: 0 10px;
+                word-wrap: break-word;
+                line-height: 1.4;
+            }
+            
+            .video-wrapper {
+                margin: 0 5px;
+                max-width: calc(100vw - 30px);
+            }
+            
+            .video-description {
+                font-size: 1em;
+                padding: 0 10px;
+                word-wrap: break-word;
+            }
+            
+            /* Testimonial Gallery Mobile */
+            .testimonial-image-wrapper .testimonial-img {
+                height: 300px;
+            }
+            
+            /* About Section Mobile */
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+            
+            .about-section .about-text {
+                font-size: 1.1em;
+            }
+            
+            /* Stats Section Mobile */
+            .achievements-hero h2 {
+                font-size: 2.2em;
+            }
+            
+            .achievements-subtitle {
+                font-size: 1.1em;
+            }
+            
+            .main-achievement-card {
+                padding: 30px 20px;
+            }
+            
+            .big-number {
+                font-size: 3.5em;
+            }
+            
+            .achievement-content h3 {
+                font-size: 1.6em;
+            }
+            
+            .platform-cards {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .platform-card {
+                padding: 30px 25px;
+            }
+            
+            .platform-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .platform-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .platform-number {
+                font-size: 2.5em;
+            }
+            
+            .platform-info h4 {
+                font-size: 1.3em;
+            }
+            
+            .click-hint {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            body {
+                min-width: 320px;
+            }
+            
+            .container {
+                padding: 0 10px;
+                max-width: 100%;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8em;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+            
+            .hero-content p {
+                font-size: 0.95em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+                word-break: keep-all;
+            }
+            
+            .product-card {
+                padding: 15px 8px;
+                margin: 0;
+                max-width: 100%;
+                width: calc(100vw - 16px);
+                box-sizing: border-box;
+            }
+            
+            .product-card h3 {
+                font-size: 1.8em;
+                word-break: keep-all;
+                padding: 0 5px;
+                line-height: 1.1;
+            }
+            
+            .premium-bundle-card {
+                padding: 20px 8px;
+                margin: 0;
+                max-width: 100%;
+                width: calc(100vw - 16px);
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+            
+            .limited-time-banner {
+                font-size: 0.9em;
+                padding: 8px 15px;
+                max-width: calc(100vw - 20px);
+                word-wrap: break-word;
+                white-space: normal;
+                line-height: 1.2;
+            }
+            
+            .popular-ribbon {
+                font-size: 0.7em;
+                padding: 5px 20px;
+                right: -10px;
+                top: 5px;
+            }
+            
+            .set-price-large {
+                font-size: 2.8em;
+            }
+            
+            .savings-text {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            
+            .big-number {
+                font-size: 3em;
+            }
+            
+            .platform-number {
+                font-size: 2.2em;
+            }
+            
+            .button {
+                font-size: 0.95em;
+                padding: 14px 28px;
+            }
+            
+            .button.bundle.premium {
+                font-size: 1em;
+                padding: 16px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content fade-in">
+            <h1>才能という名の<br>「言い訳」は、もう終わりだ。</h1>
+            <p>6ヶ月で登録者80人から14万人へ。<br>センス不要、戦略が全てを変えるSNS攻略法。</p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="section section-colored fade-in">
+        <div class="container">
+            <h2>あなたの課題に応える、2つの攻略ルート</h2>
+            <div class="products-inner">
+                <!-- YouTubeの教科書 -->
+                <div class="product-card fade-in" id="card-youtube">
+                    <div class="popular-badge-youtube">1番人気!!</div>
+                    <h3>なべの教科書 YouTube編</h3>
+                    <div class="product-image">
+                        <img src="images/image-98-1-1024x536.jpg" alt="なべの教科書 YouTube編" onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
+                    </div>
+                    <p>0→1の壁を越え、収益化を達成し、あなたのチャンネルを資産に変える。ファンを生み出す本質的なYouTube戦略の全てを50,000文字オーバーで圧倒的解説！</p>
+                    <a href="youtube_lp.html" class="button youtube">YouTube編の詳細へ</a>
+
+                    <!-- Testimonial Gallery -->
+                    <div class="testimonial-gallery">
+                        <h4>購入者の声</h4>
+                        <div class="testimonial-scroll-wrapper">
+                            <div class="testimonial-scroll-container">
+                                <!-- Original Images -->
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/image-1.jpg" alt="YouTube感想1" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <!-- Duplicated Images for seamless loop -->
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/image-1.jpg" alt="YouTube感想1" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video Embed -->
+                    <div class="video-section">
+                        <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/XSzPl_WnIso" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="video-description">これ聞くだけでもかなり勉強になると思います！</p>
+                    </div>
+                </div>
+
+                <!-- Instagramの教科書 -->
+                <div class="product-card fade-in" id="card-instagram">
+                    <div class="popular-badge-instagram">3日で100部売れた最新作!!</div>
+                    <h3>なべの教科書 Instagram編</h3>
+                    <div class="product-image">
+                        <img src="images/新Instagramの教科書サムネイル-1.jpg" alt="なべの教科書 Instagram編" onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
+                    </div>
+                    <p>YouTube素材を最大限に活用し、最小限の労力で最大のバズを生む。再現性の高いInstagramリール攻略の裏技で、あなたのSNS戦略を加速させます。</p>
+                    <a href="instagram_lp.html" class="button instagram">Instagram編の詳細へ</a>
+
+                    <!-- Testimonial Gallery -->
+                    <div class="testimonial-gallery">
+                        <h4>購入者の声</h4>
+                        <div class="testimonial-scroll-wrapper">
+                            <div class="testimonial-scroll-container">
+                                <!-- Original Images -->
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-7.jpg" alt="Instagram感想1" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-3.png" alt="Instagram感想2" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-1.png" alt="Instagram感想3" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <!-- Duplicated Images for seamless loop -->
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-7.jpg" alt="Instagram感想1" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-3.png" alt="Instagram感想2" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/image-1.png" alt="Instagram感想3" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                                <div class="testimonial-image-wrapper">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6" class="testimonial-img">
+                                    <span class="zoom-icon">🔍</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video Embed -->
+                    <div class="video-section">
+                        <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/fJN9wSk7IxA" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="video-description">これ聞くだけでもかなり勉強になると思います！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Bundle Section -->
+    <section id="bundle-premium" class="section fade-in">
+        <div class="container">
+            <div class="premium-bundle-card">
+                <div class="limited-time-banner">期間限定。今だけの特別価格</div>
+                <div class="premium-bundle-content">
+                    <div class="premium-bundle-text">
+                        <h2>超お得なセット割</h2>
+                        <h3>伝説のWセット</h3>
+                    </div>
+                    <div class="premium-bundle-image">
+                        <img src="images/Wセット.jpg" alt="伝説のWセット">
+                    </div>
+                    <div class="premium-bundle-text">
+                        <div class="simple-price">
+                            <div class="breakdown-text">YouTube教科書8,000円　Instagram教科書5,980円　合計13,980円</div>
+                            <div class="set-price-large">セット割引9,800円</div>
+                            <div class="savings-text">30%OFF！4,180円もお得</div>
+                        </div>
+                        <p>YouTubeとInstagram、両方のプラットフォームを完全制覇するための全てを、このセットに凝縮。最短で結果を出したいあなたへ贈る、最強の攻略パッケージです。</p>
+                        <a href="#" class="button bundle premium">今すぐ最強のセットを手に入れる</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Stats Section -->
+    <section id="about" class="section section-colored fade-in">
+        <div class="container">
+            <div class="about-section">
+                <h2>この教科書の制作者</h2>
+                <img src="images/クック帽子.png" alt="なべ プロフィール画像" class="profile-image">
+                <p class="profile-title">【SNS研究家】</p>
+                <p class="about-text">こんにちは、なべです。<br>かつては半年間YouTubeを毎日投稿しても登録者80人という「絶望」を経験しました。<br>しかし、センスや才能に頼るのをやめ、「戦略」と「知識」に全てを投資した結果、チャンネルは14万人を超える規模に成長しました。<br>この教科書は、過去の自分のように、暗闇の中で独り苦しんでいる未来のスターに向けた、私からの「答え」です。</p>
+            </div>
+
+            <div style="height: 120px;"></div>
+
+            <div class="achievements-hero">
+                <h2>圧倒的な実績と成果</h2>
+                <p class="achievements-subtitle">数字が証明する、確かな実力</p>
+            </div>
+
+            <div class="stats-grid">
+                <!-- メイン実績カード -->
+                <div class="main-achievement-card">
+                    <div class="achievement-content">
+                        <h3>SNS総フォロワー数</h3>
+                        <div class="big-number" id="total-followers" data-goal="500000">0</div>
+                        <p>（2025年7月現在）</p>
+                    </div>
+                </div>
+
+                <!-- SNS実績カード -->
+                <div class="platform-cards">
+                    <a href="https://www.youtube.com/c/nabekitchen" class="platform-card youtube" target="_blank">
+                        <div class="platform-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="3" width="20" height="18" rx="4" ry="4" fill="#FF0000"/>
+                                <path d="M10 8l6 4-6 4V8z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="platform-info">
+                            <h4>YouTube</h4>
+                            <div class="platform-number" id="youtube-count" data-goal="140000">0</div>
+                            <span class="platform-label">チャンネル登録者</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/nabeno_kitchen/" class="platform-card instagram" target="_blank">
+                        <div class="platform-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z"/></svg>
+                        </div>
+                        <div class="platform-info">
+                            <h4>Instagram</h4>
+                            <div class="platform-number" id="instagram-count" data-goal="170000">0</div>
+                            <span class="platform-label">フォロワー</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nabekitchen" class="platform-card tiktok" target="_blank">
+                        <div class="platform-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z"/></svg>
+                        </div>
+                        <div class="platform-info">
+                            <h4>TikTok</h4>
+                            <div class="platform-number" id="tiktok-count" data-goal="67000">0</div>
+                            <span class="platform-label">フォロワー</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- クリック案内 -->
+                <div class="click-hint-container">
+                    <p class="click-hint">各カードをクリックして実際のアカウントをご覧ください</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 なべのブログ. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox HTML -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade-in animation
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -80px 0px" };
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+
+            // Number Count-Up Animation
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const easedProgress = progress * (2 - progress); // Ease-out
+                    const currentValue = Math.floor(easedProgress * (end - start) + start);
+                    obj.innerHTML = currentValue.toLocaleString();
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.platform-number, .big-number');
+                        counters.forEach(counter => {
+                            const goal = parseInt(counter.dataset.goal);
+                            if (counter.id === 'total-followers') {
+                                animateValue(counter, 0, goal, 3000); // Longer duration for big number
+                            } else if (counter.id === 'tiktok-count') {
+                                animateValue(counter, 0, goal, 2300);
+                            } else {
+                                animateValue(counter, 0, goal, 2500);
+                            }
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            const statsGrid = document.querySelector('.stats-grid');
+            if (statsGrid) {
+                statsObserver.observe(statsGrid);
+            }
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const testimonialImages = document.querySelectorAll('.testimonial-img');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            testimonialImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = image.src;
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) { // Close only if clicking on the background
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
