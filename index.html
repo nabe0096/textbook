@@ -72,14 +72,16 @@
             }
             
             .testimonial-gallery {
-                pointer-events: none !important;
-                -webkit-transform: translateZ(0) !important;
+                -webkit-transform: translateZ(0);
             }
             
-            .testimonial-scroll-wrapper,
+            .testimonial-scroll-wrapper {
+                -webkit-transform: translateZ(0);
+            }
+            
             .testimonial-scroll-container {
-                pointer-events: none !important;
-                -webkit-transform: translateZ(0) !important;
+                -webkit-transform: translateZ(0);
+                animation-play-state: running !important;
             }
             
             .testimonial-image-wrapper {
@@ -548,39 +550,40 @@
             overflow: hidden; /* Hides parts of images outside the container */
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
-            pointer-events: none; /* Prevent scroll blocking */
         }
 
         .testimonial-scroll-container {
             display: flex;
             gap: 20px;
-            animation-name: scroll-gallery;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
+            animation: scroll-gallery 15s linear infinite;
+            -webkit-animation: scroll-gallery 15s linear infinite;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             will-change: transform;
-            pointer-events: none; /* Prevent scroll blocking */
         }
 
         #card-youtube .testimonial-scroll-container {
             width: calc(280px * 14); /* 7 images * 2 */
-            animation-duration: 15s; /* Much faster animation */
+            animation: scroll-gallery 15s linear infinite;
+            -webkit-animation: scroll-gallery 15s linear infinite;
         }
 
         #card-instagram .testimonial-scroll-container {
             width: calc(280px * 12); /* 6 images * 2 */
-            animation-duration: 12s; /* Much faster animation */
+            animation: scroll-gallery 12s linear infinite;
+            -webkit-animation: scroll-gallery 12s linear infinite;
         }
         
         /* Mobile testimonial speed - even faster */
         @media (max-width: 768px) {
             #card-youtube .testimonial-scroll-container {
-                animation-duration: 10s;
+                animation: scroll-gallery 10s linear infinite;
+                -webkit-animation: scroll-gallery 10s linear infinite;
             }
             
             #card-instagram .testimonial-scroll-container {
-                animation-duration: 8s;
+                animation: scroll-gallery 8s linear infinite;
+                -webkit-animation: scroll-gallery 8s linear infinite;
             }
         }
 
@@ -591,9 +594,22 @@
         @keyframes scroll-gallery {
             0% {
                 transform: translateX(0);
+                -webkit-transform: translateX(0);
             }
             100% {
                 transform: translateX(-50%); /* Move by half the track's width for seamless loop */
+                -webkit-transform: translateX(-50%);
+            }
+        }
+        
+        @-webkit-keyframes scroll-gallery {
+            0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            100% {
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
             }
         }
 
@@ -743,6 +759,16 @@
             -webkit-transform: translateZ(0);
             will-change: transform;
             margin: 0 auto;
+        }
+        
+        /* Premium bundle mobile border fix */
+        @media (max-width: 768px) {
+            .premium-bundle-card {
+                border-radius: 20px;
+                box-shadow: 
+                    0 20px 50px rgba(0,0,0,0.4),
+                    0 0 0 2px rgba(212, 175, 55, 0.3);
+            }
         }
 
         @keyframes glowPulse {
@@ -1650,11 +1676,11 @@
             
             /* Premium Bundle Mobile */
             .premium-bundle-card {
-                padding: 25px 8px 15px 8px;
-                margin: 30px 15px 20px 15px;
+                padding: 25px 12px 15px 12px;
+                margin: 30px 20px 20px 20px;
                 overflow: visible;
-                max-width: calc(100vw - 30px);
-                width: calc(100vw - 30px);
+                max-width: calc(100vw - 40px);
+                width: calc(100vw - 40px);
                 box-sizing: border-box;
             }
             
@@ -1902,10 +1928,10 @@
             
             /* Premium bundle 480px fixes */
             .premium-bundle-card {
-                padding: 20px 5px 10px 5px;
-                margin: 25px 10px 15px 10px;
-                max-width: calc(100vw - 20px);
-                width: calc(100vw - 20px);
+                padding: 20px 8px 10px 8px;
+                margin: 25px 15px 15px 15px;
+                max-width: calc(100vw - 30px);
+                width: calc(100vw - 30px);
             }
             
             .limited-time-banner {
