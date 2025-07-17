@@ -668,6 +668,16 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.6);
             background: var(--bg-light);
             aspect-ratio: 16/9;
+            display: block;
+        }
+        
+        /* Mobile video wrapper */
+        @media (max-width: 768px) {
+            .video-wrapper {
+                max-width: calc(100vw - 40px);
+                margin: 0 auto;
+                border-radius: 12px;
+            }
         }
 
         .video-wrapper iframe {
@@ -677,6 +687,19 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* Mobile video iframe */
+        @media (max-width: 768px) {
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block;
+            }
         }
 
         .video-description {
@@ -719,6 +742,7 @@
             transform-style: preserve-3d;
             -webkit-transform: translateZ(0);
             will-change: transform;
+            margin: 0 auto;
         }
 
         @keyframes glowPulse {
@@ -951,9 +975,9 @@
         /* Mobile premium bundle image */
         @media (max-width: 768px) {
             .premium-bundle-image {
-                max-width: calc(100vw - 60px);
+                max-width: calc(100vw - 100px);
                 margin: 0 auto;
-                padding: 0 10px;
+                padding: 0 30px;
                 box-sizing: border-box;
             }
         }
@@ -968,8 +992,8 @@
         /* Mobile premium bundle image */
         @media (max-width: 768px) {
             .premium-bundle-image img {
-                width: 100%;
-                max-width: 100%;
+                width: 80%;
+                max-width: 80%;
                 border-radius: 12px;
                 box-shadow: 0 15px 40px rgba(0,0,0,0.6);
                 object-fit: contain;
@@ -1549,7 +1573,7 @@
             }
             
             .container {
-                padding: 0 8px;
+                padding: 0 5px;
                 max-width: 100%;
                 overflow-x: hidden;
                 width: 100%;
@@ -1557,7 +1581,7 @@
             }
             
             .section { 
-                padding: 60px 0; 
+                padding: 40px 0; 
             }
             
             .hero {
@@ -1626,11 +1650,11 @@
             
             /* Premium Bundle Mobile */
             .premium-bundle-card {
-                padding: 20px 5px;
-                margin: 0 5px;
-                overflow: hidden;
-                max-width: calc(100vw - 20px);
-                width: calc(100vw - 20px);
+                padding: 25px 8px 15px 8px;
+                margin: 30px 15px 20px 15px;
+                overflow: visible;
+                max-width: calc(100vw - 30px);
+                width: calc(100vw - 30px);
                 box-sizing: border-box;
             }
             
@@ -1671,28 +1695,40 @@
             }
             
             .button.bundle.premium {
-                font-size: 1.1em;
-                padding: 18px 40px;
+                font-size: 1em;
+                padding: 16px 30px;
             }
             
             /* Video Section Mobile */
+            .video-section {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                padding: 0;
+            }
+            
             .video-section h4 {
                 font-size: 1.2em;
                 margin-bottom: 20px;
                 padding: 0 10px;
                 word-wrap: break-word;
                 line-height: 1.4;
+                text-align: center;
             }
             
             .video-wrapper {
-                margin: 0 5px;
-                max-width: calc(100vw - 30px);
+                margin: 0 auto;
+                max-width: calc(100vw - 20px);
+                width: 100%;
+                display: block;
             }
             
             .video-description {
                 font-size: 1em;
                 padding: 0 10px;
                 word-wrap: break-word;
+                text-align: center;
+                margin: 0 auto;
             }
             
             /* Testimonial Gallery Mobile */
@@ -1819,13 +1855,14 @@
             
             .limited-time-banner {
                 font-size: 0.7em;
-                padding: 5px 8px;
-                max-width: calc(100vw - 40px);
+                padding: 6px 8px;
+                max-width: calc(100vw - 60px);
                 word-wrap: break-word;
                 white-space: normal;
-                line-height: 1.0;
+                line-height: 1.1;
                 transform: translateX(-50%) scale(0.8);
-                border-radius: 20px;
+                border-radius: 15px;
+                top: 5px;
             }
             
             .popular-ribbon {
@@ -1859,28 +1896,51 @@
             }
             
             .button.bundle.premium {
-                font-size: 1em;
-                padding: 16px 35px;
+                font-size: 0.9em;
+                padding: 14px 25px;
             }
             
             /* Premium bundle 480px fixes */
             .premium-bundle-card {
-                padding: 15px 3px;
-                margin: 0 2px;
-                max-width: calc(100vw - 10px);
-                width: calc(100vw - 10px);
+                padding: 20px 5px 10px 5px;
+                margin: 25px 10px 15px 10px;
+                max-width: calc(100vw - 20px);
+                width: calc(100vw - 20px);
             }
             
             .limited-time-banner {
                 font-size: 0.6em;
                 padding: 4px 6px;
-                max-width: calc(100vw - 20px);
+                max-width: calc(100vw - 30px);
                 transform: translateX(-50%) scale(0.7);
-                border-radius: 15px;
+                border-radius: 12px;
+                top: 8px;
+                line-height: 1.1;
             }
             
             .premium-bundle-image {
-                max-width: calc(100vw - 30px);
+                max-width: calc(100vw - 50px);
+                padding: 0 15px;
+            }
+            
+            .premium-bundle-image img {
+                width: 85%;
+                max-width: 85%;
+            }
+            
+            /* Video section 480px */
+            .video-wrapper {
+                max-width: calc(100vw - 20px);
+                margin: 0 auto;
+            }
+            
+            .video-section h4 {
+                font-size: 1.1em;
+                padding: 0 5px;
+            }
+            
+            .video-description {
+                font-size: 0.95em;
                 padding: 0 5px;
             }
         }
@@ -2081,7 +2141,7 @@
     <section id="bundle-premium" class="section fade-in">
         <div class="container">
             <div class="premium-bundle-card">
-                <div class="limited-time-banner">期間限定。今だけの特別価格</div>
+                <div class="limited-time-banner">期間限定<br>今だけの特別価格</div>
                 <div class="premium-bundle-content">
                     <div class="premium-bundle-text">
                         <h2>超お得なセット割</h2>
