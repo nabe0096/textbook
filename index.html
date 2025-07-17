@@ -64,6 +64,40 @@
                 padding-left: 5px !important;
                 padding-right: 5px !important;
             }
+            
+            /* Mobile scroll improvements */
+            body {
+                -webkit-overflow-scrolling: touch !important;
+                touch-action: pan-y !important;
+            }
+            
+            .testimonial-gallery {
+                pointer-events: none !important;
+                -webkit-transform: translateZ(0) !important;
+            }
+            
+            .testimonial-scroll-wrapper,
+            .testimonial-scroll-container {
+                pointer-events: none !important;
+                -webkit-transform: translateZ(0) !important;
+            }
+            
+            .testimonial-image-wrapper {
+                pointer-events: auto !important;
+            }
+            
+            .popular-ribbon,
+            .limited-time-banner {
+                pointer-events: none !important;
+            }
+            
+            .product-card {
+                touch-action: pan-y !important;
+            }
+            
+            .premium-bundle-card {
+                touch-action: pan-y !important;
+            }
         }
 
         body {
@@ -76,6 +110,8 @@
             color: var(--text-primary);
             overflow-x: hidden;
             min-width: 320px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -295,6 +331,8 @@
             padding: 50px 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
             overflow: hidden; /* Hide overflowing content from gallery */
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
         
         /* In a colored section, the product card should use the darker background for contrast */
@@ -493,6 +531,9 @@
             width: 100%;
             margin-top: 40px;
             position: relative;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .testimonial-gallery h4 {
@@ -505,6 +546,9 @@
         .testimonial-scroll-wrapper {
             width: 100%;
             overflow: hidden; /* Hides parts of images outside the container */
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            pointer-events: none; /* Prevent scroll blocking */
         }
 
         .testimonial-scroll-container {
@@ -513,6 +557,10 @@
             animation-name: scroll-gallery;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            will-change: transform;
+            pointer-events: none; /* Prevent scroll blocking */
         }
 
         #card-youtube .testimonial-scroll-container {
@@ -554,6 +602,7 @@
             flex-shrink: 0;
             border-radius: 12px;
             overflow: hidden; /* Ensures icon stays within rounded corners */
+            pointer-events: auto; /* Allow clicks on images */
         }
 
         .testimonial-image-wrapper .testimonial-img {
@@ -668,6 +717,8 @@
             overflow: visible;
             animation: glowPulse 4s ease-in-out infinite;
             transform-style: preserve-3d;
+            -webkit-transform: translateZ(0);
+            will-change: transform;
         }
 
         @keyframes glowPulse {
@@ -718,6 +769,7 @@
             animation: ribbonPulse 3s ease-in-out infinite;
             white-space: nowrap;
             overflow: hidden;
+            pointer-events: none;
         }
 
         @keyframes ribbonPulse {
@@ -790,6 +842,7 @@
             text-align: center;
             white-space: nowrap;
             max-width: 90vw;
+            pointer-events: none;
         }
 
         .limited-time-banner::before {
