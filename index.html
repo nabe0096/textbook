@@ -463,12 +463,42 @@
         }
         
         @media (max-width: 768px) {
+            .header {
+                position: relative !important;
+            }
+            
             .nav-menu {
-                display: none;
+                display: flex !important;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+            }
+            
+            .nav-menu a {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
             
             .mobile-menu-toggle {
-                display: block;
+                display: none;
+            }
+            
+            .logo-text {
+                font-size: 0.9em !important;
+            }
+            
+            .logo img {
+                height: 45px !important;
+                margin-right: 10px !important;
             }
         }
 
@@ -2634,8 +2664,8 @@
     <header class="header">
         <div class="header-content">
             <a href="#" class="logo" style="display: flex; align-items: center;">
-                <img src="images/ホワイト-背景無し.png" alt="Logo" style="height: 110px; width: auto; margin-right: 20px;">
-                <span style="font-size: 1.2em; font-family: 'Klee One', cursive, sans-serif;">Nabeblog</span>
+                <img src="images/ホワイト-背景無し.png" alt="Logo" style="height: 60px; width: auto; margin-right: 15px;">
+                <span class="logo-text" style="font-size: 1.1em; font-family: 'Klee One', cursive, sans-serif;">Nabeblog</span>
             </a>
             <nav>
                 <ul class="nav-menu">
