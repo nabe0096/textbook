@@ -2016,6 +2016,276 @@
                 padding: 0 5px;
             }
         }
+
+        /*==================================================
+         *  Blog Section Styles
+         *==================================================*/
+        .blog-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-family: var(--font-serif);
+        }
+
+        .blog-scroll-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-gold) rgba(255, 255, 255, 0.1);
+            cursor: grab;
+            padding-bottom: 1rem;
+            touch-action: pan-x;
+        }
+
+        .blog-scroll-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .blog-scroll-wrapper::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+        }
+        
+        .blog-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 3px;
+        }
+        
+        .blog-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
+        }
+
+        .blog-scroll-container {
+            display: flex;
+            gap: 2rem;
+            min-width: max-content;
+            animation: scroll-blog 20s linear infinite;
+            -webkit-animation: scroll-blog 20s linear infinite;
+        }
+
+        .blog-scroll-wrapper:active {
+            cursor: grabbing;
+        }
+
+        .blog-scroll-container:hover {
+            animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+        }
+
+        @keyframes scroll-blog {
+            0% {
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+            }
+        }
+
+        .blog-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            hover-effect: transform;
+            flex: 0 0 300px;
+            min-width: 300px;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+        }
+
+        .blog-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            background: var(--bg-dark);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            font-family: var(--font-serif);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3em;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-family: var(--font-serif);
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95em;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 36px;
+            height: 44px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-family: var(--font-serif);
+            font-size: 0.9em;
+            border: 2px solid var(--accent-gold);
+            text-align: center;
+            min-width: 160px;
+        }
+
+        .blog-link:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Mobile Responsive for Blog Section */
+        @media (max-width: 768px) {
+            .blog-scroll-wrapper {
+                overflow-x: auto;
+                cursor: grab;
+                padding-bottom: 10px;
+            }
+            
+            .blog-scroll-wrapper:active {
+                cursor: grabbing;
+            }
+
+            .blog-scroll-container {
+                animation: scroll-blog 15s linear infinite;
+                -webkit-animation: scroll-blog 15s linear infinite;
+                gap: 1.5rem;
+            }
+
+            .blog-card {
+                flex: 0 0 280px;
+                min-width: 280px;
+            }
+
+            .blog-image {
+                height: 180px;
+            }
+
+            .blog-content {
+                padding: 1.2rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.1em;
+            }
+
+            .blog-link {
+                padding: 0 30px;
+                height: 40px;
+                font-size: 0.85em;
+                min-width: 140px;
+            }
+
+            .blog-subtitle {
+                font-size: 1.1em;
+                margin-bottom: 2rem;
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-scroll-wrapper {
+                margin: 0 -10px;
+                padding: 0 10px;
+            }
+
+            .blog-scroll-container {
+                animation: scroll-blog 15s linear infinite;
+                -webkit-animation: scroll-blog 15s linear infinite;
+                gap: 1.2rem;
+            }
+
+            .blog-card {
+                flex: 0 0 280px;
+                min-width: 280px;
+                margin-right: 0.5rem;
+            }
+
+            .blog-content {
+                padding: 1.2rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.1em;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+
+            .blog-content p {
+                font-size: 0.95em;
+                line-height: 1.5;
+                margin-bottom: 1.2rem;
+            }
+
+            .blog-image {
+                height: 180px;
+            }
+
+            .blog-category {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+
+            .blog-link {
+                padding: 0 28px;
+                height: 42px;
+                font-size: 0.85em;
+                min-width: 140px;
+                border-radius: 21px;
+            }
+
+            .blog-subtitle {
+                font-size: 1.1em;
+                margin-bottom: 1.5rem;
+                padding: 0 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2317,58 +2587,106 @@
             <h2>無料で読める おすすめ記事</h2>
             <p class="blog-subtitle">SNS運用のコツやノウハウを無料公開中</p>
             
-            <div class="blog-grid">
-                <!-- Blog Article 1 -->
-                <article class="blog-card fade-in">
-                    <div class="blog-image">
-                        <img src="images/blog-1.jpg" alt="ブログ記事1" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
-                        <div class="blog-category">YouTube</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>チャンネル登録者を増やす5つの戦略</h3>
-                        <p>多くの人が見落としている、登録者数を確実に伸ばすための具体的な方法を解説します。</p>
-                        <a href="#" class="blog-link">記事を読む →</a>
-                    </div>
-                </article>
+            <div class="blog-scroll-wrapper">
+                <div class="blog-scroll-container">
+                    <!-- Original Articles -->
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">YouTube</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【YouTube論】SNS流入をやめるべき本当の理由</h3>
+                            <p>これ知らなきゃマジでやばい。多くのクリエイターが陥る罠と、本当に効果的なチャンネル成長戦略を解説。</p>
+                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
 
-                <!-- Blog Article 2 -->
-                <article class="blog-card fade-in">
-                    <div class="blog-image">
-                        <img src="images/blog-2.jpg" alt="ブログ記事2" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
-                        <div class="blog-category">Instagram</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>インスタリールでバズる投稿の作り方</h3>
-                        <p>再生回数10万回超えのリールを作るための、誰でも実践できるテクニックを公開。</p>
-                        <a href="#" class="blog-link">記事を読む →</a>
-                    </div>
-                </article>
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">YouTube</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【要チェック】YouTubeが伸びないのはコレかも！？</h3>
+                            <p>YouTube伸ばしたいなら絶対これ！！コンセプトと外観を整えるだけでチャンネルは成長する秘密を公開。</p>
+                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
 
-                <!-- Blog Article 3 -->
-                <article class="blog-card fade-in">
-                    <div class="blog-image">
-                        <img src="images/blog-3.jpg" alt="ブログ記事3" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
-                        <div class="blog-category">戦略</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>SNS運用で挫折しないマインドセット</h3>
-                        <p>成果が出るまでの期間と、モチベーションを維持するための考え方を伝授します。</p>
-                        <a href="#" class="blog-link">記事を読む →</a>
-                    </div>
-                </article>
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">戦略</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【知らなきゃ損】SNSを伸ばしたければ"相手の未来を想像させよう"</h3>
+                            <p>これを知らなきゃSNSは伸ばせない。相手の未来を想像させる投稿作りの極意を公開します。</p>
+                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
 
-                <!-- Blog Article 4 -->
-                <article class="blog-card fade-in">
-                    <div class="blog-image">
-                        <img src="images/blog-4.jpg" alt="ブログ記事4" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
-                        <div class="blog-category">収益化</div>
-                    </div>
-                    <div class="blog-content">
-                        <h3>初心者でもできる収益化の始め方</h3>
-                        <p>0から収益を生み出すまでのロードマップと、効率的な収益化方法を詳しく解説。</p>
-                        <a href="#" class="blog-link">記事を読む →</a>
-                    </div>
-                </article>
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">収益化</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。</h3>
+                            <p>4年間の実体験から学んだ、料理系YouTuberならではの収益化戦略を全て公開します。</p>
+                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
+
+                    <!-- Duplicate Articles for seamless loop -->
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">YouTube</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【YouTube論】SNS流入をやめるべき本当の理由</h3>
+                            <p>これ知らなきゃマジでやばい。多くのクリエイターが陥る罠と、本当に効果的なチャンネル成長戦略を解説。</p>
+                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">YouTube</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【要チェック】YouTubeが伸びないのはコレかも！？</h3>
+                            <p>YouTube伸ばしたいなら絶対これ！！コンセプトと外観を整えるだけでチャンネルは成長する秘密を公開。</p>
+                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">戦略</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【知らなきゃ損】SNSを伸ばしたければ"相手の未来を想像させよう"</h3>
+                            <p>これを知らなきゃSNSは伸ばせない。相手の未来を想像させる投稿作りの極意を公開します。</p>
+                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card fade-in">
+                        <div class="blog-image">
+                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <div class="blog-category">収益化</div>
+                        </div>
+                        <div class="blog-content">
+                            <h3>【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。</h3>
+                            <p>4年間の実体験から学んだ、料理系YouTuberならではの収益化戦略を全て公開します。</p>
+                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank" class="blog-link">記事を読む →</a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
@@ -2550,6 +2868,97 @@
                 if (e.target === lightbox) { // Close only if clicking on the background
                     closeLightbox();
                 }
+            });
+
+            // Blog scroll interaction (similar to testimonials)
+            const blogScrollWrappers = document.querySelectorAll('.blog-scroll-wrapper');
+            
+            blogScrollWrappers.forEach(wrapper => {
+                let isScrolling = false;
+                let startX = 0;
+                let scrollLeft = 0;
+                const container = wrapper.querySelector('.blog-scroll-container');
+                
+                // Pause animation on manual interaction
+                wrapper.addEventListener('mouseenter', () => {
+                    if (container) {
+                        container.style.animationPlayState = 'paused';
+                        container.style.webkitAnimationPlayState = 'paused';
+                    }
+                });
+                
+                wrapper.addEventListener('mouseleave', () => {
+                    if (container && !isScrolling) {
+                        container.style.animationPlayState = 'running';
+                        container.style.webkitAnimationPlayState = 'running';
+                    }
+                });
+                
+                // Touch/mouse drag scrolling
+                wrapper.addEventListener('mousedown', (e) => {
+                    isScrolling = true;
+                    wrapper.style.cursor = 'grabbing';
+                    startX = e.pageX - wrapper.offsetLeft;
+                    scrollLeft = wrapper.scrollLeft;
+                    if (container) {
+                        container.style.animationPlayState = 'paused';
+                        container.style.webkitAnimationPlayState = 'paused';
+                    }
+                });
+                
+                wrapper.addEventListener('mousemove', (e) => {
+                    if (!isScrolling) return;
+                    e.preventDefault();
+                    const x = e.pageX - wrapper.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    wrapper.scrollLeft = scrollLeft - walk;
+                });
+                
+                wrapper.addEventListener('mouseup', () => {
+                    isScrolling = false;
+                    wrapper.style.cursor = 'grab';
+                    setTimeout(() => {
+                        if (container) {
+                            container.style.animationPlayState = 'running';
+                            container.style.webkitAnimationPlayState = 'running';
+                        }
+                    }, 1000);
+                });
+                
+                wrapper.addEventListener('mouseleave', () => {
+                    isScrolling = false;
+                    wrapper.style.cursor = 'grab';
+                });
+
+                // Touch events for mobile
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+
+                wrapper.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].clientX;
+                    touchScrollLeft = wrapper.scrollLeft;
+                    if (container) {
+                        container.style.animationPlayState = 'paused';
+                        container.style.webkitAnimationPlayState = 'paused';
+                    }
+                });
+
+                wrapper.addEventListener('touchmove', (e) => {
+                    if (!touchStartX) return;
+                    const touchX = e.touches[0].clientX;
+                    const walk = (touchStartX - touchX) * 1.5;
+                    wrapper.scrollLeft = touchScrollLeft + walk;
+                });
+
+                wrapper.addEventListener('touchend', () => {
+                    touchStartX = 0;
+                    setTimeout(() => {
+                        if (container) {
+                            container.style.animationPlayState = 'running';
+                            container.style.webkitAnimationPlayState = 'running';
+                        }
+                    }, 2000);
+                });
             });
         });
     </script>
