@@ -154,57 +154,118 @@
 
         .button {
             display: inline-block;
-            font-family: var(--font-serif);
-            font-weight: 700;
-            font-size: 1.1em; /* Increased font size */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
             text-decoration: none;
-            border-radius: 50px;
-            padding: 18px 48px; /* Increased padding */
-            letter-spacing: 1.2px; /* Increased spacing */
+            border-radius: 12px;
+            padding: 18px 36px;
+            letter-spacing: -0.025em;
             border: none;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Base shadow for depth + inner highlight for 3D effect */
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 0.15),
-                0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: all 0.15s ease;
+            text-align: center;
+            min-width: 160px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .button:active {
-            transform: translateY(2px) scale(0.98);
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 0.15),
-                0 4px 15px rgba(0, 0, 0, 0.6);
+            transform: translateY(1px) scale(0.98);
         }
 
         .button.youtube {
-            background: linear-gradient(45deg, #3a7bc8, #4A90E2);
-            color: var(--text-primary);
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button.youtube::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .button.youtube:hover::before {
+            left: 100%;
         }
 
         .button.youtube:hover {
-            background: linear-gradient(45deg, #4a8ce0, #5a9eef);
-            transform: translateY(-4px);
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 0.2),
-                0 12px 35px rgba(74, 144, 226, 0.4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
         }
 
         .button.instagram {
-            background: linear-gradient(45deg, #833AB4, #C13584);
-            color: var(--text-primary);
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button.instagram::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .button.instagram:hover::before {
+            left: 100%;
         }
 
         .button.instagram:hover {
-            background: linear-gradient(45deg, #9b4bc8, #d94a9a);
-            transform: translateY(-4px);
-            box-shadow: 
-                inset 0 1px 1px rgba(255, 255, 255, 0.2),
-                0 12px 35px rgba(193, 53, 132, 0.4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(253, 29, 29, 0.3);
+        }
+
+        .button.note {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button.note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .button.note:hover::before {
+            left: 100%;
+        }
+
+        .button.note:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(56, 239, 125, 0.3);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .button-container .button {
+            margin: 0;
         }
 
         /* --- Fade-in Animation (Bowan Effect) --- */
@@ -919,11 +980,13 @@
             transform: translateX(-50%);
             background: linear-gradient(45deg, #ff1744, #ff5722, #ff1744);
             color: white;
-            padding: 20px 80px;
-            font-size: 1.8em;
+            padding: 15px 10px;
+            font-size: 2.4em;
             font-weight: 900;
             text-transform: uppercase;
             border-radius: 30px;
+            max-width: 200px;
+            width: auto;
             box-shadow: 
                 0 10px 30px rgba(255, 23, 68, 0.7),
                 0 0 50px rgba(255, 23, 68, 0.4),
@@ -1715,9 +1778,10 @@
             }
             
             .button {
-                font-size: 1em;
-                padding: 16px 32px;
-                letter-spacing: 1px;
+                font-size: 1.0em;
+                padding: 14px 28px;
+                letter-spacing: 0.3px;
+                min-width: 160px;
             }
             
             /* Premium Bundle Mobile */
@@ -1731,13 +1795,13 @@
             }
             
             .limited-time-banner {
-                font-size: 1.2em;
-                padding: 12px 20px;
+                font-size: 1.6em;
+                padding: 10px 8px;
                 top: -12px;
                 white-space: normal;
                 text-align: center;
-                line-height: 1.3;
-                max-width: calc(100vw - 40px);
+                line-height: 1.2;
+                max-width: 180px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -1926,13 +1990,13 @@
             }
             
             .limited-time-banner {
-                font-size: 0.7em;
-                padding: 6px 8px;
-                max-width: calc(100vw - 60px);
+                font-size: 1.0em;
+                padding: 8px 6px;
+                max-width: 150px;
                 word-wrap: break-word;
                 white-space: normal;
                 line-height: 1.1;
-                transform: translateX(-50%) scale(0.8);
+                transform: translateX(-50%) scale(0.9);
                 border-radius: 15px;
                 top: 5px;
             }
@@ -1964,7 +2028,9 @@
             
             .button {
                 font-size: 0.95em;
-                padding: 14px 28px;
+                padding: 12px 24px;
+                letter-spacing: 0.3px;
+                min-width: 140px;
             }
             
             .button.bundle.premium {
@@ -1981,10 +2047,10 @@
             }
             
             .limited-time-banner {
-                font-size: 0.6em;
-                padding: 4px 6px;
-                max-width: calc(100vw - 30px);
-                transform: translateX(-50%) scale(0.7);
+                font-size: 0.8em;
+                padding: 6px 4px;
+                max-width: 120px;
+                transform: translateX(-50%) scale(0.8);
                 border-radius: 12px;
                 top: 8px;
                 line-height: 1.1;
@@ -2286,6 +2352,37 @@
                 padding: 0 15px;
             }
         }
+
+        /*==================================================
+         *  Feature List Styles
+         *==================================================*/
+        .feature-list {
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            padding-left: 0;
+            color: var(--text-primary);
+            line-height: 1.4;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .feature-item {
+                font-size: 1.1em;
+                margin-bottom: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-item {
+                font-size: 1.0em;
+                margin-bottom: 0.6rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2309,8 +2406,30 @@
                     <div class="product-image">
                         <img src="images/image-98-1-1024x536.jpg" alt="なべの教科書 YouTube編" onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
                     </div>
-                    <p>0→1の壁を越え、収益化を達成し、あなたのチャンネルを資産に変える。ファンを生み出す本質的なYouTube戦略の全てを50,000文字オーバーで圧倒的解説！</p>
-                    <a href="youtube_lp.html" class="button youtube">YouTube編の詳細へ</a>
+                    <p><strong>「半年で登録者80人だった私が、今では登録者14万人･･･」</strong><br><br>
+
+才能も特別なスキルもない状態から、どうやってここまで来れたのか？<br>
+その過程で得たすべての学びとノウハウを、ひとつの教材にまとめました。<br><br>
+
+📘 <strong>『なべの教科書（YouTube編）』</strong><br>
+→ 50,000文字超のボリュームで、撮影・編集・伸ばし方・収益化までを完全解説。</p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">✅ バズらせるための動画構成とタイトルの考え方</div>
+                        <div class="feature-item">✅ "刺さる"サムネイルと、クリック率を上げる作り方</div>
+                        <div class="feature-item">✅ 登録者が少なくても収益が出せるマネタイズ戦略</div>
+                        <div class="feature-item">✅ アナリティクスを使った伸びる動画と伸びない動画の違い分析</div>
+                        <div class="feature-item">✅ 登録者が少なくても検索上位を狙う方法</div>
+                        <div class="feature-item">✅ 企業案件を獲得するための具体的なアプローチ方法</div>
+                        <div class="feature-item">✅ 継続収入を生む仕組みづくりとファン化戦略</div>
+                    </div>
+
+                    <p><span style="font-size: 1.2em;">すでにnote版（¥9,800）では多くの方に読まれ高評価レビューも多数！</span><br>
+<span style="color: var(--accent-gold); font-weight: bold; font-size: 1.2em;">いまならブログ直販限定で、手数料分おトクな¥8,000で購入できます。</span></p>
+                    <div class="button-container">
+                        <a href="https://nabenoblog.com/youtube-strategy-articles/" target="_blank" class="button youtube">ブログ版はこちら</a>
+                        <a href="https://bit.ly/nabenote" target="_blank" class="button note">note版はこちら</a>
+                    </div>
 
                     <!-- Testimonial Gallery -->
                     <div class="testimonial-gallery">
@@ -2707,7 +2826,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Fade-in animation
             const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -80px 0px" };
+            const appearOptions = { threshold: 0.15, rootMargin: "0px 0px 50px 0px" };
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
@@ -2715,7 +2834,14 @@
                     appearOnScroll.unobserve(entry.target);
                 });
             }, appearOptions);
-            faders.forEach(fader => appearOnScroll.observe(fader));
+            faders.forEach(fader => {
+                // YouTube編セクションは即座に表示
+                if (fader.id === 'card-youtube') {
+                    fader.classList.add('visible');
+                } else {
+                    appearOnScroll.observe(fader);
+                }
+            });
 
             // Number Count-Up Animation
             function animateValue(obj, start, end, duration) {
