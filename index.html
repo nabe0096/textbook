@@ -484,24 +484,132 @@
         
         @media (max-width: 768px) {
             .header {
-                position: relative !important;
+                position: fixed !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                border-bottom: none !important;
+                padding: 15px 0;
+                z-index: 1002;
+            }
+            
+            .header-content {
+                justify-content: flex-end;
+                padding: 0 20px;
+            }
+            
+            .logo {
+                display: none !important;
             }
             
             .nav-menu {
                 display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(20, 20, 20, 0.98);
+                backdrop-filter: blur(20px);
+                z-index: 1001;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                opacity: 0;
+                transform: scale(0.8);
+                transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+                opacity: 1;
+                transform: scale(1);
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                transform: translateY(30px);
+                opacity: 0;
+                animation: slideInUp 0.6s ease forwards;
+            }
+            
+            .nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
+            .nav-menu.active li:nth-child(2) { animation-delay: 0.2s; }
+            .nav-menu.active li:nth-child(3) { animation-delay: 0.3s; }
+            .nav-menu.active li:nth-child(4) { animation-delay: 0.4s; }
+            
+            .nav-menu a {
+                font-size: 1.8em;
+                padding: 15px 30px;
+                border: 2px solid transparent;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                color: white;
+            }
+            
+            .nav-menu a:hover {
+                border-color: var(--accent-gold);
+                background: rgba(212, 175, 55, 0.1);
+                transform: scale(1.05);
             }
             
             .mobile-menu-toggle {
                 display: block;
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                color: white;
+                font-size: 1.2em;
+                padding: 12px 15px;
+                cursor: pointer;
+                z-index: 1003;
+                position: relative;
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             }
             
-            .logo-text {
-                font-size: 0.9em !important;
+            .mobile-menu-toggle:hover {
+                background: rgba(212, 175, 55, 0.2);
+                border-color: var(--accent-gold);
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
             }
             
-            .logo img {
-                height: 45px !important;
-                margin-right: 10px !important;
+            .mobile-menu-toggle:active {
+                transform: scale(0.95);
+            }
+            
+            .menu-line {
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: white;
+                margin: 4px 0;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+                transform-origin: center;
+            }
+            
+            .mobile-menu-toggle.active .menu-line:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            
+            .mobile-menu-toggle.active .menu-line:nth-child(2) {
+                opacity: 0;
+                transform: scale(0);
+            }
+            
+            .mobile-menu-toggle.active .menu-line:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            @keyframes slideInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
 
@@ -1594,6 +1702,167 @@
             font-weight: 500;
             letter-spacing: 0.5px;
             padding: 12px 24px;
+        }
+
+        /* Achievement Section Styles - 新しい実績ブロック用 */
+        .achievement-section {
+            margin: 40px 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        /* 実績セクション内の最初のachievement-sectionのみ上マージンを調整 */
+        #about .achievement-section:first-of-type {
+            margin-top: 40px;
+        }
+        
+        .achievement-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .achievement-title {
+            color: var(--text-primary);
+            font-size: 1.8em;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 0 40px 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 0;
+            padding-bottom: 45%; /* 16:9 aspect ratio for max-width 800px */
+            margin: 0 auto 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        @media (max-width: 800px) {
+            .video-wrapper {
+                padding-bottom: 56.25%; /* 16:9 aspect ratio for smaller screens */
+            }
+            
+            .achievement-section {
+                margin: 30px 0;
+                padding: 30px 20px;
+            }
+            
+            #about .achievement-section:first-of-type {
+                margin-top: 30px;
+            }
+            
+            .achievement-title {
+                font-size: 1.5em;
+                margin-bottom: 30px;
+            }
+            
+            .achievement-description {
+                font-size: 1em;
+                margin-top: 30px;
+            }
+            
+            .consulting-description .image-wrapper {
+                margin-top: 30px;
+            }
+            
+            .consulting-description .video-wrapper {
+                margin-top: 20px;
+            }
+            
+            .channel-link {
+                font-size: 1em;
+                margin: 10px 0 20px 0;
+            }
+            
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .achievement-description {
+            color: var(--text-primary);
+            font-size: 1.1em;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 800px;
+            margin: 40px auto 0 auto;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .achievement-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Consulting Description Styles */
+        .consulting-description {
+            text-align: left;
+        }
+
+        .consulting-description p {
+            margin-bottom: 20px;
+        }
+
+        .consulting-description .image-wrapper {
+            margin-top: 40px;
+        }
+
+        .consulting-description .video-wrapper {
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        /* Channel Link Styles */
+        .channel-link {
+            text-align: center;
+            margin: 15px 0 30px 0;
+            font-size: 1.1em;
+            color: var(--text-primary);
+        }
+
+        .youtube-channel-link {
+            color: #0066CC;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .youtube-channel-link:hover {
+            color: #004499;
+            text-decoration: none;
+        }
+
             display: inline-block;
             margin: 0;
         }
@@ -1605,6 +1874,7 @@
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
+            padding-bottom: 60px;
         }
 
         /* メイン実績カード */
@@ -1619,6 +1889,7 @@
                 0 0 50px rgba(212, 175, 55, 0.3);
             position: relative;
             overflow: hidden;
+            margin-bottom: 60px;
         }
 
         .main-achievement-card::before {
@@ -2160,6 +2431,7 @@
             
             .main-achievement-card {
                 padding: 30px 20px;
+                margin-bottom: 40px;
             }
             
             .big-number {
@@ -2677,7 +2949,11 @@
                     <li><a href="#blog-articles">無料記事</a></li>
                     <li><a href="#achievements">実績</a></li>
                 </ul>
-                <button class="mobile-menu-toggle">☰</button>
+                <button class="mobile-menu-toggle">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -3039,6 +3315,60 @@
                 <!-- クリック案内 -->
                 <div class="click-hint-container">
                     <p class="click-hint">各カードをクリックして実際のアカウントをご覧ください</p>
+                </div>
+
+                <!-- TVCMフードコーディネート実績 -->
+                <div class="achievement-section">
+                    <h4 class="achievement-title">TVCMフードコーディネート</h4>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/n9-J5edwZfc" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="achievement-description">SNS経由でご連絡をいただき、TVCMのフードコーディネートを担当しました。SNSでの発信力が実際のビジネスチャンスに繋がった実例です。</p>
+                </div>
+
+                <!-- レシピ開発&監修実績 -->
+                <div class="achievement-section">
+                    <h4 class="achievement-title">レシピ開発&監修</h4>
+                    <div class="image-wrapper">
+                        <img src="images/レシピ画像.webp" alt="レシピ開発監修実績" class="achievement-image" onclick="openImageModal(this)">
+                    </div>
+                    <p class="achievement-description">雑誌【実話ナックルズ】さまからのご依頼で「ちょい足しグルメのレシピ案作成」企画を担当しました。出版社との連携により、読者に愛される実用的なレシピ開発を行いました。</p>
+                </div>
+
+                <!-- コンサルティング実績 -->
+                <div class="achievement-section">
+                    <h4 class="achievement-title">コンサルティング</h4>
+                    <div class="image-wrapper">
+                        <img src="images/深夜.webp" alt="コンサルティング実績" class="achievement-image" onclick="openImageModal(this)">
+                    </div>
+                    <p class="channel-link">チャンネル：<a href="https://www.youtube.com/channel/UCeJhUEKiBsStyea_PITiZJw" target="_blank" class="youtube-channel-link">深夜のらーめん食堂</a></p>
+                    <div class="achievement-description consulting-description">
+                        <p>個人の方からご依頼いただきコンサルティングさせていただきました。</p>
+                        <p><strong>既存のチャンネルがあったものの、1からコンセプトとチャンネル設計を作り直し、開始2ヶ月でチャンネル登録者1,000人を達成することができました。</strong></p>
+                        <p>コンサルティング期間2ヶ月という短期間で</p>
+                        <div class="feature-list">
+                            <div class="feature-item">✅ 撮影技術と魅力的な映像の撮り方</div>
+                            <div class="feature-item">✅ 視聴者を惹きつける魅せ方とプレゼンテーション</div>
+                            <div class="feature-item">✅ 効果的な編集技法とテンポの作り方</div>
+                            <div class="feature-item">✅ クリック率を上げるサムネイル作成術</div>
+                            <div class="feature-item">✅ バズるタイトルの付け方と最適化手法</div>
+                        </div>
+                        <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くのかたのSNSを伸ばしてきました。</p>
+                        <div class="image-wrapper">
+                            <img src="images/実績.webp" alt="コンサルティング成果実績" class="achievement-image" onclick="openImageModal(this)">
+                        </div>
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/XZAKeJJUcLs?si=v_otaHmgty4_0bBx" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -3528,20 +3858,36 @@
             
             if (mobileMenuToggle && navMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
-                    if (navMenu.style.display === 'flex') {
-                        navMenu.style.display = 'none';
+                    if (navMenu.classList.contains('active')) {
+                        // Close menu
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        setTimeout(() => {
+                            navMenu.style.display = 'none';
+                        }, 400);
+                        document.body.style.overflow = 'auto';
                     } else {
+                        // Open menu
                         navMenu.style.display = 'flex';
-                        navMenu.style.flexDirection = 'column';
-                        navMenu.style.position = 'absolute';
-                        navMenu.style.top = '100%';
-                        navMenu.style.left = '0';
-                        navMenu.style.right = '0';
-                        navMenu.style.background = 'rgba(20, 20, 20, 0.95)';
-                        navMenu.style.padding = '20px';
-                        navMenu.style.borderTop = '1px solid rgba(212, 175, 55, 0.2)';
-                        navMenu.style.zIndex = '1001';
+                        mobileMenuToggle.classList.add('active');
+                        setTimeout(() => {
+                            navMenu.classList.add('active');
+                        }, 10);
+                        document.body.style.overflow = 'hidden';
                     }
+                });
+                
+                // Close menu when clicking on a menu item
+                const menuLinks = navMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        setTimeout(() => {
+                            navMenu.style.display = 'none';
+                        }, 400);
+                        document.body.style.overflow = 'auto';
+                    });
                 });
             }
         });
