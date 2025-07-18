@@ -468,28 +468,11 @@
             }
             
             .nav-menu {
-                display: flex !important;
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .nav-menu li {
-                margin: 0;
-            }
-            
-            .nav-menu a {
-                font-size: 0.9em;
-                padding: 8px 12px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+                display: none;
             }
             
             .mobile-menu-toggle {
-                display: none;
+                display: block;
             }
             
             .logo-text {
@@ -3518,6 +3501,29 @@
                 };
                 document.addEventListener('keydown', handleKeyPress);
             };
+            
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuToggle && navMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    if (navMenu.style.display === 'flex') {
+                        navMenu.style.display = 'none';
+                    } else {
+                        navMenu.style.display = 'flex';
+                        navMenu.style.flexDirection = 'column';
+                        navMenu.style.position = 'absolute';
+                        navMenu.style.top = '100%';
+                        navMenu.style.left = '0';
+                        navMenu.style.right = '0';
+                        navMenu.style.background = 'rgba(20, 20, 20, 0.95)';
+                        navMenu.style.padding = '20px';
+                        navMenu.style.borderTop = '1px solid rgba(212, 175, 55, 0.2)';
+                        navMenu.style.zIndex = '1001';
+                    }
+                });
+            }
         });
     </script>
 
