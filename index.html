@@ -502,7 +502,7 @@
             }
             
             .nav-menu {
-                display: none;
+                display: none !important;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -3875,46 +3875,20 @@
                 document.addEventListener('keydown', handleKeyPress);
             };
             
-            // Mobile menu toggle functionality
+            // Mobile menu - disabled for now to fix display issues
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             if (mobileMenuToggle && navMenu) {
-                // Ensure menu is closed on page load
+                // Force menu closed and hidden on all devices
                 navMenu.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
-                navMenu.style.display = 'none';
+                navMenu.style.display = 'none !important';
+                navMenu.style.visibility = 'hidden';
+                navMenu.style.opacity = '0';
                 
-                mobileMenuToggle.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        // Close menu
-                        navMenu.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                        setTimeout(() => {
-                            navMenu.style.display = 'none';
-                        }, 400);
-                    } else {
-                        // Open menu
-                        navMenu.style.display = 'flex';
-                        mobileMenuToggle.classList.add('active');
-                        setTimeout(() => {
-                            navMenu.classList.add('active');
-                        }, 10);
-                    }
-                });
-                
-                // Close menu when clicking on a menu item
-                const menuLinks = navMenu.querySelectorAll('a');
-                menuLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                        setTimeout(() => {
-                            navMenu.style.display = 'none';
-                        }, 400);
-                        // Body overflow already auto by default
-                    });
-                });
+                // Disable mobile menu toggle for now
+                mobileMenuToggle.style.display = 'none';
             }
         });
     </script>
