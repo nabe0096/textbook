@@ -1122,16 +1122,13 @@
 
         .premium-bundle-card {
             position: relative;
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            border-radius: 24px;
-            padding: 60px 40px;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
-            transition: all 0.6s ease;
             overflow: visible;
             transform-style: preserve-3d;
-            -webkit-transform: translateZ(0);
             will-change: transform;
             margin: 0 auto;
+            max-width: 900px;
+            width: 100%;
+            display: block;
         }
         
         /* Premium bundle mobile border fix */
@@ -1144,8 +1141,7 @@
 
 
         .premium-bundle-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            /* Inherit from .product-card:hover */
         }
 
         /*==================================================
@@ -1393,12 +1389,10 @@
             text-align: center;
             margin-bottom: 40px;
             padding: 30px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 20px;
         }
 
         .breakdown-text {
-            font-size: 1.2em;
+            font-size: 1.8em;
             color: var(--text-primary);
             margin-bottom: 30px;
             line-height: 1.8;
@@ -1449,7 +1443,7 @@
         }
 
         .savings-text {
-            font-size: 1.8em;
+            font-size: 2.2em;
             font-weight: 900;
             color: #ff4444;
             letter-spacing: 2px;
@@ -1545,8 +1539,15 @@
         }
 
         .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
+            width: 70px;
+            height: 2px;
+            background: var(--accent-gold);
+            opacity: 0.8;
         }
 
         .profile-image {
@@ -2226,11 +2227,14 @@
             /* Premium Bundle Mobile */
             .premium-bundle-card {
                 padding: 25px 12px 15px 12px;
-                margin: 30px 20px 20px 20px;
+                margin: 30px auto 20px auto;
                 overflow: visible;
                 max-width: calc(100vw - 40px);
                 width: calc(100vw - 40px);
                 box-sizing: border-box;
+                left: auto;
+                right: auto;
+                position: relative;
             }
             
             .limited-time-banner {
@@ -3111,12 +3115,11 @@
 
     <!-- Premium Bundle Section -->
     <section id="bundle-premium" class="section fade-in">
-        <div class="container">
-            <div class="premium-bundle-card">
-                <div class="limited-time-banner">期間限定<br>今だけの特別価格</div>
+        <div class="container" style="display: flex; justify-content: center;">
+            <div class="product-card premium-bundle-card">
                 <div class="premium-bundle-content">
                     <div class="premium-bundle-text">
-                        <h2>超お得なセット割</h2>
+                        <h2 style="color: var(--accent-gold);">超お得なセット割</h2>
                         <h3>伝説のWセット</h3>
                     </div>
                     <div class="premium-bundle-image">
@@ -3124,8 +3127,12 @@
                     </div>
                     <div class="premium-bundle-text">
                         <div class="simple-price">
-                            <div class="breakdown-text">YouTube教科書8,000円　Instagram教科書5,980円　合計13,980円</div>
-                            <div class="set-price-large">セット割引9,800円</div>
+                            <div class="breakdown-text">
+                                YouTube教科書 8,000円<br>
+                                Instagram教科書 5,980円<br>
+                                通常合計価格 13,980円
+                            </div>
+                            <div class="set-price-large">セット割引 9,800円</div>
                             <div class="savings-text">30%OFF！4,180円もお得</div>
                         </div>
                         <p>YouTubeとInstagram、両方のプラットフォームを完全制覇するための全てを、このセットに凝縮。最短で結果を出したいあなたへ贈る、最強の攻略パッケージです。</p>
@@ -3339,6 +3346,9 @@
                 <!-- TVCMフードコーディネート実績 -->
                 <div class="achievement-section">
                     <h4 class="achievement-title">TVCMフードコーディネート</h4>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/n9-J5edwZfc" title="TVCMフードコーディネート実績" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                     <p class="achievement-description">SNS経由でご連絡をいただき、TVCMのフードコーディネートを担当しました。SNSでの発信力が実際のビジネスチャンスに繋がった実例です。</p>
                 </div>
 
@@ -3372,6 +3382,9 @@
                         <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くのかたのSNSを伸ばしてきました。</p>
                         <div class="image-wrapper">
                             <img src="images/実績.webp" alt="コンサルティング成果実績" class="achievement-image" onclick="openImageModal(this)">
+                        </div>
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/XZAKeJJUcLs" title="コンサルティング実績動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
