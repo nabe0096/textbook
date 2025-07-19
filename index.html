@@ -652,6 +652,31 @@
                 background-position: center center;
                 animation: none; /* Disable animation on mobile for performance */
             }
+            
+            /* Disable problematic pseudo elements on mobile */
+            .hero::after {
+                display: none !important;
+            }
+            
+            .background-animation {
+                display: none !important;
+            }
+            
+            /* Ensure sections are visible */
+            .section-colored {
+                background-color: rgba(40, 40, 40, 0.9) !important;
+                position: relative !important;
+                z-index: 10 !important;
+            }
+            
+            .about-section, .achievements-hero, .stats-grid {
+                background: rgba(40, 40, 40, 0.8) !important;
+                padding: 20px !important;
+                margin: 10px 0 !important;
+                border-radius: 10px !important;
+                position: relative !important;
+                z-index: 15 !important;
+            }
         }
 
         @keyframes kenburns {
