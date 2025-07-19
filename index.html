@@ -504,7 +504,7 @@
             }
             
             .nav-menu {
-                display: none !important;
+                display: none;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -512,7 +512,7 @@
                 height: 100vh;
                 background: rgba(20, 20, 20, 0.98);
                 backdrop-filter: blur(20px);
-                z-index: 1001;
+                z-index: 2000;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -570,7 +570,7 @@
                 font-size: 1.2em;
                 padding: 12px 15px;
                 cursor: pointer;
-                z-index: 1003;
+                z-index: 2001;
                 position: relative;
                 border-radius: 50px;
                 backdrop-filter: blur(10px);
@@ -3883,20 +3883,45 @@
                 document.addEventListener('keydown', handleKeyPress);
             };
             
-            // Mobile menu - disabled for now to fix display issues
+            // Mobile menu functionality
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             if (mobileMenuToggle && navMenu) {
-                // Force menu closed and hidden on all devices
+                // Ensure menu is closed on page load
                 navMenu.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
-                navMenu.style.display = 'none !important';
-                navMenu.style.visibility = 'hidden';
-                navMenu.style.opacity = '0';
+                navMenu.style.display = 'none';
                 
-                // Disable mobile menu toggle for now
-                mobileMenuToggle.style.display = 'none';
+                mobileMenuToggle.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        // Close menu
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        setTimeout(() => {
+                            navMenu.style.display = 'none';
+                        }, 400);
+                    } else {
+                        // Open menu
+                        navMenu.style.display = 'flex';
+                        mobileMenuToggle.classList.add('active');
+                        setTimeout(() => {
+                            navMenu.classList.add('active');
+                        }, 10);
+                    }
+                });
+                
+                // Close menu when clicking on a menu item
+                const menuLinks = navMenu.querySelectorAll('a');
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        setTimeout(() => {
+                            navMenu.style.display = 'none';
+                        }, 400);
+                    });
+                });
             }
         });
     </script>
