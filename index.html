@@ -91,6 +91,77 @@
                 touch-action: pan-y !important;
             }
             
+            /* 強制的にモバイルでコンテンツを表示 */
+            .section-colored {
+                background-color: rgba(40, 40, 40, 0.95) !important;
+                position: relative !important;
+                z-index: 100 !important;
+            }
+            
+            .about-section {
+                background: rgba(30, 30, 30, 0.95) !important;
+                padding: 30px 20px !important;
+                margin: 20px 10px !important;
+                border-radius: 15px !important;
+                position: relative !important;
+                z-index: 200 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                border: 2px solid rgba(255, 255, 255, 0.5) !important;
+            }
+            
+            .achievements-hero {
+                background: rgba(30, 30, 30, 0.95) !important;
+                padding: 30px 20px !important;
+                margin: 20px 10px !important;
+                border-radius: 15px !important;
+                position: relative !important;
+                z-index: 200 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                border: 2px solid rgba(255, 255, 255, 0.5) !important;
+            }
+            
+            .stats-grid {
+                background: rgba(30, 30, 30, 0.95) !important;
+                padding: 30px 20px !important;
+                margin: 20px 10px !important;
+                border-radius: 15px !important;
+                position: relative !important;
+                z-index: 200 !important;
+                display: grid !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                border: 2px solid rgba(255, 255, 255, 0.5) !important;
+            }
+            
+            .about-section h2,
+            .about-section p,
+            .about-section img,
+            .achievements-hero h2,
+            .achievements-hero p,
+            .stats-grid *,
+            .platform-card,
+            .main-achievement-card {
+                position: relative !important;
+                z-index: 300 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: white !important;
+            }
+            
+            /* モバイルメニューのz-indexを下げる */
+            .nav-menu {
+                z-index: 50 !important;
+            }
+            
+            .mobile-menu-toggle {
+                z-index: 60 !important;
+            }
+            
             .testimonial-gallery {
                 -webkit-transform: translateZ(0);
             }
@@ -3558,109 +3629,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 強制的にモバイル修正を適用する
-            const style = document.createElement('style');
-            style.textContent = `
-                /* 強制的にコンテンツを表示させる */
-                @media (max-width: 768px) {
-                    .section-colored {
-                        background-color: rgba(40, 40, 40, 0.95) !important;
-                        position: relative !important;
-                        z-index: 100 !important;
-                    }
-                    
-                    .about-section {
-                        background: rgba(30, 30, 30, 0.95) !important;
-                        padding: 30px 20px !important;
-                        margin: 20px 10px !important;
-                        border-radius: 15px !important;
-                        position: relative !important;
-                        z-index: 200 !important;
-                        display: block !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        border: 2px solid rgba(255, 255, 255, 0.2) !important;
-                    }
-                    
-                    .achievements-hero {
-                        background: rgba(30, 30, 30, 0.95) !important;
-                        padding: 30px 20px !important;
-                        margin: 20px 10px !important;
-                        border-radius: 15px !important;
-                        position: relative !important;
-                        z-index: 200 !important;
-                        display: block !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        border: 2px solid rgba(255, 255, 255, 0.2) !important;
-                    }
-                    
-                    .stats-grid {
-                        background: rgba(30, 30, 30, 0.95) !important;
-                        padding: 30px 20px !important;
-                        margin: 20px 10px !important;
-                        border-radius: 15px !important;
-                        position: relative !important;
-                        z-index: 200 !important;
-                        display: grid !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        border: 2px solid rgba(255, 255, 255, 0.2) !important;
-                    }
-                    
-                    .about-section h2,
-                    .about-section p,
-                    .about-section img,
-                    .achievements-hero h2,
-                    .achievements-hero p,
-                    .stats-grid * {
-                        position: relative !important;
-                        z-index: 300 !important;
-                        display: block !important;
-                        visibility: visible !important;
-                        opacity: 1 !important;
-                        color: white !important;
-                    }
-                    
-                    /* モバイルメニューのz-indexを下げる */
-                    .nav-menu {
-                        z-index: 50 !important;
-                    }
-                    
-                    .mobile-menu-toggle {
-                        z-index: 60 !important;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // デバッグ情報を表示
-            const debugInfo = document.createElement('div');
-            debugInfo.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 10px;
-                background: rgba(255, 0, 0, 0.8);
-                color: white;
-                padding: 10px;
-                border-radius: 5px;
-                z-index: 9999;
-                font-size: 12px;
-                max-width: 200px;
-            `;
-            debugInfo.innerHTML = `
-                画面幅: ${window.innerWidth}px<br>
-                UA: ${navigator.userAgent.includes('Mobile') ? 'Mobile' : 'Desktop'}<br>
-                タッチ: ${('ontouchstart' in window) ? 'Yes' : 'No'}
-            `;
-            document.body.appendChild(debugInfo);
-            
-            // 5秒後にデバッグ情報を削除
-            setTimeout(() => {
-                if (debugInfo.parentNode) {
-                    debugInfo.parentNode.removeChild(debugInfo);
-                }
-            }, 5000);
             // Fade-in animation
             const faders = document.querySelectorAll('.fade-in');
             const appearOptions = { threshold: 0.15, rootMargin: "0px 0px 50px 0px" };
