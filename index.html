@@ -3601,11 +3601,28 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.1 });
 
             const statsGrid = document.querySelector('.stats-grid');
             if (statsGrid) {
                 statsObserver.observe(statsGrid);
+                
+                // Fallback: If no intersection, trigger after 3 seconds
+                setTimeout(() => {
+                    const counters = statsGrid.querySelectorAll('.platform-number, .big-number');
+                    counters.forEach(counter => {
+                        if (counter.innerHTML === '0') { // Only animate if not already animated
+                            const goal = parseInt(counter.dataset.goal);
+                            if (counter.id === 'total-followers') {
+                                animateValue(counter, 0, goal, 3000);
+                            } else if (counter.id === 'tiktok-count') {
+                                animateValue(counter, 0, goal, 2300);
+                            } else {
+                                animateValue(counter, 0, goal, 2500);
+                            }
+                        }
+                    });
+                }, 3000);
             }
 
             // Testimonial gallery manual scroll
