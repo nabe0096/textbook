@@ -652,31 +652,6 @@
                 background-position: center center;
                 animation: none; /* Disable animation on mobile for performance */
             }
-            
-            /* Disable problematic pseudo elements on mobile */
-            .hero::after {
-                display: none !important;
-            }
-            
-            .background-animation {
-                display: none !important;
-            }
-            
-            /* Ensure sections are visible */
-            .section-colored {
-                background-color: rgba(40, 40, 40, 0.9) !important;
-                position: relative !important;
-                z-index: 10 !important;
-            }
-            
-            .about-section, .achievements-hero, .stats-grid {
-                background: rgba(40, 40, 40, 0.8) !important;
-                padding: 20px !important;
-                margin: 10px 0 !important;
-                border-radius: 10px !important;
-                position: relative !important;
-                z-index: 15 !important;
-            }
         }
 
         @keyframes kenburns {
@@ -3583,6 +3558,34 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Real mobile device detection
+            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                                   ('ontouchstart' in window) || 
+                                   (navigator.maxTouchPoints > 0);
+            
+            // Force visibility on real mobile devices
+            if (isMobileDevice && window.innerWidth <= 768) {
+                const style = document.createElement('style');
+                style.textContent = `
+                    .section-colored {
+                        background-color: rgba(40, 40, 40, 0.9) !important;
+                        position: relative !important;
+                        z-index: 10 !important;
+                    }
+                    .about-section, .achievements-hero, .stats-grid {
+                        background: rgba(40, 40, 40, 0.8) !important;
+                        padding: 20px !important;
+                        margin: 10px 0 !important;
+                        border-radius: 10px !important;
+                        position: relative !important;
+                        z-index: 15 !important;
+                        display: block !important;
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
             // Fade-in animation
             const faders = document.querySelectorAll('.fade-in');
             const appearOptions = { threshold: 0.15, rootMargin: "0px 0px 50px 0px" };
