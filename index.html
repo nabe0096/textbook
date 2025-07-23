@@ -567,7 +567,8 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
+            width: 100%;
         }
 
         .hero-content h1 {
@@ -576,12 +577,41 @@
             color: #fff;
             line-height: 1.4;
             letter-spacing: 3px;
-            text-shadow: 
-                2px 2px 4px rgba(0, 0, 0, 0.9),
-                0 0 20px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(0, 0, 0, 0.6);
             margin: 0;
             word-break: keep-all; /* Prevent unintended line breaks */
+            white-space: nowrap; /* 改行を完全に防ぐ */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #fff,
+                0 0 20px #fff,
+                0 0 35px #fff,
+                0 0 40px #fff,
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: whiteNeonFlicker 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes whiteNeonFlicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px #fff,
+                    0 0 20px #fff,
+                    0 0 35px #fff,
+                    0 0 40px #fff,
+                    2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+            20%, 24%, 55% {
+                text-shadow: 
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 8px #fff,
+                    0 0 12px #fff,
+                    0 0 18px #fff,
+                    0 0 25px #fff,
+                    2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
         }
 
         .hero-content p {
@@ -2892,7 +2922,7 @@
 
     <div class="hero">
         <div class="hero-content fade-in">
-            <h1>才能という名の<br>「言い訳」は、もう終わりだ。</h1>
+            <h1>才能という名の「言い訳」は<br>もう終わりだ。</h1>
             <p>6ヶ月で登録者80人から14万人へ。<br>センス不要、戦略が全てを変えるSNS攻略法。</p>
         </div>
     </div>
