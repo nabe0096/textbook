@@ -417,6 +417,9 @@
             z-index: 1000;
             padding: 15px 0;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
         }
         
         .header-content {
@@ -437,11 +440,13 @@
         }
         
         .nav-menu {
-            display: flex;
+            display: flex !important;
             gap: 2rem;
             list-style: none;
             margin: 0;
             padding: 0;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
         
         .nav-menu a {
@@ -480,7 +485,24 @@
             cursor: pointer;
         }
         
-        @media (max-width: 768px) {
+        /* Desktop Menu Always Visible */
+        @media (min-width: 481px) {
+            .header {
+                display: block !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .nav-menu {
+                display: flex !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .header {
                 display: none !important;
             }
@@ -2887,6 +2909,7 @@
                     <li><a href="#products">教科書一覧</a></li>
                     <li><a href="#about">制作者について</a></li>
                     <li><a href="#blog-articles">無料記事</a></li>
+                    <li><a href="#about">プロフィール</a></li>
                     <li><a href="#achievements">実績</a></li>
                 </ul>
                 <button class="mobile-menu-toggle">
