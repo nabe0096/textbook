@@ -365,6 +365,15 @@
             font-weight: 600;
         }
 
+        .button.profile-button {
+            background: linear-gradient(135deg, var(--accent-gold), #f6e27a);
+            color: var(--bg-dark);
+            width: 100%;
+            max-width: 480px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
         .button-container {
             display: flex;
             flex-direction: column;
@@ -508,7 +517,7 @@
         
         @media (max-width: 480px) {
             .header {
-                display: none !important;
+                display: block !important;
             }
             
             
@@ -2100,27 +2109,64 @@
         
         .footer-social {
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
             justify-content: flex-start;
         }
         
         .social-link {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 50%;
-            color: var(--accent-gold);
+            gap: 0.65rem;
+            padding: 0.55rem 1rem;
+            background: rgba(212, 175, 55, 0.12);
+            border-radius: 999px;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .social-link__label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .social-link svg,
+        .social-link__icon {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-gold);
+            transition: color 0.25s ease;
+        }
+
+        .social-link__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
         
         .social-link:hover {
             background: var(--accent-gold);
             color: var(--bg-dark);
             transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(212, 175, 55, 0.35);
+        }
+
+        .social-link:hover svg,
+        .social-link:hover .social-link__icon {
+            color: var(--bg-dark);
+        }
+
+        .social-link:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
         }
         
         .footer-bottom {
@@ -3060,9 +3106,9 @@
                     <div class="video-section">
                         <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/XSzPl_WnIso" 
-                                    style="border: none;" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            <iframe src="https://www.youtube-nocookie.com/embed/XSzPl_WnIso?rel=0&modestbranding=1&enablejsapi=0"
+                                    style="border: none;"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
                             </iframe>
                         </div>
@@ -3159,7 +3205,7 @@
                     <div class="video-section">
                         <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/fJN9wSk7IxA" 
+                            <iframe src="https://www.youtube-nocookie.com/embed/fJN9wSk7IxA?rel=0&modestbranding=1&enablejsapi=0" 
                                     style="border: none;" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen>
@@ -3334,6 +3380,9 @@
                 誰よりも失敗を重ねてきたので、失敗しないためのノウハウを日々発信中！！<br><br>
                 
                 この教科書は、過去の自分のように、暗闇の中で独り苦しんでいる未来のスターに向けた、私からの「答え」です。</p>
+                <div class="button-container">
+                    <a class="button profile-button" href="https://nabe0096.github.io/portfolio/" target="_blank" rel="noopener noreferrer">プロフィール詳細はこちら</a>
+                </div>
             </div>
 
             <div style="height: 120px;"></div>
@@ -3405,7 +3454,7 @@
                     <h4 class="achievement-title">TVCMフードコーディネート</h4>
                     <div class="video-wrapper" style="margin: 20px auto; max-width: 100%; width: 100%; height: 0; padding-bottom: 56.25%; position: relative; border-radius: 12px; overflow: hidden;">
                         <iframe 
-                            src="https://www.youtube.com/embed/n9-J5edwZfc" 
+                            src="https://www.youtube-nocookie.com/embed/n9-J5edwZfc?rel=0&modestbranding=1&enablejsapi=0" 
                             title="TVCMフードコーディネート実績"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -3449,7 +3498,7 @@
                         </div>
                         <div class="video-wrapper" style="margin: 30px auto;">
                             <iframe 
-                                src="https://www.youtube.com/embed/XZAKeJJUcLs" 
+                                src="https://www.youtube-nocookie.com/embed/XZAKeJJUcLs?rel=0&modestbranding=1&enablejsapi=0" 
                                 title="コンサルティング実績動画" 
                                 width="100%" 
                                 height="100%" 
@@ -3490,23 +3539,27 @@
                 <div class="footer-section">
                     <h4>SNSをフォロー</h4>
                     <div class="footer-social">
-                        <a href="https://www.youtube.com/channel/UCJrqY4A7dXKXpgRFJVtAUww" target="_blank" class="social-link" title="YouTube">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.youtube.com/channel/UCJrqY4A7dXKXpgRFJVtAUww" target="_blank" class="social-link" title="YouTube" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                             </svg>
+                            <span class="social-link__label">YouTube</span>
                         </a>
-                        <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank" class="social-link" title="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank" class="social-link" title="Instagram" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z"/>
                             </svg>
+                            <span class="social-link__label">Instagram</span>
                         </a>
-                        <a href="https://www.tiktok.com/@nabekitchen" target="_blank" class="social-link" title="TikTok">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.tiktok.com/@nabekitchen" target="_blank" class="social-link" title="TikTok" aria-label="TikTok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z"/>
                             </svg>
+                            <span class="social-link__label">TikTok</span>
                         </a>
-                        <a href="https://note.com/nabeno_kitchen" target="_blank" class="social-link" title="note">
-                            <span style="font-weight: bold; font-size: 12px;">note</span>
+                        <a href="https://note.com/nabeno_kitchen" target="_blank" class="social-link" title="note" aria-label="note">
+                            <span class="social-link__icon" aria-hidden="true">note</span>
+                            <span class="social-link__label">note</span>
                         </a>
                     </div>
                 </div>
