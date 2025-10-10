@@ -466,6 +466,7 @@
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9em;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -2992,6 +2993,59 @@
             }
         }
     </style>
+
+    <!-- スクロール位置保持スクリプト -->
+    <script>
+        // ページ離脱前にスクロール位置を保存
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('scrollPos', window.scrollY);
+        });
+
+        // ページ読み込み後にスクロール位置を復元
+        window.addEventListener('load', function() {
+            const scrollPos = sessionStorage.getItem('scrollPos');
+            if (scrollPos !== null) {
+                // スマホの場合はさらに遅延を増やす
+                setTimeout(function() {
+                    window.scrollTo({
+                        top: parseInt(scrollPos),
+                        left: 0,
+                        behavior: 'instant'
+                    });
+                }, 300);
+            }
+        });
+
+        // DOMContentLoaded時にも復元を試みる（より早いタイミング）
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollPos = sessionStorage.getItem('scrollPos');
+            if (scrollPos !== null) {
+                window.scrollTo({
+                    top: parseInt(scrollPos),
+                    left: 0,
+                    behavior: 'instant'
+                });
+            }
+        });
+
+        // さらに保険として、複数のタイミングで復元を試みる
+        let retryCount = 0;
+        const maxRetries = 5;
+        const retryInterval = setInterval(function() {
+            const scrollPos = sessionStorage.getItem('scrollPos');
+            if (scrollPos !== null && retryCount < maxRetries) {
+                window.scrollTo({
+                    top: parseInt(scrollPos),
+                    left: 0,
+                    behavior: 'instant'
+                });
+                retryCount++;
+            }
+            if (retryCount >= maxRetries) {
+                clearInterval(retryInterval);
+            }
+        }, 200);
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -3006,6 +3060,7 @@
                     <li><a href="#youtube-textbook">YouTubeの教科書</a></li>
                     <li><a href="#instagram-textbook">Instagramの教科書</a></li>
                     <li><a href="#limited-w-set">限定Wセット</a></li>
+                    <li><a href="#card-other-services">その他サービス</a></li>
                     <li><a href="#blog-articles">無料記事</a></li>
                     <li><a href="#about">プロフィール</a></li>
                     <li><a href="#achievements">実績</a></li>
@@ -3494,38 +3549,136 @@ note版（¥9,800）で高評価レビュー多数。<br>
 
                 <!-- 伝説のWセット -->
                 <div class="product-card fade-in" id="card-bundle">
-                    <div class="popular-badge-youtube" style="color: var(--accent-gold);"><a href="#limited-w-set" style="color: inherit; text-decoration: none;">超お得なセット割</a></div>
-                    <h3 id="limited-w-set">伝説のWセット</h3>
+                    <div class="popular-badge-youtube wset-badge" style="color: var(--accent-gold);"><a href="#limited-w-set" style="color: inherit; text-decoration: none;">超お得なセット割</a></div>
+                    <h3 id="limited-w-set" class="wset-title">伝説のWセット</h3>
+                    <style>
+                    @media (max-width: 768px) {
+                        .wset-badge {
+                            font-size: 1.5em !important;
+                        }
+                        .wset-title {
+                            font-size: 2.2em !important;
+                            margin-bottom: 20px !important;
+                        }
+                    }
+                    </style>
                     <div class="product-image">
                         <img src="images/Wセット.jpg" alt="伝説のWセット">
                     </div>
                     
                     <div class="simple-price">
                         <div class="breakdown-text">
-                            <span style="font-size: 1.1em;">YouTube教科書 8,000円</span><br>
-                            <span style="font-size: 1.1em;">Instagram教科書 5,980円</span><br>
-                            <span style="font-size: 1.1em;">通常合計価格 13,980円</span>
+                            <span class="price-item" style="font-size: 1.1em;">YouTube教科書 8,000円</span><br>
+                            <span class="price-item" style="font-size: 1.1em;">Instagram教科書 5,980円</span><br>
+                            <span class="price-item" style="font-size: 1.1em;">通常合計価格 13,980円</span>
                         </div>
                         <div class="set-price-large">セット割引 9,800円</div>
-                        <div class="savings-text" style="margin-top: 15px; margin-bottom: 0px; padding-bottom: 5px !important;"><span style="font-size: 1.5em;">30%OFF！<br>4,180円もお得</span></div>
+                        <div class="savings-text" style="margin-top: 15px; margin-bottom: 0px; padding-bottom: 5px !important; line-height: 1.2;">
+                            <span class="discount-text" style="font-size: 1.3em;">30%OFF！</span><br>
+                            <span class="savings-amount shine-savings" style="font-size: 1.8em; font-weight: bold;">4,180円もお得</span>
+                        </div>
                     </div>
 
                     <style>
+                    @keyframes shine-savings-animation {
+                        0% {
+                            background-position: -200%;
+                        }
+                        100% {
+                            background-position: 200%;
+                        }
+                    }
+                    .shine-savings {
+                        background: linear-gradient(90deg, #ff4444 0%, #fff 50%, #ff4444 100%);
+                        background-size: 200% auto;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        animation: shine-savings-animation 3s linear infinite;
+                    }
+                    @media (max-width: 768px) {
+                        .price-item {
+                            font-size: 1.5em !important;
+                        }
+                        .savings-text {
+                            margin-bottom: -10px !important;
+                            padding-bottom: 0px !important;
+                            padding-left: 10px !important;
+                            padding-right: 10px !important;
+                            text-align: center !important;
+                            display: block !important;
+                        }
+                        .savings-amount {
+                            font-size: 1.7em !important;
+                            display: inline-block !important;
+                            white-space: nowrap !important;
+                        }
+                        .wset-description {
+                            margin-top: 0px !important;
+                        }
+                    }
                     @media (min-width: 769px) {
                         .breakdown-text span {
                             font-size: 1em !important;
                         }
-                        .savings-text span {
+                        .discount-text {
                             font-size: 1em !important;
+                        }
+                        .savings-amount {
+                            font-size: 2.5em !important;
                         }
                     }
                     </style>
 
-                    <p style="margin-top: 10px;">YouTubeとInstagram、両方のプラットフォームを完全制覇するための全てを、このセットに凝縮。最短で結果を出したいあなたへ贈る、最強の攻略パッケージです。</p>
-                    
-                    <div class="button-container" style="margin-bottom: 40px;">
+                    <p class="wset-description" style="margin-top: 10px;"><strong>YouTubeもInstagramも、本気で伸ばしたいならこれ！</strong><br>最短で結果を出すために必要な「全て」を詰め込んだ最強パッケージ。</p>
+                    <p style="margin-bottom: 0;">SNSで大切なのは"正しい方向に努力すること"。私は何度も遠回りをしてきたからこそ伝えられる、本当に大事な攻略法をこの一式に凝縮しました。遠回りせず、一緒に最短ルートを歩きましょう。</p>
+
+                    <p class="limited-notice" style="margin-top: 25px; margin-bottom: 10px; font-size: 0.9em; color: #888;">※部数限定のため、予告なく終了する場合がございます。</p>
+                    <style>
+                    @media (min-width: 769px) {
+                        .limited-notice {
+                            font-size: 1.1em !important;
+                            margin-top: 30px !important;
+                            margin-bottom: 20px !important;
+                        }
+                    }
+                    </style>
+
+                    <div class="button-container" style="margin-top: 10px; margin-bottom: 40px;">
                         <a href="https://buy.stripe.com/dR6bJUc0Nar3eGc00e" target="_blank" class="button bundle premium">今すぐ最強のセットを手に入れる</a>
                     </div>
+                </div>
+
+                <!-- その他サービス -->
+                <div class="product-card fade-in" id="card-other-services">
+                    <h3 class="other-services-title">その他サービス</h3>
+                    <style>
+                    @media (max-width: 768px) {
+                        .other-services-title {
+                            margin-top: 20px !important;
+                        }
+                    }
+                    </style>
+                    <p>【人数限定】個人・法人向けのコンサルティング／メンタープラン／SNS立ち上げ支援を随時受付中です。ご相談のみでも歓迎です。お気軽にお問い合わせください。</p>
+                    <div class="button-container" style="margin-top: 30px;">
+                        <a href="#consulting" class="button bundle premium other-services-button">コンサルティング実績</a>
+                    </div>
+                    <div class="button-container" style="margin-top: 20px;">
+                        <a href="https://nabe0096.github.io/portfolio/" target="_blank" class="button bundle premium other-services-button">その他詳細はこちら</a>
+                    </div>
+                    <style>
+                    @media (min-width: 769px) {
+                        .other-services-button {
+                            min-width: 400px !important;
+                            padding: 18px 60px !important;
+                        }
+                    }
+                    @media (max-width: 768px) {
+                        #card-other-services {
+                            padding-bottom: 40px !important;
+                        }
+                    }
+                    </style>
                 </div>
             </div>
         </div>
@@ -3763,7 +3916,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 </div>
 
                 <!-- コンサルティング実績 -->
-                <div class="achievement-section">
+                <div class="achievement-section" id="consulting">
                     <h4 class="achievement-title">コンサルティング</h4>
                     <div class="image-wrapper">
                         <img src="images/深夜.webp" alt="コンサルティング実績" class="achievement-image" onclick="openImageModal(this)">
@@ -3771,31 +3924,53 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     <p class="channel-link">チャンネル：<a href="https://www.youtube.com/channel/UCeJhUEKiBsStyea_PITiZJw" target="_blank" class="youtube-channel-link">深夜のらーめん食堂</a></p>
                     <div class="achievement-description consulting-description">
                         <p>個人の方からご依頼いただきコンサルティングさせていただきました。</p>
-                        <p><strong>既存のチャンネルがあったものの、1からコンセプトとチャンネル設計を作り直し、開始2ヶ月でチャンネル登録者1,000人を達成することができました。</strong></p>
-                        <p>コンサルティング期間2ヶ月という短期間で</p>
-                        <div class="feature-list">
-                            <div class="feature-item">✅ 撮影技術と魅力的な映像の撮り方</div>
-                            <div class="feature-item">✅ 視聴者を惹きつける魅せ方とプレゼンテーション</div>
-                            <div class="feature-item">✅ 効果的な編集技法とテンポの作り方</div>
-                            <div class="feature-item">✅ クリック率を上げるサムネイル作成術</div>
-                            <div class="feature-item">✅ バズるタイトルの付け方と最適化手法</div>
-                        </div>
-                        <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くのかたのSNSを伸ばしてきました。</p>
+                        <p><strong>既存のレシピチャンネルがあったものの数年運用しても結果がでないとご相談があり、1からコンセプトとチャンネル設計を作り直しました。開始2ヶ月でチャンネル登録者1,000人を達成することができました。（現在は23,000人）</strong></p>
                         <div class="image-wrapper">
                             <img src="images/実績.webp" alt="コンサルティング成果実績" class="achievement-image" onclick="openImageModal(this)">
                         </div>
-                        <div class="video-wrapper" style="margin: 30px auto;">
-                            <iframe 
-                                src="https://www.youtube-nocookie.com/embed/XZAKeJJUcLs?rel=0&modestbranding=1&enablejsapi=0" 
-                                title="コンサルティング実績動画" 
-                                width="100%" 
-                                height="100%" 
-                                style="border: none; border-radius: 12px;" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        <div class="video-wrapper" style="margin: 30px auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/XZAKeJJUcLs?rel=0&modestbranding=1&enablejsapi=0"
+                                title="コンサルティング実績動画"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen
                                 loading="lazy">
                             </iframe>
                         </div>
+                        <p>コンサルティング期間2ヶ月という短期間で</p>
+                        <div class="feature-list">
+                            <div class="feature-item" style="color: var(--accent-gold);">・発信軸、発信の届け方などのチャンネル設計</div>
+                            <div class="feature-item" style="color: var(--accent-gold);">・撮影技術と魅力的な映像の撮り方</div>
+                            <div class="feature-item" style="color: var(--accent-gold);">・視聴者を惹きつける魅せ方</div>
+                            <div class="feature-item" style="color: var(--accent-gold);">・効果的な編集技法とテンポの作り方</div>
+                            <div class="feature-item" style="color: var(--accent-gold);">・クリック率を上げるサムネイル作成術</div>
+                            <div class="feature-item" style="color: var(--accent-gold);">・バズるタイトル、検索で上位をとるため施策</div>
+                        </div>
+                        <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くの方のSNSを伸ばしてきました。</p>
+                        <p>伸びない理由を発信内容や機材のせいにする方を多くみてきましたが、コンセプト設計や魅せ方をしっかりと学ぶだけでも数字は大きく変わります。</p>
+                        <div class="button-container" style="margin-top: 30px;">
+                            <a href="https://nabe0096.github.io/portfolio/" target="_blank" class="button consulting-button">コンサルティング詳細はこちら</a>
+                        </div>
+                        <div class="button-container" style="margin-top: 20px;">
+                            <a href="https://nabenoblog.com/" target="_blank" class="button consulting-button">無料記事で学ぶ</a>
+                        </div>
+                        <p style="margin-top: 30px;">【人数限定】個人・法人向けのコンサルティング／メンタープラン／SNS立ち上げ支援を随時受付中です。<br>内容やご相談のみでも歓迎です。お気軽にお問い合わせください。</p>
+                        <style>
+                        .consulting-button {
+                            background: var(--accent-gold) !important;
+                            color: #000 !important;
+                            display: flex !important;
+                            align-items: center !important;
+                            justify-content: center !important;
+                        }
+                        @media (min-width: 769px) {
+                            .consulting-button {
+                                padding: 18px 60px !important;
+                                min-width: 400px !important;
+                            }
+                        }
+                        </style>
                     </div>
                 </div>
 
