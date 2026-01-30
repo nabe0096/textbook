@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>なべの教科書 - YouTube & Instagram完全攻略</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon222.png">
     <link rel="shortcut icon" type="image/png" href="favicon222.png">
-    
+
     <!-- OGP Meta Tags -->
     <meta property="og:title" content="なべの教科書 - YouTube & Instagram完全攻略">
     <meta property="og:description" content="6ヶ月で登録者80人から15万人へ。センス不要、戦略が全てを変えるSNS攻略法。なべが実践した全ノウハウを完全公開！">
@@ -16,21 +17,23 @@
     <meta property="og:url" content="https://nabe0096.github.io/textbook/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="なべの教科書">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="なべの教科書 - YouTube & Instagram完全攻略">
     <meta name="twitter:description" content="6ヶ月で登録者80人から15万人へ。センス不要、戦略が全てを変えるSNS攻略法。">
     <meta name="twitter:image" content="https://nabe0096.github.io/textbook/images/image-98-1-1024x536.jpg">
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="6ヶ月で登録者80人から15万人へ。センス不要、戦略が全てを変えるSNS攻略法。なべが実践した全ノウハウを完全公開！">
     <meta name="keywords" content="YouTube,Instagram,SNS,攻略,教科書,なべ,登録者,フォロワー,増やす,戦略">
     <meta name="author" content="なべ">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Klee+One:wght@400;600&display=swap"
+        rel="stylesheet">
     <style>
         /*==================================================
          *  Global Styles & Variables
@@ -40,7 +43,8 @@
             --accent-gold: #D4AF37;
             --accent-youtube: #4A90E2;
             --accent-instagram: #C13584;
-            --accent-tiktok: #00f2ea; /* TikTok Teal */
+            --accent-tiktok: #00f2ea;
+            /* TikTok Teal */
             --text-primary: #F0F0F0;
             --text-secondary: #A0A0A0;
             --bg-dark: #121212;
@@ -54,74 +58,83 @@
             overflow-x: hidden;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: inherit;
         }
-        
+
         /* Prevent horizontal overflow on all elements */
         * {
             max-width: 100%;
         }
-        
-        img, video, iframe {
+
+        img,
+        video,
+        iframe {
             max-width: 100%;
             height: auto;
             object-fit: cover;
         }
-        
+
         /* Force images to load properly on mobile */
         .product-image img {
             background: var(--bg-light) !important;
             border: 1px solid var(--border-color);
         }
-        
+
         /* Strict mobile text containment */
         @media (max-width: 768px) {
             * {
                 word-wrap: break-word !important;
                 overflow-wrap: break-word !important;
             }
-            
-            h1, h2, h3, h4, h5, h6 {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
                 max-width: 100% !important;
                 box-sizing: border-box !important;
                 padding-left: 5px !important;
                 padding-right: 5px !important;
             }
-            
+
             /* Mobile scroll improvements */
             body {
                 -webkit-overflow-scrolling: touch !important;
                 touch-action: pan-y !important;
             }
-            
-            
+
+
             .testimonial-gallery {
                 -webkit-transform: translateZ(0);
             }
-            
+
             .testimonial-scroll-wrapper {
                 -webkit-transform: translateZ(0);
             }
-            
+
             .testimonial-scroll-container {
                 -webkit-transform: translateZ(0);
                 animation-play-state: running !important;
             }
-            
+
             .testimonial-image-wrapper {
                 pointer-events: auto !important;
             }
-            
+
             .popular-ribbon,
             .limited-time-banner {
                 pointer-events: none !important;
             }
-            
+
             .product-card {
                 touch-action: pan-y !important;
             }
-            
+
             .premium-bundle-card {
                 touch-action: pan-y !important;
             }
@@ -141,7 +154,7 @@
             scroll-behavior: smooth;
             position: relative;
         }
-        
+
         /* Background Animation */
         .background-animation {
             position: fixed;
@@ -153,7 +166,7 @@
             pointer-events: none;
             overflow: hidden;
         }
-        
+
         .floating-icon {
             position: absolute;
             opacity: 0.1;
@@ -161,64 +174,68 @@
             color: var(--accent-gold);
             animation: float 20s infinite linear;
         }
-        
+
         .floating-icon:nth-child(1) {
             top: 10%;
             left: 5%;
             animation-delay: 0s;
             animation-duration: 25s;
         }
-        
+
         .floating-icon:nth-child(2) {
             top: 30%;
             right: 10%;
             animation-delay: -5s;
             animation-duration: 30s;
         }
-        
+
         .floating-icon:nth-child(3) {
             top: 60%;
             left: 15%;
             animation-delay: -10s;
             animation-duration: 35s;
         }
-        
+
         .floating-icon:nth-child(4) {
             top: 80%;
             right: 5%;
             animation-delay: -15s;
             animation-duration: 28s;
         }
-        
+
         .floating-icon:nth-child(5) {
             top: 50%;
             left: 50%;
             animation-delay: -8s;
             animation-duration: 32s;
         }
-        
+
         .floating-icon:nth-child(6) {
             top: 20%;
             left: 80%;
             animation-delay: -12s;
             animation-duration: 26s;
         }
-        
+
         @keyframes float {
             0% {
                 transform: translateX(-100px) translateY(0px) rotate(0deg);
                 opacity: 0.05;
             }
+
             25% {
                 opacity: 0.15;
             }
+
             50% {
                 transform: translateX(100px) translateY(-30px) rotate(180deg);
                 opacity: 0.1;
             }
+
             75% {
                 opacity: 0.12;
             }
+
             100% {
                 transform: translateX(-100px) translateY(0px) rotate(360deg);
                 opacity: 0.05;
@@ -231,7 +248,12 @@
             padding: 0 24px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-serif);
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -285,10 +307,10 @@
             box-sizing: border-box;
             color: white;
             overflow: hidden;
-            box-shadow: 
-                0 4px 15px rgba(0,0,0,0.2),
-                0 2px 8px rgba(0,0,0,0.1),
-                inset 0 1px 0 rgba(255,255,255,0.1);
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .button::before {
@@ -298,50 +320,54 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
             transform: translateX(-100%);
             animation: auto-sparkle 3s ease-in-out infinite;
             z-index: 1;
         }
-        
+
         @keyframes auto-sparkle {
             0% {
                 transform: translateX(-100%);
                 opacity: 0;
             }
+
             5% {
                 opacity: 1;
             }
+
             15% {
                 transform: translateX(100%);
                 opacity: 1;
             }
+
             20% {
                 opacity: 0;
             }
+
             100% {
                 transform: translateX(100%);
                 opacity: 0;
             }
         }
-        
+
         .button:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 
-                0 8px 25px rgba(0,0,0,0.25),
-                0 4px 15px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.2);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.25),
+                0 4px 15px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
-        
+
         .button:hover::before {
             animation-duration: 1.5s;
         }
 
         .button:active {
             transform: translateY(0) scale(0.98);
-            box-shadow: 
-                0 2px 8px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.1);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .button.youtube {
@@ -355,7 +381,7 @@
         .button.note {
             background: #27ae60;
         }
-        
+
         .button.blog-button {
             background: var(--accent-gold);
             color: var(--bg-dark);
@@ -434,7 +460,7 @@
             visibility: visible !important;
             display: block !important;
         }
-        
+
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -443,7 +469,7 @@
             align-items: center;
             padding: 0 24px;
         }
-        
+
         .logo {
             font-size: 1.8em;
             font-weight: 700;
@@ -451,7 +477,7 @@
             text-decoration: none;
             font-family: var(--font-serif);
         }
-        
+
         .nav-menu {
             display: flex !important;
             gap: 2rem;
@@ -461,7 +487,7 @@
             opacity: 1 !important;
             visibility: visible !important;
         }
-        
+
         .nav-menu a {
             color: var(--text-primary);
             text-decoration: none;
@@ -470,11 +496,11 @@
             transition: color 0.3s ease;
             position: relative;
         }
-        
+
         .nav-menu a:hover {
             color: var(--accent-gold);
         }
-        
+
         .nav-menu a::after {
             content: '';
             position: absolute;
@@ -485,11 +511,11 @@
             background: var(--accent-gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-menu a:hover::after {
             width: 100%;
         }
-        
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -498,7 +524,7 @@
             font-size: 1.5em;
             cursor: pointer;
         }
-        
+
         /* Desktop Menu Always Visible */
         @media (min-width: 481px) {
             .header {
@@ -506,16 +532,18 @@
                 opacity: 1 !important;
                 visibility: visible !important;
             }
+
             .nav-menu {
                 display: flex !important;
                 opacity: 1 !important;
                 visibility: visible !important;
             }
+
             .mobile-menu-toggle {
                 display: none !important;
             }
         }
-        
+
         @media (max-width: 480px) {
             .header {
                 display: block !important;
@@ -579,20 +607,20 @@
                 padding: 1rem;
                 font-size: 1.2rem;
             }
-            
+
             .mobile-menu-toggle.active .menu-line:nth-child(1) {
                 transform: rotate(45deg) translate(6px, 6px);
             }
-            
+
             .mobile-menu-toggle.active .menu-line:nth-child(2) {
                 opacity: 0;
                 transform: scale(0);
             }
-            
+
             .mobile-menu-toggle.active .menu-line:nth-child(3) {
                 transform: rotate(-45deg) translate(6px, -6px);
             }
-            
+
             @keyframes slideInUp {
                 to {
                     opacity: 1;
@@ -617,33 +645,46 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: url('images/IMG_9401.jpg') no-repeat center center;
             background-size: cover;
-            background-attachment: scroll; /* Better for mobile */
+            background-attachment: scroll;
+            /* Better for mobile */
             animation: kenburns 20s ease-out infinite alternate;
             z-index: -2;
         }
-        
+
         /* Mobile hero background fix */
         @media (max-width: 768px) {
             .hero::before {
                 background-attachment: scroll;
                 background-position: center center;
-                animation: none; /* Disable animation on mobile for performance */
+                animation: none;
+                /* Disable animation on mobile for performance */
             }
         }
 
         @keyframes kenburns {
-            0% { transform: scale(1.05) translate(0, 0); }
-            100% { transform: scale(1.2) translate(5%, -5%); }
+            0% {
+                transform: scale(1.05) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.2) translate(5%, -5%);
+            }
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(18,18,18,0.3) 0%, rgba(18,18,18,0.95) 100%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(18, 18, 18, 0.3) 0%, rgba(18, 18, 18, 0.95) 100%);
             z-index: -1;
         }
 
@@ -661,9 +702,11 @@
             line-height: 1.4;
             letter-spacing: 3px;
             margin: 0;
-            word-break: keep-all; /* Prevent unintended line breaks */
-            white-space: nowrap; /* 改行を完全に防ぐ */
-            text-shadow: 
+            word-break: keep-all;
+            /* Prevent unintended line breaks */
+            white-space: nowrap;
+            /* 改行を完全に防ぐ */
+            text-shadow:
                 0 0 5px #fff,
                 0 0 10px #fff,
                 0 0 15px #fff,
@@ -673,10 +716,17 @@
                 2px 2px 4px rgba(0, 0, 0, 0.8);
             animation: whiteNeonFlicker 3s ease-in-out infinite alternate;
         }
-        
+
         @keyframes whiteNeonFlicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+                text-shadow:
                     0 0 5px #fff,
                     0 0 10px #fff,
                     0 0 15px #fff,
@@ -685,8 +735,11 @@
                     0 0 40px #fff,
                     2px 2px 4px rgba(0, 0, 0, 0.8);
             }
-            20%, 24%, 55% {
-                text-shadow: 
+
+            20%,
+            24%,
+            55% {
+                text-shadow:
                     0 0 2px #fff,
                     0 0 5px #fff,
                     0 0 8px #fff,
@@ -702,7 +755,7 @@
             color: #fff;
             margin-top: 25px;
             letter-spacing: 1px;
-            text-shadow: 
+            text-shadow:
                 1px 1px 3px rgba(0, 0, 0, 0.9),
                 0 0 15px rgba(0, 0, 0, 0.7);
         }
@@ -712,16 +765,20 @@
          *==================================================*/
         .products-inner {
             display: flex;
-            flex-direction: column; /* Stack cards vertically */
-            align-items: center; /* Center cards horizontally */
-            gap: 80px; /* Space between cards */
+            flex-direction: column;
+            /* Stack cards vertically */
+            align-items: center;
+            /* Center cards horizontally */
+            gap: 80px;
+            /* Space between cards */
         }
 
         .product-card {
             background: var(--bg-light);
             border-radius: 24px;
             width: 100%;
-            max-width: 900px; /* Control max width */
+            max-width: 900px;
+            /* Control max width */
             text-align: center;
             border: 1px solid var(--border-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -729,12 +786,13 @@
             flex-direction: column;
             align-items: center;
             padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            overflow: hidden; /* Hide overflowing content from gallery */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            /* Hide overflowing content from gallery */
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
         }
-        
+
         /* In a colored section, the product card should use the darker background for contrast */
         .section-colored .product-card {
             background: var(--bg-dark);
@@ -742,7 +800,7 @@
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
         }
 
         .product-card h3 {
@@ -750,7 +808,7 @@
             margin-top: 0;
             margin-bottom: 30px;
             color: var(--text-primary);
-            text-shadow: 
+            text-shadow:
                 0 0 20px rgba(255, 255, 255, 0.4),
                 0 0 40px rgba(255, 255, 255, 0.2),
                 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -774,11 +832,11 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.8), 
-                rgba(255, 255, 255, 0.6), 
-                transparent);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.8),
+                    rgba(255, 255, 255, 0.6),
+                    transparent);
             transform: skew(20deg);
             animation: sparkle 4s ease-in-out infinite;
             z-index: 1;
@@ -791,10 +849,10 @@
             left: -10px;
             right: -10px;
             bottom: -5px;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent);
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.1),
+                    transparent);
             border-radius: 10px;
             z-index: -1;
             opacity: 0;
@@ -802,34 +860,47 @@
         }
 
         @keyframes sparkle {
-            0% { 
+            0% {
                 left: -100%;
                 opacity: 0;
             }
-            10% { 
+
+            10% {
                 opacity: 1;
             }
-            90% { 
+
+            90% {
                 opacity: 1;
             }
-            100% { 
+
+            100% {
                 left: 100%;
                 opacity: 0;
             }
         }
 
         @keyframes titleFloat {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: skew(-8deg, 0deg) translateY(0px);
             }
-            50% { 
+
+            50% {
                 transform: skew(-8deg, 0deg) translateY(-3px);
             }
         }
 
         @keyframes titleGlow {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         /*==================================================
@@ -856,9 +927,10 @@
             text-align: center;
             letter-spacing: 2px;
         }
-        
+
         /* Mobile badges */
         @media (max-width: 768px) {
+
             .popular-badge-youtube,
             .popular-badge-instagram {
                 font-size: 1.3em;
@@ -868,8 +940,9 @@
                 word-wrap: break-word;
             }
         }
-        
+
         @media (max-width: 480px) {
+
             .popular-badge-youtube,
             .popular-badge-instagram {
                 font-size: 1.1em;
@@ -877,14 +950,15 @@
                 padding: 0 3px;
             }
         }
-        
+
         .product-card .product-image {
             max-width: 700px;
             width: 100%;
             margin-bottom: 30px;
             border-radius: 16px;
-            overflow: hidden; /* Ensures image respects border radius */
-            box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+            overflow: hidden;
+            /* Ensures image respects border radius */
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
         }
 
         .product-card .product-image img {
@@ -895,20 +969,20 @@
             min-height: 200px;
             background-color: var(--bg-light);
         }
-        
+
         /* Mobile image fixes */
         @media (max-width: 768px) {
             .product-card .product-image {
                 max-width: 100%;
                 margin-bottom: 20px;
             }
-            
+
             .product-card .product-image img {
                 min-height: 150px;
                 max-height: 300px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .product-card .product-image img {
                 min-height: 120px;
@@ -949,28 +1023,28 @@
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.3) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
             cursor: grab;
         }
-        
+
         .testimonial-scroll-wrapper::-webkit-scrollbar {
             height: 6px;
         }
-        
+
         .testimonial-scroll-wrapper::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
         }
-        
+
         .testimonial-scroll-wrapper::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 3px;
         }
-        
+
         .testimonial-scroll-wrapper::-webkit-scrollbar-thumb:hover {
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .testimonial-scroll-container {
@@ -983,24 +1057,26 @@
             transform: translateZ(0);
             will-change: transform;
         }
-        
+
         .testimonial-scroll-container:hover {
             animation-play-state: paused;
             -webkit-animation-play-state: paused;
         }
 
         #card-youtube .testimonial-scroll-container {
-            min-width: calc(300px * 14); /* 7 images * 2 with proper spacing */
+            min-width: calc(300px * 14);
+            /* 7 images * 2 with proper spacing */
             animation: scroll-gallery 20s linear infinite;
             -webkit-animation: scroll-gallery 20s linear infinite;
         }
 
         #card-instagram .testimonial-scroll-container {
-            min-width: calc(300px * 12); /* 6 images * 2 with proper spacing */
+            min-width: calc(300px * 12);
+            /* 6 images * 2 with proper spacing */
             animation: scroll-gallery 18s linear infinite;
             -webkit-animation: scroll-gallery 18s linear infinite;
         }
-        
+
         /* Mobile testimonial improvements */
         @media (max-width: 768px) {
             .testimonial-scroll-wrapper {
@@ -1008,23 +1084,23 @@
                 cursor: grab;
                 padding-bottom: 10px;
             }
-            
+
             .testimonial-scroll-wrapper:active {
                 cursor: grabbing;
             }
-            
+
             #card-youtube .testimonial-scroll-container {
                 min-width: calc(280px * 14);
                 animation: scroll-gallery 15s linear infinite;
                 -webkit-animation: scroll-gallery 15s linear infinite;
             }
-            
+
             #card-instagram .testimonial-scroll-container {
                 min-width: calc(280px * 12);
                 animation: scroll-gallery 12s linear infinite;
                 -webkit-animation: scroll-gallery 12s linear infinite;
             }
-            
+
             .testimonial-image-wrapper .testimonial-img {
                 height: 250px;
                 min-width: 200px;
@@ -1040,17 +1116,20 @@
                 transform: translateX(0);
                 -webkit-transform: translateX(0);
             }
+
             100% {
-                transform: translateX(-50%); /* Move by half the track's width for seamless loop */
+                transform: translateX(-50%);
+                /* Move by half the track's width for seamless loop */
                 -webkit-transform: translateX(-50%);
             }
         }
-        
+
         @-webkit-keyframes scroll-gallery {
             0% {
                 -webkit-transform: translateX(0);
                 transform: translateX(0);
             }
+
             100% {
                 -webkit-transform: translateX(-50%);
                 transform: translateX(-50%);
@@ -1061,14 +1140,19 @@
             position: relative;
             flex-shrink: 0;
             border-radius: 12px;
-            overflow: hidden; /* Ensures icon stays within rounded corners */
-            pointer-events: auto; /* Allow clicks on images */
+            overflow: hidden;
+            /* Ensures icon stays within rounded corners */
+            pointer-events: auto;
+            /* Allow clicks on images */
         }
 
         .testimonial-image-wrapper .testimonial-img {
-            height: 400px; /* Fixed height */
-            width: auto; /* Auto width to maintain aspect ratio */
-            display: block; /* Remove bottom space under image */
+            height: 400px;
+            /* Fixed height */
+            width: auto;
+            /* Auto width to maintain aspect ratio */
+            display: block;
+            /* Remove bottom space under image */
             transition: transform 0.3s ease;
             cursor: pointer;
         }
@@ -1092,7 +1176,8 @@
             font-size: 22px;
             font-weight: bold;
             line-height: 1;
-            pointer-events: none; /* Lets the click go through to the image */
+            pointer-events: none;
+            /* Lets the click go through to the image */
             transition: transform 0.3s ease, background-color 0.3s ease;
             z-index: 2;
         }
@@ -1101,18 +1186,18 @@
             transform: scale(1.1);
             background-color: rgba(0, 0, 0, 0.8);
         }
-        
+
         /* Analytics Image Modal */
         .analytics-image {
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .analytics-image:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         }
-        
+
         .image-modal {
             display: none;
             position: fixed;
@@ -1124,7 +1209,7 @@
             background-color: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
         }
-        
+
         .image-modal-content {
             position: absolute;
             top: 50%;
@@ -1133,9 +1218,9 @@
             max-width: 95%;
             max-height: 95%;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
         }
-        
+
         .image-modal-close {
             position: absolute;
             top: 20px;
@@ -1147,7 +1232,7 @@
             z-index: 10001;
             transition: opacity 0.3s ease;
         }
-        
+
         .image-modal-close:hover {
             opacity: 0.7;
         }
@@ -1175,12 +1260,12 @@
             margin: 0 auto;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
             background: var(--bg-light);
             aspect-ratio: 16/9;
             display: block;
         }
-        
+
         /* Mobile video wrapper */
         @media (max-width: 768px) {
             .video-wrapper {
@@ -1198,7 +1283,7 @@
             height: 100%;
             border: none;
         }
-        
+
         /* Mobile video iframe */
         @media (max-width: 768px) {
             .video-wrapper iframe {
@@ -1246,12 +1331,12 @@
             width: 100%;
             display: block;
         }
-        
+
         /* Premium bundle mobile border fix */
         @media (max-width: 768px) {
             .premium-bundle-card {
                 border-radius: 20px;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
             }
         }
 
@@ -1275,7 +1360,7 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transform: rotate(45deg);
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(255, 48, 48, 0.6),
                 0 0 30px rgba(255, 48, 48, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -1289,16 +1374,19 @@
         }
 
         @keyframes ribbonPulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: rotate(45deg) scale(1);
-                box-shadow: 
+                box-shadow:
                     0 8px 25px rgba(255, 48, 48, 0.6),
                     0 0 30px rgba(255, 48, 48, 0.3),
                     inset 0 1px 0 rgba(255, 255, 255, 0.3);
             }
-            50% { 
+
+            50% {
                 transform: rotate(45deg) scale(1.05);
-                box-shadow: 
+                box-shadow:
                     0 12px 35px rgba(255, 48, 48, 0.8),
                     0 0 40px rgba(255, 48, 48, 0.5),
                     inset 0 1px 0 rgba(255, 255, 255, 0.4);
@@ -1346,7 +1434,7 @@
             border-radius: 30px;
             max-width: 200px;
             width: auto;
-            box-shadow: 
+            box-shadow:
                 0 10px 30px rgba(255, 23, 68, 0.7),
                 0 0 50px rgba(255, 23, 68, 0.4),
                 inset 0 2px 0 rgba(255, 255, 255, 0.3);
@@ -1370,22 +1458,25 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             animation: bannerShimmer 2.5s ease-in-out infinite;
         }
 
 
         @keyframes limitedBannerPulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: translateX(-50%) scale(1);
-                box-shadow: 
+                box-shadow:
                     0 10px 30px rgba(255, 23, 68, 0.7),
                     0 0 50px rgba(255, 23, 68, 0.4),
                     inset 0 2px 0 rgba(255, 255, 255, 0.3);
             }
-            50% { 
+
+            50% {
                 transform: translateX(-50%) scale(1.08);
-                box-shadow: 
+                box-shadow:
                     0 15px 40px rgba(255, 23, 68, 0.9),
                     0 0 70px rgba(255, 23, 68, 0.6),
                     inset 0 2px 0 rgba(255, 255, 255, 0.4);
@@ -1393,16 +1484,30 @@
         }
 
         @keyframes bannerShimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         @keyframes sparkle {
-            0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
-            50% { opacity: 0.7; transform: translateY(-50%) scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: translateY(-50%) scale(1.2);
+            }
         }
 
-        
+
 
         .premium-bundle-content {
             display: flex;
@@ -1425,7 +1530,8 @@
         }
 
         .premium-bundle-text h2::after {
-           display: none; /* Remove default separator */
+            display: none;
+            /* Remove default separator */
         }
 
         .premium-bundle-text h3 {
@@ -1440,7 +1546,7 @@
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 30px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
             padding: 10px 20px;
             border-radius: 12px;
             display: inline-block;
@@ -1465,7 +1571,7 @@
             max-width: 600px;
             text-align: center;
         }
-        
+
         /* Mobile premium bundle image */
         @media (max-width: 768px) {
             .premium-bundle-image {
@@ -1479,17 +1585,17 @@
         .premium-bundle-image img {
             width: 100%;
             border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
             transition: transform 0.4s ease;
         }
-        
+
         /* Mobile premium bundle image */
         @media (max-width: 768px) {
             .premium-bundle-image img {
                 width: 80%;
                 max-width: 80%;
                 border-radius: 12px;
-                box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
                 object-fit: contain;
             }
         }
@@ -1514,7 +1620,7 @@
             line-height: 1.8;
             padding: 15px 0;
         }
-        
+
         /* Mobile breakdown text */
         @media (max-width: 768px) {
             .breakdown-text {
@@ -1525,7 +1631,7 @@
                 overflow-wrap: break-word;
             }
         }
-        
+
         @media (max-width: 480px) {
             .breakdown-text {
                 font-size: 0.85em;
@@ -1550,8 +1656,9 @@
                 text-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
                 transform: scale(1);
             }
+
             100% {
-                text-shadow: 
+                text-shadow:
                     0 0 50px rgba(212, 175, 55, 0.8),
                     0 0 80px rgba(212, 175, 55, 0.4);
                 transform: scale(1.02);
@@ -1590,7 +1697,8 @@
          *  Lightbox Styles
          *==================================================*/
         .lightbox {
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -1604,8 +1712,13 @@
         }
 
         @keyframes fadeInLightbox {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .lightbox-content {
@@ -1615,8 +1728,13 @@
         }
 
         @keyframes zoomInLightbox {
-            from { transform: scale(0.8); }
-            to { transform: scale(1); }
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
         }
 
         .lightbox-close {
@@ -1644,8 +1762,10 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            max-width: 900px; /* Match product cards */
-            margin: 0 auto; /* Center the card itself */
+            max-width: 900px;
+            /* Match product cards */
+            margin: 0 auto;
+            /* Center the card itself */
         }
 
         .about-section h2 {
@@ -1741,12 +1861,12 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         /* 実績セクション内の最初のachievement-sectionのみ上マージンを調整 */
         #about .achievement-section:first-of-type {
             margin-top: 40px;
         }
-        
+
         .achievement-section:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
@@ -1766,50 +1886,52 @@
             width: 100%;
             max-width: 800px;
             height: 0;
-            padding-bottom: 45%; /* 16:9 aspect ratio for max-width 800px */
+            padding-bottom: 45%;
+            /* 16:9 aspect ratio for max-width 800px */
             margin: 0 auto 30px auto;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
-        
+
         @media (max-width: 800px) {
             .video-wrapper {
-                padding-bottom: 56.25%; /* 16:9 aspect ratio for smaller screens */
+                padding-bottom: 56.25%;
+                /* 16:9 aspect ratio for smaller screens */
             }
-            
+
             .achievement-section {
                 margin: 30px 0;
                 padding: 30px 20px;
             }
-            
+
             #about .achievement-section:first-of-type {
                 margin-top: 30px;
             }
-            
+
             .achievement-title {
                 font-size: 1.5em;
                 margin-bottom: 30px;
             }
-            
+
             .achievement-description {
                 font-size: 1em;
                 margin-top: 30px;
             }
-            
+
             .consulting-description .image-wrapper {
                 margin-top: 30px;
             }
-            
+
             .consulting-description .video-wrapper {
                 margin-top: 20px;
             }
-            
+
             .channel-link {
                 font-size: 1em;
                 margin: 10px 0 20px 0;
             }
-            
+
         }
 
         .video-wrapper iframe {
@@ -1904,8 +2026,8 @@
             padding: 50px;
             text-align: center;
             border: 2px solid var(--accent-gold);
-            box-shadow: 
-                0 30px 80px rgba(0,0,0,0.6),
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.6),
                 0 0 50px rgba(212, 175, 55, 0.3);
             position: relative;
             overflow: hidden;
@@ -1915,7 +2037,10 @@
         .main-achievement-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
             animation: cardGlow 6s ease-in-out infinite;
         }
@@ -1950,14 +2075,14 @@
         }
 
         .platform-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
             backdrop-filter: blur(10px);
             border-radius: 25px;
             padding: 40px 35px;
             text-decoration: none;
             color: var(--text-primary);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1973,7 +2098,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.6s;
         }
 
@@ -1983,26 +2108,26 @@
 
         .platform-card:hover {
             transform: translateY(-12px) scale(1.03);
-            border-color: rgba(255,255,255,0.2);
-            box-shadow: 
-                0 35px 80px rgba(0,0,0,0.3),
-                0 0 40px rgba(255,255,255,0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 35px 80px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(255, 255, 255, 0.1);
         }
 
         .platform-card.youtube:hover {
-            box-shadow: 
+            box-shadow:
                 0 35px 80px rgba(74, 144, 226, 0.2),
                 0 0 50px rgba(74, 144, 226, 0.15);
         }
 
         .platform-card.instagram:hover {
-            box-shadow: 
+            box-shadow:
                 0 35px 80px rgba(193, 53, 132, 0.2),
                 0 0 50px rgba(193, 53, 132, 0.15);
         }
 
         .platform-card.tiktok:hover {
-            box-shadow: 
+            box-shadow:
                 0 35px 80px rgba(0, 242, 234, 0.2),
                 0 0 50px rgba(0, 242, 234, 0.15);
         }
@@ -2014,15 +2139,15 @@
             align-items: center;
             justify-content: center;
             border-radius: 20px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             margin-bottom: 8px;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .platform-card:hover .platform-icon {
             transform: scale(1.1) rotate(-5deg);
-            background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
         }
 
         .platform-icon svg {
@@ -2031,13 +2156,15 @@
             transition: all 0.4s ease;
         }
 
-        .platform-card.youtube .platform-icon { 
+        .platform-card.youtube .platform-icon {
             color: inherit;
         }
-        .platform-card.instagram .platform-icon { 
+
+        .platform-card.instagram .platform-icon {
             color: var(--accent-instagram);
         }
-        .platform-card.tiktok .platform-icon { 
+
+        .platform-card.tiktok .platform-icon {
             color: var(--accent-tiktok);
         }
 
@@ -2081,13 +2208,13 @@
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .achievement-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .achievement-number {
@@ -2106,8 +2233,15 @@
 
         /* アニメーション */
         @keyframes cardGlow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.7; }
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
         }
 
 
@@ -2120,48 +2254,48 @@
             margin-top: 80px;
             border-top: 1px solid rgba(212, 175, 55, 0.3);
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
-        
+
         .footer-section h4 {
             color: var(--accent-gold);
             font-size: 1.2em;
             margin-bottom: 1rem;
             font-weight: 600;
         }
-        
+
         .footer-section ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .footer-section ul li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-section ul li a {
             color: var(--text-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .footer-section ul li a:hover {
             color: var(--accent-gold);
         }
-        
+
         .footer-social {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
             justify-content: flex-start;
         }
-        
+
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -2199,7 +2333,7 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
-        
+
         .social-link:hover {
             background: var(--accent-gold);
             color: var(--bg-dark);
@@ -2216,7 +2350,7 @@
             outline: 2px solid var(--accent-gold);
             outline-offset: 4px;
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
@@ -2224,14 +2358,14 @@
             color: var(--text-primary);
             font-size: 0.9em;
         }
-        
+
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
-            
+
             .footer-social {
                 justify-content: center;
             }
@@ -2240,52 +2374,62 @@
         /*==================================================
          *  Responsive Design
          *==================================================*/
-        
+
         /* Large tablets and small desktops */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 20px;
             }
+
             .premium-bundle-card {
                 padding: 50px 30px;
             }
         }
-        
+
         /* Tablets */
         @media (max-width: 992px) {
-            .hero-content h1 { 
-                font-size: 2.8em; 
+            .hero-content h1 {
+                font-size: 2.8em;
                 line-height: 1.2;
                 padding: 0 20px;
             }
-            .hero-content p { 
+
+            .hero-content p {
                 font-size: 1.1em;
-                padding: 0 20px; 
+                padding: 0 20px;
             }
-            h2 { 
-                font-size: 2.2em; 
+
+            h2 {
+                font-size: 2.2em;
                 margin-bottom: 50px;
                 padding: 0 15px;
                 word-wrap: break-word;
             }
+
             .premium-bundle-content {
                 flex-direction: column;
                 text-align: center;
                 gap: 30px;
             }
+
             .premium-bundle-text {
                 text-align: center;
             }
-            .premium-bundle-text h2, .premium-bundle-text h3 {
+
+            .premium-bundle-text h2,
+            .premium-bundle-text h3 {
                 text-align: center;
             }
+
             .premium-bundle-text p {
                 margin-left: auto;
                 margin-right: auto;
             }
+
             .product-card {
                 padding: 40px 30px;
             }
+
             .platform-cards {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 30px;
@@ -2298,7 +2442,7 @@
                 font-size: 14px;
                 min-width: 320px;
             }
-            
+
             .container {
                 padding: 0 5px;
                 max-width: 100%;
@@ -2306,32 +2450,32 @@
                 width: 100%;
                 box-sizing: border-box;
             }
-            
-            .section { 
-                padding: 40px 0; 
+
+            .section {
+                padding: 40px 0;
             }
-            
+
             .hero {
                 min-height: 80vh;
                 padding: 40px 16px;
             }
-            
-            .hero-content h1 { 
-                font-size: 2em; 
+
+            .hero-content h1 {
+                font-size: 2em;
                 letter-spacing: 0.5px;
                 line-height: 1.2;
                 margin-bottom: 20px;
                 padding: 0 5px;
                 word-wrap: break-word;
             }
-            
-            .hero-content p { 
+
+            .hero-content p {
                 font-size: 0.95em;
                 line-height: 1.5;
                 padding: 0 10px;
                 word-wrap: break-word;
             }
-            
+
             h2 {
                 font-size: 1.8em;
                 margin-bottom: 30px;
@@ -2340,11 +2484,11 @@
                 line-height: 1.3;
                 text-align: center;
             }
-            
+
             .products-inner {
                 gap: 50px;
             }
-            
+
             .product-card {
                 padding: 20px 30px;
                 max-width: 100%;
@@ -2352,7 +2496,7 @@
                 margin: 0 auto;
                 box-sizing: border-box;
             }
-            
+
             .product-card h3 {
                 font-size: 2.2em;
                 margin-bottom: 15px;
@@ -2360,7 +2504,7 @@
                 word-wrap: break-word;
                 line-height: 1.2;
             }
-            
+
             .product-card p {
                 font-size: 1em;
                 margin-bottom: 25px;
@@ -2368,7 +2512,7 @@
                 word-wrap: break-word;
                 line-height: 1.5;
             }
-            
+
             .button {
                 font-size: 16px;
                 padding: 0;
@@ -2376,7 +2520,7 @@
                 min-width: 280px;
                 height: 64px;
             }
-            
+
             /* Premium Bundle Mobile */
             .premium-bundle-card {
                 padding: 25px 12px 15px 12px;
@@ -2389,7 +2533,7 @@
                 right: auto;
                 position: relative;
             }
-            
+
             .limited-time-banner {
                 font-size: 1.6em;
                 padding: 10px 8px;
@@ -2401,36 +2545,36 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-            
+
             .popular-ribbon {
                 font-size: 0.9em;
                 padding: 8px 30px;
                 top: 8px;
                 right: -20px;
             }
-            
+
             .premium-bundle-text h2 {
                 font-size: 1.8em;
             }
-            
+
             .premium-bundle-text h3 {
                 font-size: 2.8em;
             }
-            
+
             .set-price-large {
                 font-size: 3.2em;
             }
-            
+
             .savings-text {
                 font-size: 1.4em;
                 padding: 12px 24px;
             }
-            
+
             .button.bundle.premium {
                 font-size: 1em;
                 padding: 16px 30px;
             }
-            
+
             /* Video Section Mobile */
             .video-section {
                 width: 100%;
@@ -2438,7 +2582,7 @@
                 margin: 0 auto;
                 padding: 0;
             }
-            
+
             .video-section h4 {
                 font-size: 1.2em;
                 margin-bottom: 20px;
@@ -2447,14 +2591,14 @@
                 line-height: 1.4;
                 text-align: center;
             }
-            
+
             .video-wrapper {
                 margin: 0 auto;
                 max-width: calc(100vw - 20px);
                 width: 100%;
                 display: block;
             }
-            
+
             .video-description {
                 font-size: 1em;
                 padding: 0 10px;
@@ -2462,106 +2606,106 @@
                 text-align: center;
                 margin: 0 auto;
             }
-            
+
             /* Testimonial Gallery Mobile */
             .testimonial-image-wrapper .testimonial-img {
                 height: 300px;
             }
-            
+
             /* About Section Mobile */
             .profile-image {
                 width: 150px;
                 height: 150px;
                 margin-bottom: 15px;
             }
-            
+
             .about-section .about-text {
                 font-size: 1.1em;
             }
-            
+
             /* Stats Section Mobile */
             .achievements-hero h2 {
                 font-size: 2.2em;
                 margin-bottom: -5px;
             }
-            
+
             .achievements-subtitle {
                 font-size: 1.1em;
             }
-            
+
             .main-achievement-card {
                 padding: 30px 20px;
                 margin-bottom: 40px;
             }
-            
+
             .big-number {
                 font-size: 3.5em;
             }
-            
+
             .achievement-content h3 {
                 font-size: 1.6em;
             }
-            
+
             .platform-cards {
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
-            
+
             .platform-card {
                 padding: 30px 25px;
             }
-            
+
             .platform-icon {
                 width: 80px;
                 height: 80px;
             }
-            
+
             .platform-icon svg {
                 width: 60px;
                 height: 60px;
             }
-            
+
             .platform-number {
                 font-size: 2.5em;
             }
-            
+
             .platform-info h4 {
                 font-size: 1.3em;
             }
-            
+
             .click-hint {
                 font-size: 0.9em;
                 padding: 10px 20px;
             }
         }
-        
+
         /* Small mobile devices */
         @media (max-width: 480px) {
             body {
                 min-width: 320px;
             }
-            
+
             .container {
                 padding: 0 10px;
                 max-width: 100%;
             }
-            
+
             .hero-content h1 {
                 font-size: 1.6em;
                 word-break: keep-all;
                 overflow-wrap: break-word;
                 padding: 0 5px;
             }
-            
+
             .hero-content p {
                 font-size: 0.95em;
             }
-            
+
             h2 {
                 font-size: 1.8em;
                 word-break: keep-all;
             }
-            
+
             .product-card {
                 padding: 12px 30px;
                 margin: 0;
@@ -2569,7 +2713,7 @@
                 width: calc(100vw - 12px);
                 box-sizing: border-box;
             }
-            
+
             .product-card h3 {
                 font-size: 1.5em;
                 word-break: keep-all;
@@ -2577,7 +2721,7 @@
                 line-height: 1.1;
                 text-align: center;
             }
-            
+
             .premium-bundle-card {
                 padding: 15px 6px;
                 margin: 0;
@@ -2586,7 +2730,7 @@
                 overflow: hidden;
                 box-sizing: border-box;
             }
-            
+
             .limited-time-banner {
                 font-size: 1.0em;
                 padding: 8px 6px;
@@ -2598,7 +2742,7 @@
                 border-radius: 15px;
                 top: 5px;
             }
-            
+
             .popular-ribbon {
                 font-size: 0.6em;
                 padding: 4px 15px;
@@ -2606,24 +2750,24 @@
                 top: 3px;
                 transform: rotate(45deg) scale(0.8);
             }
-            
+
             .set-price-large {
                 font-size: 2.8em;
             }
-            
+
             .savings-text {
                 font-size: 1.2em;
                 padding: 10px 20px;
             }
-            
+
             .big-number {
                 font-size: 3em;
             }
-            
+
             .platform-number {
                 font-size: 2.2em;
             }
-            
+
             .button {
                 font-size: 14px;
                 padding: 0;
@@ -2631,12 +2775,12 @@
                 min-width: 260px;
                 height: 58px;
             }
-            
+
             .button.bundle.premium {
                 font-size: 0.9em;
                 padding: 14px 25px;
             }
-            
+
             /* Premium bundle 480px fixes */
             .premium-bundle-card {
                 padding: 20px 8px 10px 8px;
@@ -2644,7 +2788,7 @@
                 max-width: calc(100vw - 30px);
                 width: calc(100vw - 30px);
             }
-            
+
             .limited-time-banner {
                 font-size: 0.8em;
                 padding: 6px 4px;
@@ -2654,28 +2798,28 @@
                 top: 8px;
                 line-height: 1.1;
             }
-            
+
             .premium-bundle-image {
                 max-width: calc(100vw - 50px);
                 padding: 0 15px;
             }
-            
+
             .premium-bundle-image img {
                 width: 85%;
                 max-width: 85%;
             }
-            
+
             /* Video section 480px */
             .video-wrapper {
                 max-width: calc(100vw - 20px);
                 margin: 0 auto;
             }
-            
+
             .video-section h4 {
                 font-size: 1.1em;
                 padding: 0 5px;
             }
-            
+
             .video-description {
                 font-size: 0.95em;
                 padding: 0 5px;
@@ -2708,17 +2852,17 @@
         .blog-scroll-wrapper::-webkit-scrollbar {
             height: 6px;
         }
-        
+
         .blog-scroll-wrapper::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 3px;
         }
-        
+
         .blog-scroll-wrapper::-webkit-scrollbar-thumb {
             background: rgba(212, 175, 55, 0.8);
             border-radius: 3px;
         }
-        
+
         .blog-scroll-wrapper::-webkit-scrollbar-thumb:hover {
             background: var(--accent-gold);
         }
@@ -2745,6 +2889,7 @@
                 transform: translateX(0);
                 -webkit-transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
                 -webkit-transform: translateX(-50%);
@@ -2852,7 +2997,7 @@
                 cursor: grab;
                 padding-bottom: 10px;
             }
-            
+
             .blog-scroll-wrapper:active {
                 cursor: grabbing;
             }
@@ -2982,12 +3127,12 @@
                 font-size: 1.0em;
                 margin-bottom: 0.6rem;
             }
-            
+
             .achievements-hero h2 {
                 font-size: 1.8em;
                 margin-bottom: 0px;
             }
-            
+
             .achievements-subtitle {
                 font-size: 1.0em;
             }
@@ -2997,16 +3142,16 @@
     <!-- スクロール位置保持スクリプト -->
     <script>
         // ページ離脱前にスクロール位置を保存
-        window.addEventListener('beforeunload', function() {
+        window.addEventListener('beforeunload', function () {
             sessionStorage.setItem('scrollPos', window.scrollY);
         });
 
         // ページ読み込み後にスクロール位置を復元
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const scrollPos = sessionStorage.getItem('scrollPos');
             if (scrollPos !== null) {
                 // スマホの場合はさらに遅延を増やす
-                setTimeout(function() {
+                setTimeout(function () {
                     window.scrollTo({
                         top: parseInt(scrollPos),
                         left: 0,
@@ -3017,7 +3162,7 @@
         });
 
         // DOMContentLoaded時にも復元を試みる（より早いタイミング）
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const scrollPos = sessionStorage.getItem('scrollPos');
             if (scrollPos !== null) {
                 window.scrollTo({
@@ -3031,7 +3176,7 @@
         // さらに保険として、複数のタイミングで復元を試みる
         let retryCount = 0;
         const maxRetries = 5;
-        const retryInterval = setInterval(function() {
+        const retryInterval = setInterval(function () {
             const scrollPos = sessionStorage.getItem('scrollPos');
             if (scrollPos !== null && retryCount < maxRetries) {
                 window.scrollTo({
@@ -3047,19 +3192,22 @@
         }, 200);
     </script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-content">
             <a href="#" class="logo" style="display: flex; align-items: center;">
                 <img src="images/ホワイト-背景無し.png" alt="Logo" style="height: 60px; width: auto; margin-right: 15px;">
-                <span class="logo-text" style="font-size: 1.1em; font-family: 'Klee One', cursive, sans-serif;">Nabeblog</span>
+                <span class="logo-text"
+                    style="font-size: 1.1em; font-family: 'Klee One', cursive, sans-serif;">Nabeblog</span>
             </a>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#youtube-textbook">YouTubeの教科書</a></li>
                     <li><a href="#instagram-textbook">Instagramの教科書</a></li>
                     <li><a href="#limited-w-set">限定Wセット</a></li>
+                    <li><a href="recook_lp.html">メルマガ</a></li>
                     <li><a href="#card-other-services">その他サービス</a></li>
                     <li><a href="#blog-articles">無料記事</a></li>
                     <li><a href="#about">プロフィール</a></li>
@@ -3078,17 +3226,20 @@
     <div class="background-animation">
         <div class="floating-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" width="100" height="100">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
         </div>
         <div class="floating-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" width="80" height="80">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z"/>
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z" />
             </svg>
         </div>
         <div class="floating-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" width="90" height="90">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
         </div>
         <div class="floating-icon">💰</div>
@@ -3110,176 +3261,203 @@
             <div class="products-inner">
                 <!-- YouTubeの教科書 -->
                 <div class="product-card fade-in" id="card-youtube">
-                    <div class="popular-badge-youtube"><a href="#youtube-textbook" style="color: inherit; text-decoration: none;">お陰様で300部突破の大人気記事！！</a></div>
+                    <div class="popular-badge-youtube"><a href="#youtube-textbook"
+                            style="color: inherit; text-decoration: none;">お陰様で300部突破の大人気記事！！</a></div>
                     <h3 id="youtube-textbook">なべの教科書 YouTube編</h3>
                     <div class="product-image">
-                        <img src="images/image-98-1-1024x536.jpg" alt="なべの教科書 YouTube編" onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
+                        <img src="images/image-98-1-1024x536.jpg" alt="なべの教科書 YouTube編"
+                            onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
                     </div>
                     <p><strong>「半年で登録者80人だった私が、今では登録者15万人･･･」</strong></p>
 
-<div style="text-align: center; margin: 30px auto;">
-<img src="images/スクリーンショット 2025-07-18 15.41.56.jpg" alt="YouTube実績" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px;">
-<p style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9em; text-align: center; max-width: 100%;">苦節期間長すぎｗｗ</p>
-</div>
+                    <div style="text-align: center; margin: 30px auto;">
+                        <img src="images/スクリーンショット 2025-07-18 15.41.56.jpg" alt="YouTube実績"
+                            style="max-width: 100%; width: 100%; height: auto; border-radius: 10px;">
+                        <p
+                            style="margin-top: 10px; color: var(--text-secondary); font-size: 0.9em; text-align: center; max-width: 100%;">
+                            苦節期間長すぎｗｗ</p>
+                    </div>
 
-<div style="max-width: 550px; margin: 30px auto 30px;">
-<blockquote class="twitter-tweet" data-theme="dark"><p lang="ja" dir="ltr">【YouTubeの教科書】についてのご報告<br><br>開始6ヶ月、毎日投稿で登録者数80人だったチャンネルが、<br>戦略を変えてから<br>6ヶ月後に14万人になった道のり<br><br>を書いた教科書が完成しました<br>※サブチャンネルも約3ヶ月で1万人達成<br><br>センスや知識ではなく、<br>「型」×「データ」×「継続力」<br><br>noteにて10日後に公開します <a href="https://t.co/Jl1GNs9fuj">pic.twitter.com/Jl1GNs9fuj</a></p>&mdash; なべ│SNS×料理のフリーランス (@nabeno_kitchen) <a href="https://twitter.com/nabeno_kitchen/status/1421344414887079936?ref_src=twsrc%5Etfw">July 31, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+                    <div style="max-width: 550px; margin: 30px auto 30px;">
+                        <blockquote class="twitter-tweet" data-theme="dark">
+                            <p lang="ja" dir="ltr">
+                                【YouTubeの教科書】についてのご報告<br><br>開始6ヶ月、毎日投稿で登録者数80人だったチャンネルが、<br>戦略を変えてから<br>6ヶ月後に14万人になった道のり<br><br>を書いた教科書が完成しました<br>※サブチャンネルも約3ヶ月で1万人達成<br><br>センスや知識ではなく、<br>「型」×「データ」×「継続力」<br><br>noteにて10日後に公開します
+                                <a href="https://t.co/Jl1GNs9fuj">pic.twitter.com/Jl1GNs9fuj</a>
+                            </p>&mdash;
+                            なべ│SNS×料理のフリーランス (@nabeno_kitchen) <a
+                                href="https://twitter.com/nabeno_kitchen/status/1421344414887079936?ref_src=twsrc%5Etfw">July
+                                31, 2021</a>
+                        </blockquote>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
 
-<div style="text-align: left;">
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
-才能ゼロでも伸ばせた<br>80人→10万人の全プロセスを一冊に
-</p>
+                    <div style="text-align: left;">
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            才能ゼロでも伸ばせた<br>80人→10万人の全プロセスを一冊に
+                        </p>
 
-<p>
-会社員の副業で週2本×6ヶ月投稿しても登録者はたった80人…。<br>
-「このままじゃ絶対ムリ」と現実を直視し、研究に全振り。
-</p>
+                        <p>
+                            会社員の副業で週2本×6ヶ月投稿しても登録者はたった80人…。<br>
+                            「このままじゃ絶対ムリ」と現実を直視し、研究に全振り。
+                        </p>
 
-<p>
-👉 1年で収益化<br>
-👉 2年半で登録者5万人<br>
-👉 そして10万人突破
-</p>
+                        <p>
+                            👉 1年で収益化<br>
+                            👉 2年半で登録者5万人<br>
+                            👉 そして10万人突破
+                        </p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/1697586705810-n8JfYSktdq.webp" alt="10万人突破" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/1697586705810-n8JfYSktdq.webp" alt="10万人突破"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<p>
-特別な才能も、スキルもなかった自分がどうやってここまで来たのか？<br>
-失敗と検証すべて込みで、一冊の教材にまとめました。
-</p>
+                        <p>
+                            特別な才能も、スキルもなかった自分がどうやってここまで来たのか？<br>
+                            失敗と検証すべて込みで、一冊の教材にまとめました。
+                        </p>
 
-<p>
-✅ バズを生む動画構成とタイトル設計<br>
-✅ "刺さる"サムネの作り方とクリック率UPの具体手順<br>
-✅ 登録者が少なくても収益化できるマネタイズ戦略<br>
-✅ アナリティクスを使った"伸びる/伸びない"動画の見分け方<br>
-✅ 登録者が少なくても検索上位を狙える方法<br>
-✅ 企業案件を獲得するためのアプローチ台本<br>
-✅ 継続収入を生む仕組み化とファン化導線
-</p>
+                        <p>
+                            ✅ バズを生む動画構成とタイトル設計<br>
+                            ✅ "刺さる"サムネの作り方とクリック率UPの具体手順<br>
+                            ✅ 登録者が少なくても収益化できるマネタイズ戦略<br>
+                            ✅ アナリティクスを使った"伸びる/伸びない"動画の見分け方<br>
+                            ✅ 登録者が少なくても検索上位を狙える方法<br>
+                            ✅ 企業案件を獲得するためのアプローチ台本<br>
+                            ✅ 継続収入を生む仕組み化とファン化導線
+                        </p>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
-読めばわかる"リアルな再現性"
-</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            読めばわかる"リアルな再現性"
+                        </p>
 
-<p>
-• 伸びない原因は「才能不足」じゃない。<br>
-• 伸びないチャンネルには必ず共通の"伸びない要素"がある。<br>
-• 音量、編集、タイトル、サムネ、戦略… ひとつでも欠ければ数字は止まる。
-</p>
+                        <p>
+                            • 伸びない原因は「才能不足」じゃない。<br>
+                            • 伸びないチャンネルには必ず共通の"伸びない要素"がある。<br>
+                            • 音量、編集、タイトル、サムネ、戦略… ひとつでも欠ければ数字は止まる。
+                        </p>
 
-<p>
-本教材では、それらを1つずつ潰す実践法を具体例・図解付きで解説しています。
-</p>
+                        <p>
+                            本教材では、それらを1つずつ潰す実践法を具体例・図解付きで解説しています。
+                        </p>
 
-<p>
-さらに料理系YouTuberに必須の「検索上位をとる設計」も初公開。<br>
-実際に私は「牛丼」「カレー」「味噌汁」など大物と同じ土俵で上位を獲得し、いまも毎日数千再生を稼ぐ"安定回路"を作れました。
-</p>
+                        <p>
+                            さらに料理系YouTuberに必須の「検索上位をとる設計」も初公開。<br>
+                            実際に私は「牛丼」「カレー」「味噌汁」など大物と同じ土俵で上位を獲得し、いまも毎日数千再生を稼ぐ"安定回路"を作れました。
+                        </p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 15.58.37.jpg" alt="検索上位獲得" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-<p style="color: #888; font-size: 0.9em; margin-top: 10px; text-align: center;">5年近くたっても再生され続けてる</p>
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 15.58.37.jpg" alt="検索上位獲得"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                            <p style="color: #888; font-size: 0.9em; margin-top: 10px; text-align: center;">
+                                5年近くたっても再生され続けてる</p>
+                        </div>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
-この教材をおすすめしたい人
-</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            この教材をおすすめしたい人
+                        </p>
 
-<p>
-• 本気で料理系YouTubeで勝負したい<br>
-• いま投稿してるけど全然伸びない<br>
-• 副業から脱サラを目指したい<br>
-• 安定して数字を伸ばす仕組みを作りたい
-</p>
+                        <p>
+                            • 本気で料理系YouTubeで勝負したい<br>
+                            • いま投稿してるけど全然伸びない<br>
+                            • 副業から脱サラを目指したい<br>
+                            • 安定して数字を伸ばす仕組みを作りたい
+                        </p>
 
-<p>
-逆に…
-</p>
+                        <p>
+                            逆に…
+                        </p>
 
-<p>
-• 魔法みたいな即伸びノウハウだけが欲しい<br>
-• 努力なしで稼ぎたい<br>
-• すでに十分伸びている
-</p>
+                        <p>
+                            • 魔法みたいな即伸びノウハウだけが欲しい<br>
+                            • 努力なしで稼ぎたい<br>
+                            • すでに十分伸びている
+                        </p>
 
-<p>
-こういう方には向いていません。
-</p>
+                        <p>
+                            こういう方には向いていません。
+                        </p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 16.02.01.jpg" alt="向いていない人" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 16.02.01.jpg" alt="向いていない人"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 16.03.15.jpg" alt="努力の方向性" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-<p style="color: #888; font-size: 0.9em; margin-top: 10px; text-align: center;">画像などを使って誰にでも分かりやすく解説</p>
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 16.03.15.jpg" alt="努力の方向性"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                            <p style="color: #888; font-size: 0.9em; margin-top: 10px; text-align: center;">
+                                画像などを使って誰にでも分かりやすく解説</p>
+                        </div>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
-最後に
-</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            最後に
+                        </p>
 
-<p>
-私が伸ばせたのは、特別なセンスではなく「現実を直視して、正しい努力を継続した」から。
-</p>
+                        <p>
+                            私が伸ばせたのは、特別なセンスではなく「現実を直視して、正しい努力を継続した」から。
+                        </p>
 
-<p>
-あなたが「やる」と決めるなら、遠回りを最短に変える設計図を渡します。
-</p>
+                        <p>
+                            あなたが「やる」と決めるなら、遠回りを最短に変える設計図を渡します。
+                        </p>
 
-<br>
+                        <br>
 
-<p class="shine-text" style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
-今すぐ手に入れて、<br>あなたの努力の正しい方向性を<br class="sp-only">確認してください。
-</p>
-<style>
-@media (min-width: 769px) {
-    .sp-only {
-        display: none;
-    }
-    .shine-text {
-        font-size: 1.6em !important;
-    }
-}
-@keyframes shine {
-    0% {
-        background-position: -200%;
-    }
-    100% {
-        background-position: 200%;
-    }
-}
-.shine-text {
-    background: linear-gradient(90deg, var(--accent-gold) 0%, #fff 50%, var(--accent-gold) 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
-}
-</style>
+                        <p class="shine-text"
+                            style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            今すぐ手に入れて、<br>あなたの努力の正しい方向性を<br class="sp-only">確認してください。
+                        </p>
+                        <style>
+                            @media (min-width: 769px) {
+                                .sp-only {
+                                    display: none;
+                                }
 
-<br>
+                                .shine-text {
+                                    font-size: 1.6em !important;
+                                }
+                            }
 
-<p style="text-align: center; color: #ff4444;">
-note版（¥9,800）で高評価レビュー多数。<br>
-ブログ販なら ¥8,000（内容同じで1,800円もお得）<br>
-<span style="color: white;">手数料がないためお安くしております</span>
-</p>
-</div>
+                            @keyframes shine {
+                                0% {
+                                    background-position: -200%;
+                                }
+
+                                100% {
+                                    background-position: 200%;
+                                }
+                            }
+
+                            .shine-text {
+                                background: linear-gradient(90deg, var(--accent-gold) 0%, #fff 50%, var(--accent-gold) 100%);
+                                background-size: 200% auto;
+                                -webkit-background-clip: text;
+                                background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                animation: shine 3s linear infinite;
+                            }
+                        </style>
+
+                        <br>
+
+                        <p style="text-align: center; color: #ff4444;">
+                            note版（¥9,800）で高評価レビュー多数。<br>
+                            ブログ販なら ¥8,000（内容同じで1,800円もお得）<br>
+                            <span style="color: white;">手数料がないためお安くしております</span>
+                        </p>
+                    </div>
                     <div class="button-container">
-                        <a href="https://nabenoblog.com/youtube-strategy-articles/" target="_blank" class="button youtube">ブログ版詳細はこちら</a>
-                        <a href="https://note.com/nabeno_kitchen/n/n3256ab26fc30" target="_blank" class="button note">note版はこちら</a>
+                        <a href="https://nabenoblog.com/youtube-strategy-articles/" target="_blank"
+                            class="button youtube">ブログ版詳細はこちら</a>
+                        <a href="https://note.com/nabeno_kitchen/n/n3256ab26fc30" target="_blank"
+                            class="button note">note版はこちら</a>
                     </div>
 
                     <!-- Testimonial Gallery -->
@@ -3293,27 +3471,33 @@ note版（¥9,800）で高評価レビュー多数。<br>
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2" class="testimonial-img">
+                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3" class="testimonial-img">
+                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4" class="testimonial-img">
+                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5" class="testimonial-img">
+                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6" class="testimonial-img">
+                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7" class="testimonial-img">
+                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <!-- Duplicated Images for seamless loop -->
@@ -3322,27 +3506,33 @@ note版（¥9,800）で高評価レビュー多数。<br>
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2" class="testimonial-img">
+                                    <img src="images/give/2023-12-01-14.58.57.jpg" alt="YouTube感想2"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3" class="testimonial-img">
+                                    <img src="images/give/1652066104519-aeNnNajDHl.webp" alt="YouTube感想3"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4" class="testimonial-img">
+                                    <img src="images/give/1651747541010-RrJ4ZHH2ga.webp" alt="YouTube感想4"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5" class="testimonial-img">
+                                    <img src="images/give/1651214987454-p7e0hbfwvh.webp" alt="YouTube感想5"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6" class="testimonial-img">
+                                    <img src="images/give/1651205679671-qFxOxJ0Wfi.webp" alt="YouTube感想6"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7" class="testimonial-img">
+                                    <img src="images/give/スクリーンショット-2024-08-13-13.52.57.jpg" alt="YouTube感想7"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                             </div>
@@ -3353,10 +3543,11 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     <div class="video-section">
                         <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube-nocookie.com/embed/XSzPl_WnIso?rel=0&modestbranding=1&enablejsapi=0"
-                                    style="border: none;"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/XSzPl_WnIso?rel=0&modestbranding=1&enablejsapi=0"
+                                style="border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
                             </iframe>
                         </div>
                         <p class="video-description">これ聞くだけでもかなり勉強になると思います！</p>
@@ -3365,113 +3556,131 @@ note版（¥9,800）で高評価レビュー多数。<br>
 
                 <!-- Instagramの教科書 -->
                 <div class="product-card fade-in" id="card-instagram">
-                    <div class="popular-badge-instagram"><a href="#instagram-textbook" style="color: inherit; text-decoration: none;">3日で100部売れた最新作!!</a></div>
+                    <div class="popular-badge-instagram"><a href="#instagram-textbook"
+                            style="color: inherit; text-decoration: none;">3日で100部売れた最新作!!</a></div>
                     <h3 id="instagram-textbook">なべの教科書 Instagram編</h3>
                     <div class="product-image">
-                        <img src="images/新Instagramの教科書サムネイル-1.jpg" alt="なべの教科書 Instagram編" onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
+                        <img src="images/新Instagramの教科書サムネイル-1.jpg" alt="なべの教科書 Instagram編"
+                            onerror="this.style.backgroundColor='#333'; this.style.color='white'; this.innerHTML='画像を読み込み中...'">
                     </div>
-<div style="text-align: left;">
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">YouTuberこそInstagramを攻略せよ！</p>
+                    <div style="text-align: left;">
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            YouTuberこそInstagramを攻略せよ！</p>
 
-<p>YouTube素材を活用してフォロワー0から17万人を突破した私が、Instagram攻略法を40,000字以上の完全版で伝授します。</p>
+                        <p>YouTube素材を活用してフォロワー0から17万人を突破した私が、Instagram攻略法を40,000字以上の完全版で伝授します。</p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/image-66.jpg" alt="Instagram実績" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/image-66.jpg" alt="Instagram実績"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">とはいえ、最初は全然伸びなかった…</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            とはいえ、最初は全然伸びなかった…</p>
 
-<p>私がInstagramを始めたのは2023年。<br>
-正直、最初はまったく手応えがありませんでした。</p>
+                        <p>私がInstagramを始めたのは2023年。<br>
+                            正直、最初はまったく手応えがありませんでした。</p>
 
-<p>• 「頑張ってショート動画を作っても再生100回…」<br>
-• 「フォロワーも全然増えない…」<br>
-• 「ストーリーズ？なにそれ…？」</p>
+                        <p>• 「頑張ってショート動画を作っても再生100回…」<br>
+                            • 「フォロワーも全然増えない…」<br>
+                            • 「ストーリーズ？なにそれ…？」</p>
 
-<p>YouTube登録者10万人いるのに、このザマかよ…！って正直イライラしてました（笑）</p>
+                        <p>YouTube登録者10万人いるのに、このザマかよ…！って正直イライラしてました（笑）</p>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">研究を始めて人生が変わった</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            研究を始めて人生が変わった</p>
 
-<p>「これじゃダメだ！」と思い、アプリを本格的に使い込み、徹底的に研究を始めました。</p>
+                        <p>「これじゃダメだ！」と思い、アプリを本格的に使い込み、徹底的に研究を始めました。</p>
 
-<p>その結果、YouTube素材を再編集するだけで約1年半でInstagramフォロワー17万人を突破。</p>
+                        <p>その結果、YouTube素材を再編集するだけで約1年半でInstagramフォロワー17万人を突破。</p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/1736384590-6MCz7VJwdT5pS1uhrDisLfUm.webp" alt="Instagram成長グラフ" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/1736384590-6MCz7VJwdT5pS1uhrDisLfUm.webp" alt="Instagram成長グラフ"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<p>そこからは新しい出会いやお仕事までいただけるようになり、今では<strong>「YouTube以上に人生を変えてくれたプラットフォーム」</strong>だと本気で思っています。</p>
+                        <p>そこからは新しい出会いやお仕事までいただけるようになり、今では<strong>「YouTube以上に人生を変えてくれたプラットフォーム」</strong>だと本気で思っています。</p>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">YouTuberがInstagramをやるべき理由</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            YouTuberがInstagramをやるべき理由</p>
 
-<p>YouTuberのみなさん、戦うための素材はすでに大量に持っています。<br>
-私が投稿してきた動画の99.9%はYouTubeの過去素材。</p>
+                        <p>YouTuberのみなさん、戦うための素材はすでに大量に持っています。<br>
+                            私が投稿してきた動画の99.9%はYouTubeの過去素材。</p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 250px;">
-<img src="images/1736381840-8AuOqEQvKp4TtUg1PRbJW6IF.webp" alt="YouTube素材活用" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 250px;">
+                            <img src="images/1736381840-8AuOqEQvKp4TtUg1PRbJW6IF.webp" alt="YouTube素材活用"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<p>YouTube用に編集した動画を"ほんの少し詰めるだけ"でInstagramのリールが完成するんです。<br>
-特にレシピ系やライフスタイル系は、Instagramのユーザー層（料理好きな女性が多い）と相性抜群！</p>
+                        <p>YouTube用に編集した動画を"ほんの少し詰めるだけ"でInstagramのリールが完成するんです。<br>
+                            特にレシピ系やライフスタイル系は、Instagramのユーザー層（料理好きな女性が多い）と相性抜群！</p>
 
-<p>「新しく撮影しろ！」なんて言いません。<br>
-<strong>「今ある素材で勝負できる」</strong>と理解してもらえるのが、今回の記事の狙いです。</p>
+                        <p>「新しく撮影しろ！」なんて言いません。<br>
+                            <strong>「今ある素材で勝負できる」</strong>と理解してもらえるのが、今回の記事の狙いです。
+                        </p>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">この教材で学べること</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            この教材で学べること</p>
 
-<div class="feature-list">
-<div class="feature-item">• 素材を使い回してバズるリールを作る方法</div>
-<div class="feature-item">• 編集・音楽・テキスト選びのコツ</div>
-<div class="feature-item">• 見られる動画に共通する冒頭数秒の仕掛け</div>
-<div class="feature-item">• ストーリーズ・プロフィールとの連携テク</div>
-<div class="feature-item">• "売れる導線"の作り方と収益化戦略</div>
-<div class="feature-item">• フォロワー0からでも始められる実践的な戦略</div>
-</div>
+                        <div class="feature-list">
+                            <div class="feature-item">• 素材を使い回してバズるリールを作る方法</div>
+                            <div class="feature-item">• 編集・音楽・テキスト選びのコツ</div>
+                            <div class="feature-item">• 見られる動画に共通する冒頭数秒の仕掛け</div>
+                            <div class="feature-item">• ストーリーズ・プロフィールとの連携テク</div>
+                            <div class="feature-item">• "売れる導線"の作り方と収益化戦略</div>
+                            <div class="feature-item">• フォロワー0からでも始められる実践的な戦略</div>
+                        </div>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 15.46.21.jpg" alt="教材目次" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 15.46.21.jpg" alt="教材目次"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 15.47.06.jpg" alt="教材目次2" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 15.47.06.jpg" alt="教材目次2"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/スクリーンショット 2025-10-02 15.48.23.jpg" alt="教材目次3" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/スクリーンショット 2025-10-02 15.48.23.jpg" alt="教材目次3"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<br>
+                        <br>
 
-<p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">Instagramは最強の「名刺」</p>
+                        <p style="font-weight: bold; color: var(--accent-gold); font-size: 1.5em; text-align: center;">
+                            Instagramは最強の「名刺」</p>
 
-<div style="text-align: center; margin: 30px auto; max-width: 600px;">
-<img src="images/1736382212-zf6vcMu9pQOZoqmtYE420rKJ.webp" alt="Instagramの名刺効果" style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
-</div>
+                        <div style="text-align: center; margin: 30px auto; max-width: 600px;">
+                            <img src="images/1736382212-zf6vcMu9pQOZoqmtYE420rKJ.webp" alt="Instagramの名刺効果"
+                                style="max-width: 100%; width: 100%; height: auto; border-radius: 10px; display: block; margin: 0 auto;">
+                        </div>
 
-<p>Instagramは単なるSNSではなく、あなたの活動を伝える「名刺」になります。<br>
-実際に私は、そこから仕事や繋がりを数多く得てきました。</p>
+                        <p>Instagramは単なるSNSではなく、あなたの活動を伝える「名刺」になります。<br>
+                            実際に私は、そこから仕事や繋がりを数多く得てきました。</p>
 
-<p>記事の無料部分にもInstagramの魅力を書いているので、ぜひ読んでみてください。<br>
-読んだらきっと「Instagram始めよう！」と思えるはずです。</p>
+                        <p>記事の無料部分にもInstagramの魅力を書いているので、ぜひ読んでみてください。<br>
+                            読んだらきっと「Instagram始めよう！」と思えるはずです。</p>
 
-<br>
+                        <br>
 
-<p>販売開始からわずか3日で100部突破、多くの方から感想もいただいています。<br>
-もしあなたがYouTubeをやっていて素材が余っているなら…それは宝の山です。</p>
+                        <p>販売開始からわずか3日で100部突破、多くの方から感想もいただいています。<br>
+                            もしあなたがYouTubeをやっていて素材が余っているなら…それは宝の山です。</p>
 
-<p>ぜひInstagramに挑戦して、新しい可能性を掴んでください。</p>
-</div>
+                        <p>ぜひInstagramに挑戦して、新しい可能性を掴んでください。</p>
+                    </div>
                     <div class="button-container">
-                        <a href="https://nabenoblog.com/instagram-textbook-sales-page/" target="_blank" class="button youtube">ブログ版詳細はこちら</a>
-                        <a href="https://note.com/nabeno_kitchen/n/n08b426ae1c05" target="_blank" class="button note">note版はこちら</a>
+                        <a href="https://nabenoblog.com/instagram-textbook-sales-page/" target="_blank"
+                            class="button youtube">ブログ版詳細はこちら</a>
+                        <a href="https://note.com/nabeno_kitchen/n/n08b426ae1c05" target="_blank"
+                            class="button note">note版はこちら</a>
                     </div>
 
                     <!-- Testimonial Gallery -->
@@ -3493,15 +3702,18 @@ note版（¥9,800）で高評価レビュー多数。<br>
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <!-- Duplicated Images for seamless loop -->
@@ -3518,15 +3730,18 @@ note版（¥9,800）で高評価レビュー多数。<br>
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.31.51.jpg" alt="Instagram感想4"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.32.59.jpg" alt="Instagram感想5"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                                 <div class="testimonial-image-wrapper">
-                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6" class="testimonial-img">
+                                    <img src="images/give/insta/スクリーンショット 2025-07-17 9.33.49.jpg" alt="Instagram感想6"
+                                        class="testimonial-img">
                                     <span class="zoom-icon">🔍</span>
                                 </div>
                             </div>
@@ -3537,10 +3752,11 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     <div class="video-section">
                         <h4>【中身が分かる！】AIになべの教科書を解説させてみた！！</h4>
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube-nocookie.com/embed/fJN9wSk7IxA?rel=0&modestbranding=1&enablejsapi=0" 
-                                    style="border: none;" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/fJN9wSk7IxA?rel=0&modestbranding=1&enablejsapi=0"
+                                style="border: none;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
                             </iframe>
                         </div>
                         <p class="video-description">これ聞くだけでもかなり勉強になると思います！</p>
@@ -3549,23 +3765,25 @@ note版（¥9,800）で高評価レビュー多数。<br>
 
                 <!-- 伝説のWセット -->
                 <div class="product-card fade-in" id="card-bundle">
-                    <div class="popular-badge-youtube wset-badge" style="color: var(--accent-gold);"><a href="#limited-w-set" style="color: inherit; text-decoration: none;">超お得なセット割</a></div>
+                    <div class="popular-badge-youtube wset-badge" style="color: var(--accent-gold);"><a
+                            href="#limited-w-set" style="color: inherit; text-decoration: none;">超お得なセット割</a></div>
                     <h3 id="limited-w-set" class="wset-title">伝説のWセット</h3>
                     <style>
-                    @media (max-width: 768px) {
-                        .wset-badge {
-                            font-size: 1.5em !important;
+                        @media (max-width: 768px) {
+                            .wset-badge {
+                                font-size: 1.5em !important;
+                            }
+
+                            .wset-title {
+                                font-size: 2.2em !important;
+                                margin-bottom: 20px !important;
+                            }
                         }
-                        .wset-title {
-                            font-size: 2.2em !important;
-                            margin-bottom: 20px !important;
-                        }
-                    }
                     </style>
                     <div class="product-image">
                         <img src="images/Wセット.jpg" alt="伝説のWセット">
                     </div>
-                    
+
                     <div class="simple-price">
                         <div class="breakdown-text">
                             <span class="price-item" style="font-size: 1.1em;">YouTube教科書 8,000円</span><br>
@@ -3573,79 +3791,96 @@ note版（¥9,800）で高評価レビュー多数。<br>
                             <span class="price-item" style="font-size: 1.1em;">通常合計価格 13,980円</span>
                         </div>
                         <div class="set-price-large">セット割引 9,800円</div>
-                        <div class="savings-text" style="margin-top: 15px; margin-bottom: 0px; padding-bottom: 5px !important; line-height: 1.2;">
+                        <div class="savings-text"
+                            style="margin-top: 15px; margin-bottom: 0px; padding-bottom: 5px !important; line-height: 1.2;">
                             <span class="discount-text" style="font-size: 1.3em;">30%OFF！</span><br>
-                            <span class="savings-amount shine-savings" style="font-size: 1.8em; font-weight: bold;">4,180円もお得</span>
+                            <span class="savings-amount shine-savings"
+                                style="font-size: 1.8em; font-weight: bold;">4,180円もお得</span>
                         </div>
                     </div>
 
                     <style>
-                    @keyframes shine-savings-animation {
-                        0% {
-                            background-position: -200%;
+                        @keyframes shine-savings-animation {
+                            0% {
+                                background-position: -200%;
+                            }
+
+                            100% {
+                                background-position: 200%;
+                            }
                         }
-                        100% {
-                            background-position: 200%;
+
+                        .shine-savings {
+                            background: linear-gradient(90deg, #ff4444 0%, #fff 50%, #ff4444 100%);
+                            background-size: 200% auto;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            animation: shine-savings-animation 3s linear infinite;
                         }
-                    }
-                    .shine-savings {
-                        background: linear-gradient(90deg, #ff4444 0%, #fff 50%, #ff4444 100%);
-                        background-size: 200% auto;
-                        -webkit-background-clip: text;
-                        background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        animation: shine-savings-animation 3s linear infinite;
-                    }
-                    @media (max-width: 768px) {
-                        .price-item {
-                            font-size: 1.5em !important;
+
+                        @media (max-width: 768px) {
+                            .price-item {
+                                font-size: 1.5em !important;
+                            }
+
+                            .savings-text {
+                                margin-bottom: -10px !important;
+                                padding-bottom: 0px !important;
+                                padding-left: 10px !important;
+                                padding-right: 10px !important;
+                                text-align: center !important;
+                                display: block !important;
+                            }
+
+                            .savings-amount {
+                                font-size: 1.7em !important;
+                                display: inline-block !important;
+                                white-space: nowrap !important;
+                            }
+
+                            .wset-description {
+                                margin-top: 0px !important;
+                            }
                         }
-                        .savings-text {
-                            margin-bottom: -10px !important;
-                            padding-bottom: 0px !important;
-                            padding-left: 10px !important;
-                            padding-right: 10px !important;
-                            text-align: center !important;
-                            display: block !important;
+
+                        @media (min-width: 769px) {
+                            .breakdown-text span {
+                                font-size: 1em !important;
+                            }
+
+                            .discount-text {
+                                font-size: 1em !important;
+                            }
+
+                            .savings-amount {
+                                font-size: 2.5em !important;
+                            }
                         }
-                        .savings-amount {
-                            font-size: 1.7em !important;
-                            display: inline-block !important;
-                            white-space: nowrap !important;
-                        }
-                        .wset-description {
-                            margin-top: 0px !important;
-                        }
-                    }
-                    @media (min-width: 769px) {
-                        .breakdown-text span {
-                            font-size: 1em !important;
-                        }
-                        .discount-text {
-                            font-size: 1em !important;
-                        }
-                        .savings-amount {
-                            font-size: 2.5em !important;
-                        }
-                    }
                     </style>
 
-                    <p class="wset-description" style="margin-top: 10px;"><strong>YouTubeもInstagramも、本気で伸ばしたいならこれ！</strong><br>最短で結果を出すために必要な「全て」を詰め込んだ最強パッケージ。</p>
-                    <p style="margin-bottom: 0;">SNSで大切なのは"正しい方向に努力すること"。私は何度も遠回りをしてきたからこそ伝えられる、本当に大事な攻略法をこの一式に凝縮しました。遠回りせず、一緒に最短ルートを歩きましょう。</p>
+                    <p class="wset-description" style="margin-top: 10px;">
+                        <strong>YouTubeもInstagramも、本気で伸ばしたいならこれ！</strong><br>最短で結果を出すために必要な「全て」を詰め込んだ最強パッケージ。
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        SNSで大切なのは"正しい方向に努力すること"。私は何度も遠回りをしてきたからこそ伝えられる、本当に大事な攻略法をこの一式に凝縮しました。遠回りせず、一緒に最短ルートを歩きましょう。</p>
 
-                    <p class="limited-notice" style="margin-top: 25px; margin-bottom: 10px; font-size: 0.9em; color: #888;">※部数限定のため、予告なく終了する場合がございます。</p>
+                    <p class="limited-notice"
+                        style="margin-top: 25px; margin-bottom: 10px; font-size: 0.9em; color: #888;">
+                        ※部数限定のため、予告なく終了する場合がございます。</p>
                     <style>
-                    @media (min-width: 769px) {
-                        .limited-notice {
-                            font-size: 1.1em !important;
-                            margin-top: 30px !important;
-                            margin-bottom: 20px !important;
+                        @media (min-width: 769px) {
+                            .limited-notice {
+                                font-size: 1.1em !important;
+                                margin-top: 30px !important;
+                                margin-bottom: 20px !important;
+                            }
                         }
-                    }
                     </style>
 
                     <div class="button-container" style="margin-top: 10px; margin-bottom: 40px;">
-                        <a href="https://buy.stripe.com/dR6bJUc0Nar3eGc00e" target="_blank" class="button bundle premium">今すぐ最強のセットを手に入れる</a>
+                        <a href="https://buy.stripe.com/dR6bJUc0Nar3eGc00e" target="_blank"
+                            class="button bundle premium">今すぐ最強のセットを手に入れる</a>
                     </div>
                 </div>
 
@@ -3653,31 +3888,33 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 <div class="product-card fade-in" id="card-other-services">
                     <h3 class="other-services-title">その他サービス</h3>
                     <style>
-                    @media (max-width: 768px) {
-                        .other-services-title {
-                            margin-top: 20px !important;
+                        @media (max-width: 768px) {
+                            .other-services-title {
+                                margin-top: 20px !important;
+                            }
                         }
-                    }
                     </style>
                     <p>【人数限定】個人・法人向けのコンサルティング／メンタープラン／SNS立ち上げ支援を随時受付中です。ご相談のみでも歓迎です。お気軽にお問い合わせください。</p>
                     <div class="button-container" style="margin-top: 30px;">
                         <a href="#consulting" class="button bundle premium other-services-button">コンサルティング実績</a>
                     </div>
                     <div class="button-container" style="margin-top: 20px;">
-                        <a href="https://nabe0096.github.io/portfolio/" target="_blank" class="button bundle premium other-services-button">その他詳細はこちら</a>
+                        <a href="https://nabe0096.github.io/portfolio/" target="_blank"
+                            class="button bundle premium other-services-button">その他詳細はこちら</a>
                     </div>
                     <style>
-                    @media (min-width: 769px) {
-                        .other-services-button {
-                            min-width: 400px !important;
-                            padding: 18px 60px !important;
+                        @media (min-width: 769px) {
+                            .other-services-button {
+                                min-width: 400px !important;
+                                padding: 18px 60px !important;
+                            }
                         }
-                    }
-                    @media (max-width: 768px) {
-                        #card-other-services {
-                            padding-bottom: 40px !important;
+
+                        @media (max-width: 768px) {
+                            #card-other-services {
+                                padding-bottom: 40px !important;
+                            }
                         }
-                    }
                     </style>
                 </div>
             </div>
@@ -3689,109 +3926,125 @@ note版（¥9,800）で高評価レビュー多数。<br>
     <section id="blog-articles" class="section section-colored fade-in">
         <div class="container">
             <h2>無料で読める おすすめ記事</h2>
-            
+
             <div class="blog-scroll-wrapper">
                 <div class="blog-scroll-container">
                     <!-- Original Articles -->
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">YouTube</div>
                         </div>
                         <div class="blog-content">
                             <h3>【YouTube論】SNS流入をやめるべき本当の理由</h3>
                             <p>これ知らなきゃマジでやばい。多くのクリエイターが陥る罠と、本当に効果的なチャンネル成長戦略を解説。</p>
-                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">YouTube</div>
                         </div>
                         <div class="blog-content">
                             <h3>【要チェック】YouTubeが伸びないのはコレかも！？</h3>
                             <p>YouTube伸ばしたいなら絶対これ！！コンセプトと外観を整えるだけでチャンネルは成長する秘密を公開。</p>
-                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">戦略</div>
                         </div>
                         <div class="blog-content">
                             <h3>【知らなきゃ損】SNSを伸ばしたければ"相手の未来を想像させよう"</h3>
                             <p>これを知らなきゃSNSは伸ばせない。相手の未来を想像させる投稿作りの極意を公開します。</p>
-                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">収益化</div>
                         </div>
                         <div class="blog-content">
                             <h3>【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。</h3>
                             <p>4年間の実体験から学んだ、料理系YouTuberならではの収益化戦略を全て公開します。</p>
-                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <!-- Duplicate Articles for seamless loop -->
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/SNS流入.jpg" alt="【YouTube論】SNS流入をやめるべき本当の理由"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">YouTube</div>
                         </div>
                         <div class="blog-content">
                             <h3>【YouTube論】SNS流入をやめるべき本当の理由</h3>
                             <p>これ知らなきゃマジでやばい。多くのクリエイターが陥る罠と、本当に効果的なチャンネル成長戦略を解説。</p>
-                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/dont-spread-it-on-social-media/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/コンセプト.jpg" alt="【要チェック】YouTubeが伸びないのはコレかも！？"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">YouTube</div>
                         </div>
                         <div class="blog-content">
                             <h3>【要チェック】YouTubeが伸びないのはコレかも！？</h3>
                             <p>YouTube伸ばしたいなら絶対これ！！コンセプトと外観を整えるだけでチャンネルは成長する秘密を公開。</p>
-                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/why-youtube-doesnt-grow/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/スクリーンショット-2024-08-28-11.06.51.jpg" alt="【知らなきゃ損】SNSを伸ばしたければ相手の未来を想像させよう"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">戦略</div>
                         </div>
                         <div class="blog-content">
                             <h3>【知らなきゃ損】SNSを伸ばしたければ"相手の未来を想像させよう"</h3>
                             <p>これを知らなきゃSNSは伸ばせない。相手の未来を想像させる投稿作りの極意を公開します。</p>
-                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/how-to-grow-your-sns/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
 
                     <article class="blog-card fade-in">
                         <div class="blog-image">
-                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。" onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
+                            <img src="images/マネタイズ戦略.jpg" alt="【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。"
+                                onerror="this.style.backgroundColor='#333'; this.style.minHeight='200px';">
                             <div class="blog-category">収益化</div>
                         </div>
                         <div class="blog-content">
                             <h3>【本当は教えたくない･･･】料理系YouTuberを4年間続けてきた私のマネタイズ戦略教えます。</h3>
                             <p>4年間の実体験から学んだ、料理系YouTuberならではの収益化戦略を全て公開します。</p>
-                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank" class="blog-link">記事を読む →</a>
+                            <a href="https://nabenoblog.com/cooking-youtuber-monetization-strategy/" target="_blank"
+                                class="blog-link">記事を読む →</a>
                         </div>
                     </article>
                 </div>
             </div>
-            
+
             <!-- その他無料ブログボタン -->
             <div style="text-align: center; margin-top: 2rem;">
                 <p class="blog-subtitle" style="margin-bottom: 1.5rem;">SNS運用のコツやノウハウを無料公開中</p>
@@ -3807,22 +4060,28 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 <h2>プロフィール</h2>
                 <img src="images/クック帽子.png" alt="なべ プロフィール画像" class="profile-image">
                 <p class="profile-title">なべ │ SNSマーケター兼料理研究家</p>
-                <img src="images/スクリーンショット 2021-11-20 15.03.50.jpg" alt="なべの実績画像" class="analytics-image" style="width: 100%; max-width: 600px; margin: 20px 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);" onclick="openImageModal(this)">
+                <img src="images/スクリーンショット 2021-11-20 15.03.50.jpg" alt="なべの実績画像" class="analytics-image"
+                    style="width: 100%; max-width: 600px; margin: 20px 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"
+                    onclick="openImageModal(this)">
                 <p class="about-text">こんにちは、なべです。<br><br>
-                <strong>料理系YouTuber 150,000人!! Instagram17万フォロワー!!</strong><br>
-                が、過去はひどいｗ<br>
-                スタート6ヵ月で登録者80人ｗ<br>
-                そこからガチ研究→1年で収益化→現在 3児のパパフリーランス！</p>
-                <img src="images/スクリーンショット 2025-07-18 15.41.56.jpg" alt="YouTubeチャンネル登録者数の推移グラフ" class="analytics-image" style="width: 100%; max-width: 600px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: block;" onclick="openImageModal(this)">
+                    <strong>料理系YouTuber 150,000人!! Instagram17万フォロワー!!</strong><br>
+                    が、過去はひどいｗ<br>
+                    スタート6ヵ月で登録者80人ｗ<br>
+                    そこからガチ研究→1年で収益化→現在 3児のパパフリーランス！
+                </p>
+                <img src="images/スクリーンショット 2025-07-18 15.41.56.jpg" alt="YouTubeチャンネル登録者数の推移グラフ" class="analytics-image"
+                    style="width: 100%; max-width: 600px; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: block;"
+                    onclick="openImageModal(this)">
                 <p class="about-text">
-                かつては半年間YouTubeを毎日投稿しても登録者80人という「絶望」を経験しました。<br>
-                しかし、センスや才能に頼るのをやめ、「戦略」と「知識」に全てを投資した結果、チャンネルは15万人を超える規模に成長しました。<br><br>
-                
-                誰よりも失敗を重ねてきたので、失敗しないためのノウハウを日々発信中！！<br><br>
-                
-                この教科書は、過去の自分のように、暗闇の中で独り苦しんでいる未来のスターに向けた、私からの「答え」です。</p>
+                    かつては半年間YouTubeを毎日投稿しても登録者80人という「絶望」を経験しました。<br>
+                    しかし、センスや才能に頼るのをやめ、「戦略」と「知識」に全てを投資した結果、チャンネルは15万人を超える規模に成長しました。<br><br>
+
+                    誰よりも失敗を重ねてきたので、失敗しないためのノウハウを日々発信中！！<br><br>
+
+                    この教科書は、過去の自分のように、暗闇の中で独り苦しんでいる未来のスターに向けた、私からの「答え」です。</p>
                 <div class="button-container">
-                    <a class="button profile-button" href="https://nabe0096.github.io/portfolio/" target="_blank" rel="noopener noreferrer">プロフィール詳細はこちら</a>
+                    <a class="button profile-button" href="https://nabe0096.github.io/portfolio/" target="_blank"
+                        rel="noopener noreferrer">プロフィール詳細はこちら</a>
                 </div>
             </div>
 
@@ -3848,35 +4107,41 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     <a href="https://www.youtube.com/c/nabekitchen" class="platform-card youtube" target="_blank">
                         <div class="platform-icon">
                             <svg viewBox="0 0 24 24" fill="none">
-                                <rect x="2" y="3" width="20" height="18" rx="4" ry="4" fill="#FF0000"/>
-                                <path d="M10 8l6 4-6 4V8z" fill="white"/>
+                                <rect x="2" y="3" width="20" height="18" rx="4" ry="4" fill="#FF0000" />
+                                <path d="M10 8l6 4-6 4V8z" fill="white" />
                             </svg>
                         </div>
                         <div class="platform-info">
                             <h4>YouTube</h4>
-                            <div class="platform-number" id="youtube-count" data-goal="150000">150,000</div>
+                            <div class="platform-number" id="youtube-count" data-goal="167000">167,000</div>
                             <span class="platform-label">チャンネル登録者</span>
                         </div>
                     </a>
 
                     <a href="https://www.instagram.com/nabeno_kitchen/" class="platform-card instagram" target="_blank">
                         <div class="platform-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z" />
+                            </svg>
                         </div>
                         <div class="platform-info">
                             <h4>Instagram</h4>
-                            <div class="platform-number" id="instagram-count" data-goal="170000">170,000</div>
+                            <div class="platform-number" id="instagram-count" data-goal="186000">186,000</div>
                             <span class="platform-label">フォロワー</span>
                         </div>
                     </a>
 
                     <a href="https://www.tiktok.com/@nabekitchen" class="platform-card tiktok" target="_blank">
                         <div class="platform-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z" />
+                            </svg>
                         </div>
                         <div class="platform-info">
                             <h4>TikTok</h4>
-                            <div class="platform-number" id="tiktok-count" data-goal="67000">67,000</div>
+                            <div class="platform-number" id="tiktok-count" data-goal="89000">89,000</div>
                             <span class="platform-label">フォロワー</span>
                         </div>
                     </a>
@@ -3893,49 +4158,56 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 <!-- TVCMフードコーディネート実績 -->
                 <div class="achievement-section">
                     <h4 class="achievement-title">TVCMフードコーディネート</h4>
-                    <div class="video-wrapper" style="margin: 20px auto; max-width: 100%; width: 100%; height: 0; padding-bottom: 56.25%; position: relative; border-radius: 12px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.youtube-nocookie.com/embed/n9-J5edwZfc?rel=0&modestbranding=1&enablejsapi=0" 
+                    <div class="video-wrapper"
+                        style="margin: 20px auto; max-width: 100%; width: 100%; height: 0; padding-bottom: 56.25%; position: relative; border-radius: 12px; overflow: hidden;">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/n9-J5edwZfc?rel=0&modestbranding=1&enablejsapi=0"
                             title="TVCMフードコーディネート実績"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen
-                            loading="lazy">
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen loading="lazy">
                         </iframe>
                     </div>
-                    <p class="achievement-description">SNS経由でご連絡をいただき、TVCMのフードコーディネートを担当しました。SNSでの発信力が実際のビジネスチャンスに繋がった実例です。</p>
+                    <p class="achievement-description">
+                        SNS経由でご連絡をいただき、TVCMのフードコーディネートを担当しました。SNSでの発信力が実際のビジネスチャンスに繋がった実例です。</p>
                 </div>
 
                 <!-- レシピ開発&監修実績 -->
                 <div class="achievement-section">
                     <h4 class="achievement-title">レシピ開発&監修</h4>
                     <div class="image-wrapper">
-                        <img src="images/レシピ画像.webp" alt="レシピ開発監修実績" class="achievement-image" onclick="openImageModal(this)">
+                        <img src="images/レシピ画像.webp" alt="レシピ開発監修実績" class="achievement-image"
+                            onclick="openImageModal(this)">
                     </div>
-                    <p class="achievement-description">雑誌【実話ナックルズ】さまからのご依頼で「ちょい足しグルメのレシピ案作成」企画を担当しました。出版社との連携により、読者に愛される実用的なレシピ開発を行いました。</p>
+                    <p class="achievement-description">
+                        雑誌【実話ナックルズ】さまからのご依頼で「ちょい足しグルメのレシピ案作成」企画を担当しました。出版社との連携により、読者に愛される実用的なレシピ開発を行いました。</p>
                 </div>
 
                 <!-- コンサルティング実績 -->
                 <div class="achievement-section" id="consulting">
                     <h4 class="achievement-title">コンサルティング</h4>
                     <div class="image-wrapper">
-                        <img src="images/深夜.webp" alt="コンサルティング実績" class="achievement-image" onclick="openImageModal(this)">
+                        <img src="images/深夜.webp" alt="コンサルティング実績" class="achievement-image"
+                            onclick="openImageModal(this)">
                     </div>
-                    <p class="channel-link">チャンネル：<a href="https://www.youtube.com/channel/UCeJhUEKiBsStyea_PITiZJw" target="_blank" class="youtube-channel-link">深夜のらーめん食堂</a></p>
+                    <p class="channel-link">チャンネル：<a href="https://www.youtube.com/channel/UCeJhUEKiBsStyea_PITiZJw"
+                            target="_blank" class="youtube-channel-link">深夜のらーめん食堂</a></p>
                     <div class="achievement-description consulting-description">
                         <p>個人の方からご依頼いただきコンサルティングさせていただきました。</p>
-                        <p><strong>既存のレシピチャンネルがあったものの数年運用しても結果がでないとご相談があり、1からコンセプトとチャンネル設計を作り直しました。開始2ヶ月でチャンネル登録者1,000人を達成することができました。（現在は23,000人）</strong></p>
+                        <p><strong>既存のレシピチャンネルがあったものの数年運用しても結果がでないとご相談があり、1からコンセプトとチャンネル設計を作り直しました。開始2ヶ月でチャンネル登録者1,000人を達成することができました。（現在は23,000人）</strong>
+                        </p>
                         <div class="image-wrapper">
-                            <img src="images/実績.webp" alt="コンサルティング成果実績" class="achievement-image" onclick="openImageModal(this)">
+                            <img src="images/実績.webp" alt="コンサルティング成果実績" class="achievement-image"
+                                onclick="openImageModal(this)">
                         </div>
-                        <div class="video-wrapper" style="margin: 30px auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+                        <div class="video-wrapper"
+                            style="margin: 30px auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
                             <iframe
                                 src="https://www.youtube-nocookie.com/embed/XZAKeJJUcLs?rel=0&modestbranding=1&enablejsapi=0"
                                 title="コンサルティング実績動画"
                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen
-                                loading="lazy">
+                                allowfullscreen loading="lazy">
                             </iframe>
                         </div>
                         <p>コンサルティング期間2ヶ月という短期間で</p>
@@ -3947,29 +4219,34 @@ note版（¥9,800）で高評価レビュー多数。<br>
                             <div class="feature-item" style="color: var(--accent-gold);">・クリック率を上げるサムネイル作成術</div>
                             <div class="feature-item" style="color: var(--accent-gold);">・バズるタイトル、検索で上位をとるため施策</div>
                         </div>
-                        <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くの方のSNSを伸ばしてきました。</p>
+                        <p>これらをしっかりと指導することで、1本目の動画から伸ばすことができました。同じ人間でも「魅せ方」で伸び方が変わるのがSNSの大きな特徴です。この方の他にも多くの方のSNSを伸ばしてきました。
+                        </p>
                         <p>伸びない理由を発信内容や機材のせいにする方を多くみてきましたが、コンセプト設計や魅せ方をしっかりと学ぶだけでも数字は大きく変わります。</p>
                         <div class="button-container" style="margin-top: 30px;">
-                            <a href="https://nabe0096.github.io/portfolio/" target="_blank" class="button consulting-button">コンサルティング詳細はこちら</a>
+                            <a href="https://nabe0096.github.io/portfolio/" target="_blank"
+                                class="button consulting-button">コンサルティング詳細はこちら</a>
                         </div>
                         <div class="button-container" style="margin-top: 20px;">
-                            <a href="https://nabenoblog.com/" target="_blank" class="button consulting-button">無料記事で学ぶ</a>
+                            <a href="https://nabenoblog.com/" target="_blank"
+                                class="button consulting-button">無料記事で学ぶ</a>
                         </div>
-                        <p style="margin-top: 30px;">【人数限定】個人・法人向けのコンサルティング／メンタープラン／SNS立ち上げ支援を随時受付中です。<br>内容やご相談のみでも歓迎です。お気軽にお問い合わせください。</p>
+                        <p style="margin-top: 30px;">
+                            【人数限定】個人・法人向けのコンサルティング／メンタープラン／SNS立ち上げ支援を随時受付中です。<br>内容やご相談のみでも歓迎です。お気軽にお問い合わせください。</p>
                         <style>
-                        .consulting-button {
-                            background: var(--accent-gold) !important;
-                            color: #000 !important;
-                            display: flex !important;
-                            align-items: center !important;
-                            justify-content: center !important;
-                        }
-                        @media (min-width: 769px) {
                             .consulting-button {
-                                padding: 18px 60px !important;
-                                min-width: 400px !important;
+                                background: var(--accent-gold) !important;
+                                color: #000 !important;
+                                display: flex !important;
+                                align-items: center !important;
+                                justify-content: center !important;
                             }
-                        }
+
+                            @media (min-width: 769px) {
+                                .consulting-button {
+                                    padding: 18px 60px !important;
+                                    min-width: 400px !important;
+                                }
+                            }
                         </style>
                     </div>
                 </div>
@@ -3979,75 +4256,90 @@ note版（¥9,800）で高評価レビュー多数。<br>
     </section>
 
     <!-- CONTACT Section -->
-    <section id="contact" class="section section-colored fade-in" style="padding: 0; padding-top: 40px; padding-bottom: 100px;">
+    <section id="contact" class="section section-colored fade-in"
+        style="padding: 0; padding-top: 40px; padding-bottom: 100px;">
         <div class="container">
             <h2 style="text-align: center; font-size: 2.5em; margin-top: 0; margin-bottom: 20px;">CONTACT</h2>
             <p style="text-align: center; font-size: 1.1em; line-height: 1.8; margin-bottom: 40px;">
-                <span class="contact-text-pc">お仕事のご依頼、ご相談は<br>下記お問い合わせフォームよりお気軽にご連絡ください。<br>Instagram DM、公式LINEからも可能です。</span>
-                <span class="contact-text-mobile">お仕事のご依頼、ご相談は下記お問い合わせフォームよりお気軽にご連絡ください。Instagram DM、公式LINEからも可能です。</span>
+                <span class="contact-text-pc">お仕事のご依頼、ご相談は<br>下記お問い合わせフォームよりお気軽にご連絡ください。<br>Instagram
+                    DM、公式LINEからも可能です。</span>
+                <span class="contact-text-mobile">お仕事のご依頼、ご相談は下記お問い合わせフォームよりお気軽にご連絡ください。Instagram
+                    DM、公式LINEからも可能です。</span>
             </p>
             <style>
-            .contact-text-pc {
-                display: inline;
-            }
-            .contact-text-mobile {
-                display: none;
-            }
-            @media (max-width: 768px) {
                 .contact-text-pc {
-                    display: none;
-                }
-                .contact-text-mobile {
                     display: inline;
                 }
-            }
+
+                .contact-text-mobile {
+                    display: none;
+                }
+
+                @media (max-width: 768px) {
+                    .contact-text-pc {
+                        display: none;
+                    }
+
+                    .contact-text-mobile {
+                        display: inline;
+                    }
+                }
             </style>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; margin-bottom: 50px;">
+            <div
+                style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; margin-bottom: 50px;">
                 <a href="https://www.nabenokitchen.com/contact/" target="_blank" class="contact-button">お問い合わせはこちら</a>
-                <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank" class="contact-button">Instagramはこちら</a>
+                <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank"
+                    class="contact-button">Instagramはこちら</a>
                 <a href="https://lin.ee/beWMgoL" target="_blank" class="contact-button">公式LINEはこちら</a>
             </div>
             <style>
-            @keyframes contact-shine {
-                0%, 100% {
-                    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+                @keyframes contact-shine {
+
+                    0%,
+                    100% {
+                        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+                    }
+
+                    50% {
+                        box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+                    }
                 }
-                50% {
-                    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
-                }
-            }
-            .contact-button {
-                min-width: 280px !important;
-                padding: 18px 40px !important;
-                background: #000 !important;
-                color: #fff !important;
-                text-decoration: none !important;
-                border-radius: 8px !important;
-                font-size: 1em !important;
-                font-weight: 500 !important;
-                text-align: center !important;
-                display: inline-block !important;
-                transition: all 0.3s ease !important;
-                border: none !important;
-                animation: contact-shine 2.5s ease-in-out infinite !important;
-                white-space: nowrap !important;
-            }
-            .contact-button:hover {
-                transform: translateY(-2px) !important;
-                box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) !important;
-            }
-            @media (max-width: 768px) {
+
                 .contact-button {
-                    min-width: 260px !important;
-                    padding: 18px 20px !important;
-                    font-size: 0.95em !important;
+                    min-width: 280px !important;
+                    padding: 18px 40px !important;
+                    background: #000 !important;
+                    color: #fff !important;
+                    text-decoration: none !important;
+                    border-radius: 8px !important;
+                    font-size: 1em !important;
+                    font-weight: 500 !important;
+                    text-align: center !important;
+                    display: inline-block !important;
+                    transition: all 0.3s ease !important;
+                    border: none !important;
+                    animation: contact-shine 2.5s ease-in-out infinite !important;
+                    white-space: nowrap !important;
                 }
-            }
-            @media (min-width: 769px) {
-                .contact-button {
-                    min-width: 320px !important;
+
+                .contact-button:hover {
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) !important;
                 }
-            }
+
+                @media (max-width: 768px) {
+                    .contact-button {
+                        min-width: 260px !important;
+                        padding: 18px 20px !important;
+                        font-size: 0.95em !important;
+                    }
+                }
+
+                @media (min-width: 769px) {
+                    .contact-button {
+                        min-width: 320px !important;
+                    }
+                }
             </style>
         </div>
     </section>
@@ -4076,25 +4368,32 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 <div class="footer-section">
                     <h4>SNSをフォロー</h4>
                     <div class="footer-social">
-                        <a href="https://www.youtube.com/channel/UCJrqY4A7dXKXpgRFJVtAUww" target="_blank" class="social-link" title="YouTube" aria-label="YouTube">
+                        <a href="https://www.youtube.com/channel/UCJrqY4A7dXKXpgRFJVtAUww" target="_blank"
+                            class="social-link" title="YouTube" aria-label="YouTube">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                             </svg>
                             <span class="social-link__label">YouTube</span>
                         </a>
-                        <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank" class="social-link" title="Instagram" aria-label="Instagram">
+                        <a href="https://www.instagram.com/nabeno_kitchen/" target="_blank" class="social-link"
+                            title="Instagram" aria-label="Instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z"/>
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.116 0-3.473.01-4.692.066-2.44.112-3.572 1.248-3.684 3.684-.056 1.22-.066 1.575-.066 4.692s.01 3.473.066 4.692c.112 2.436 1.248 3.572 3.684 3.684 1.219.056 1.575.066 4.692.066s3.473-.01 4.692-.066c2.44-.112 3.572-1.248 3.684-3.684.056-1.22.066-1.575-.066-4.692s-.01-3.473-.066-4.692c-.112-2.436-1.248-3.572-3.684-3.684-1.219-.056-1.575-.066-4.692-.066zM12 6.837c-2.846 0-5.163 2.317-5.163 5.163s2.317 5.163 5.163 5.163 5.163-2.317 5.163-5.163-2.317-5.163-5.163-5.163zm0 8.528c-1.862 0-3.365-1.503-3.365-3.365s1.503-3.365 3.365-3.365 3.365 1.503 3.365 3.365-1.503 3.365-3.365 3.365zm4.965-6.412c-.786 0-1.425.639-1.425 1.425s.639 1.425 1.425 1.425 1.425-.639 1.425-1.425-.639-1.425-1.425-1.425z" />
                             </svg>
                             <span class="social-link__label">Instagram</span>
                         </a>
-                        <a href="https://www.tiktok.com/@nabekitchen" target="_blank" class="social-link" title="TikTok" aria-label="TikTok">
+                        <a href="https://www.tiktok.com/@nabekitchen" target="_blank" class="social-link" title="TikTok"
+                            aria-label="TikTok">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z"/>
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.38 1.92-3.54 2.96-5.94 2.96-1.92 0-3.85-.73-5.12-2.04-1.25-1.29-1.91-2.97-1.91-4.81 0-2.59 1.23-4.82 3.18-6.11.57-.38 1.21-.7 1.85-.94v-4.03c-1.11.29-2.18.69-3.2 1.15-.21.09-.43.18-.64.27-.02-1.52-.01-3.04.01-4.57.51-.16 1.02-.31 1.53-.45C5.1 5.43 7.36 3.46 10.02.41c.45-.53.88-1.08 1.38-1.58.36-.36.77-.67 1.12-.99z" />
                             </svg>
                             <span class="social-link__label">TikTok</span>
                         </a>
-                        <a href="https://note.com/nabeno_kitchen" target="_blank" class="social-link" title="note" aria-label="note">
+                        <a href="https://note.com/nabeno_kitchen" target="_blank" class="social-link" title="note"
+                            aria-label="note">
                             <span class="social-link__icon" aria-hidden="true">note</span>
                             <span class="social-link__label">note</span>
                         </a>
@@ -4114,11 +4413,11 @@ note版（¥9,800）で高評価レビュー多数。<br>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Fade-in animation
             const faders = document.querySelectorAll('.fade-in');
             const appearOptions = { threshold: 0.15, rootMargin: "0px 0px 50px 0px" };
-            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
                     entry.target.classList.add('visible');
@@ -4172,7 +4471,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
             const statsGrid = document.querySelector('.stats-grid');
             if (statsGrid) {
                 statsObserver.observe(statsGrid);
-                
+
                 // Fallback: If no intersection, trigger after 3 seconds
                 setTimeout(() => {
                     const counters = statsGrid.querySelectorAll('.platform-number, .big-number');
@@ -4193,13 +4492,13 @@ note版（¥9,800）で高評価レビュー多数。<br>
 
             // Testimonial gallery manual scroll
             const testimonialWrappers = document.querySelectorAll('.testimonial-scroll-wrapper');
-            
+
             testimonialWrappers.forEach(wrapper => {
                 let isScrolling = false;
                 let startX = 0;
                 let scrollLeft = 0;
                 const container = wrapper.querySelector('.testimonial-scroll-container');
-                
+
                 // Pause animation on manual interaction
                 wrapper.addEventListener('mouseenter', () => {
                     if (container) {
@@ -4207,14 +4506,14 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         container.style.webkitAnimationPlayState = 'paused';
                     }
                 });
-                
+
                 wrapper.addEventListener('mouseleave', () => {
                     if (container && !isScrolling) {
                         container.style.animationPlayState = 'running';
                         container.style.webkitAnimationPlayState = 'running';
                     }
                 });
-                
+
                 // Touch/mouse drag scrolling
                 wrapper.addEventListener('mousedown', (e) => {
                     isScrolling = true;
@@ -4226,7 +4525,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         container.style.webkitAnimationPlayState = 'paused';
                     }
                 });
-                
+
                 wrapper.addEventListener('mousemove', (e) => {
                     if (!isScrolling) return;
                     e.preventDefault();
@@ -4234,7 +4533,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     const walk = (x - startX) * 2;
                     wrapper.scrollLeft = scrollLeft - walk;
                 });
-                
+
                 wrapper.addEventListener('mouseup', () => {
                     isScrolling = false;
                     wrapper.style.cursor = 'grab';
@@ -4245,12 +4544,12 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         }
                     }, 1000);
                 });
-                
+
                 wrapper.addEventListener('mouseleave', () => {
                     isScrolling = false;
                     wrapper.style.cursor = 'grab';
                 });
-                
+
                 // Touch events for mobile
                 wrapper.addEventListener('touchstart', (e) => {
                     isScrolling = true;
@@ -4261,14 +4560,14 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         container.style.webkitAnimationPlayState = 'paused';
                     }
                 });
-                
+
                 wrapper.addEventListener('touchmove', (e) => {
                     if (!isScrolling) return;
                     const x = e.touches[0].pageX - wrapper.offsetLeft;
                     const walk = (x - startX) * 2;
                     wrapper.scrollLeft = scrollLeft - walk;
                 });
-                
+
                 wrapper.addEventListener('touchend', () => {
                     isScrolling = false;
                     setTimeout(() => {
@@ -4306,13 +4605,13 @@ note版（¥9,800）で高評価レビュー多数。<br>
 
             // Blog scroll interaction (similar to testimonials)
             const blogScrollWrappers = document.querySelectorAll('.blog-scroll-wrapper');
-            
+
             blogScrollWrappers.forEach(wrapper => {
                 let isScrolling = false;
                 let startX = 0;
                 let scrollLeft = 0;
                 const container = wrapper.querySelector('.blog-scroll-container');
-                
+
                 // Pause animation on manual interaction
                 wrapper.addEventListener('mouseenter', () => {
                     if (container) {
@@ -4320,14 +4619,14 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         container.style.webkitAnimationPlayState = 'paused';
                     }
                 });
-                
+
                 wrapper.addEventListener('mouseleave', () => {
                     if (container && !isScrolling) {
                         container.style.animationPlayState = 'running';
                         container.style.webkitAnimationPlayState = 'running';
                     }
                 });
-                
+
                 // Touch/mouse drag scrolling
                 wrapper.addEventListener('mousedown', (e) => {
                     isScrolling = true;
@@ -4339,7 +4638,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         container.style.webkitAnimationPlayState = 'paused';
                     }
                 });
-                
+
                 wrapper.addEventListener('mousemove', (e) => {
                     if (!isScrolling) return;
                     e.preventDefault();
@@ -4347,7 +4646,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     const walk = (x - startX) * 2;
                     wrapper.scrollLeft = scrollLeft - walk;
                 });
-                
+
                 wrapper.addEventListener('mouseup', () => {
                     isScrolling = false;
                     wrapper.style.cursor = 'grab';
@@ -4358,7 +4657,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         }
                     }, 1000);
                 });
-                
+
                 wrapper.addEventListener('mouseleave', () => {
                     isScrolling = false;
                     wrapper.style.cursor = 'grab';
@@ -4394,37 +4693,37 @@ note版（¥9,800）で高評価レビュー多数。<br>
                     }, 2000);
                 });
             });
-            
+
             // Analytics Image Modal functionality
-            window.openImageModal = function(img) {
+            window.openImageModal = function (img) {
                 const modal = document.createElement('div');
                 modal.className = 'image-modal';
                 modal.style.display = 'block';
-                
+
                 const closeBtn = document.createElement('span');
                 closeBtn.className = 'image-modal-close';
                 closeBtn.innerHTML = '&times;';
-                
+
                 const modalImg = document.createElement('img');
                 modalImg.className = 'image-modal-content';
                 modalImg.src = img.src;
                 modalImg.alt = img.alt;
-                
+
                 modal.appendChild(closeBtn);
                 modal.appendChild(modalImg);
                 document.body.appendChild(modal);
-                
+
                 const closeModal = () => {
                     document.body.removeChild(modal);
                 };
-                
+
                 closeBtn.addEventListener('click', closeModal);
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         closeModal();
                     }
                 });
-                
+
                 // Close with Escape key
                 const handleKeyPress = (e) => {
                     if (e.key === 'Escape') {
@@ -4434,17 +4733,17 @@ note版（¥9,800）で高評価レビュー多数。<br>
                 };
                 document.addEventListener('keydown', handleKeyPress);
             };
-            
+
             // Mobile menu functionality
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
-            
+
             if (mobileMenuToggle && navMenu) {
                 // Ensure menu is closed on page load
                 navMenu.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
                 navMenu.style.display = 'none';
-                
+
                 mobileMenuToggle.addEventListener('click', () => {
                     if (navMenu.classList.contains('active')) {
                         // Close menu
@@ -4462,7 +4761,7 @@ note版（¥9,800）で高評価レビュー多数。<br>
                         }, 10);
                     }
                 });
-                
+
                 // Close menu when clicking on a menu item
                 const menuLinks = navMenu.querySelectorAll('a');
                 menuLinks.forEach(link => {
@@ -4479,4 +4778,5 @@ note版（¥9,800）で高評価レビュー多数。<br>
     </script>
 
 </body>
+
 </html>
