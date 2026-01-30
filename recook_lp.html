@@ -428,6 +428,19 @@
             .mobile-menu-toggle.active .menu-line:nth-child(3) {
                 transform: rotate(-45deg) translate(6px, -6px);
             }
+
+            /* Ported from index.html to match header size */
+            .header {
+                padding: 10px 0;
+            }
+
+            .logo img {
+                height: 40px !important;
+            }
+
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
         }
 
         /* 
@@ -607,26 +620,33 @@
         /* Mobile Optimization for Hero */
         @media (max-width: 768px) {
             .hero-sub {
-                font-size: 3.5rem;
-                /* Reduced from 6rem */
+                font-size: 2.8rem;
+                /* Reduced further from 3.5rem */
+                margin-bottom: 0.5rem;
+                /* Tighter spacing */
             }
 
             .hero-sub-jp {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .hero-title {
-                font-size: 2rem;
-                /* Adjust title size */
+                font-size: 1.4rem !important;
+                /* Smaller title */
+                letter-spacing: 0.05em !important;
+                white-space: nowrap !important;
+                margin-bottom: 0.8rem;
+                /* Tighter spacing */
             }
 
             .hero-copy {
-                font-size: 0.95rem;
+                font-size: 0.85rem;
                 /* Slightly smaller text */
-                line-height: 1.8;
-                /* Better line height */
-                padding: 0 1rem;
-                /* Add side padding */
+                line-height: 1.6;
+                /* Tighter line height */
+                padding: 0 0.5rem;
+                margin-bottom: 1.5rem;
+                /* Tighter spacing to button */
             }
 
             .pc-only {
@@ -635,18 +655,15 @@
             }
 
             .hero {
-                padding-top: 180px;
-                /* Increased to avoid top cutoff */
+                padding-top: 100px;
+                /* Reduced significantly to show button */
                 padding-left: 1rem;
                 padding-right: 1rem;
                 height: auto;
-                /* Allow content to push height */
                 min-height: 100vh;
-                /* Ensure it covers screen */
-                padding-bottom: 50px;
+                padding-bottom: 30px;
                 /* Avoid bottom cutoff */
                 align-items: flex-start;
-                /* Align to top (with padding) instead of center which can clip */
             }
 
             .hero-title {
