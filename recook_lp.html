@@ -577,7 +577,7 @@
             z-index: 1;
             /* Content above background */
             /* SNS-like atmosphere: Taking a photo of food */
-            background: radial-gradient(ellipse at center, rgba(18, 18, 18, 0.75) 0%, rgba(18, 18, 18, 0.95) 100%), url('images/1697586705810-n8JfYSktdq.webp') no-repeat center center/cover;
+            background: radial-gradient(ellipse at center, rgba(18, 18, 18, 0.75) 0%, rgba(18, 18, 18, 0.95) 100%), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
             padding-top: 80px;
             /* Offset for header */
         }
@@ -602,6 +602,136 @@
             line-height: 1.2;
             text-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
             animation: elegant-float 3s ease-in-out infinite alternate;
+        }
+
+        /* Mobile Optimization for Hero */
+        @media (max-width: 768px) {
+            .hero-sub {
+                font-size: 3.5rem;
+                /* Reduced from 6rem */
+            }
+
+            .hero-sub-jp {
+                font-size: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+                /* Adjust title size */
+            }
+
+            .hero-copy {
+                font-size: 0.95rem;
+                /* Slightly smaller text */
+                line-height: 1.8;
+                /* Better line height */
+                padding: 0 1rem;
+                /* Add side padding */
+            }
+
+            .pc-only {
+                display: none;
+                /* Hide PC-specific line breaks */
+            }
+
+            .hero {
+                padding-top: 180px;
+                /* Increased to avoid top cutoff */
+                padding-left: 1rem;
+                padding-right: 1rem;
+                height: auto;
+                /* Allow content to push height */
+                min-height: 100vh;
+                /* Ensure it covers screen */
+                padding-bottom: 50px;
+                /* Avoid bottom cutoff */
+                align-items: flex-start;
+                /* Align to top (with padding) instead of center which can clip */
+            }
+
+            .hero-title {
+                font-size: 1.5rem !important;
+                /* Smaller title */
+                letter-spacing: 0.05em !important;
+                /* Tighter spacing */
+                white-space: nowrap !important;
+                /* Force one line if possible */
+                margin-bottom: 1rem;
+            }
+
+            .button {
+                width: 90% !important;
+                /* Prevent overflow */
+                max-width: 350px !important;
+                /* Max width */
+                min-width: 0 !important;
+                /* Allow shrinking */
+                font-size: 0.95rem !important;
+                /* Smaller font to fit text */
+                padding: 15px 5px !important;
+                /* Reduce side padding */
+                box-sizing: border-box !important;
+                /* Include padding in width */
+                white-space: nowrap !important;
+                /* Prevent text wrapping */
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block !important;
+                /* Ensure block for auto margin centering */
+                height: auto !important;
+                /* Allow height to adjust */
+                line-height: 1.5 !important;
+                letter-spacing: -0.02em !important;
+                /* Slight squeeze */
+            }
+
+            .section-title {
+                font-size: 1.3rem !important;
+                /* Force smaller size on mobile */
+                width: 100% !important;
+                white-space: nowrap;
+                /* Try to keep on one line */
+                overflow: hidden;
+                /* Prevent scroll if it still overflows */
+                text-overflow: ellipsis;
+                /* nice to have */
+                padding: 0 5px;
+                /* Ensure some padding */
+            }
+
+            .value-title {
+                font-size: 1.2rem !important;
+                /* Override inline style (1.8rem) */
+                white-space: nowrap;
+                letter-spacing: -0.05em;
+                /* Tighten slightly to fit */
+            }
+
+            .profile-image {
+                width: 120px !important;
+                /* Smaller image */
+                height: 120px !important;
+            }
+
+            .profile-title {
+                font-size: 0.9rem !important;
+                /* Smaller text */
+                white-space: nowrap !important;
+                /* No wrap */
+                letter-spacing: -0.05em !important;
+                /* Tighten to fit */
+            }
+
+            .achievement-content h3 {
+                font-size: 1.3rem !important;
+                /* Smaller heading for stats */
+                white-space: nowrap !important;
+            }
+
+            .big-number {
+                font-size: 3.5rem !important;
+                /* Smaller number */
+            }
         }
 
         @keyframes elegant-float {
@@ -1290,11 +1420,11 @@
 
             <div class="hero-copy">
                 【才能ゼロ】半年で登録者80人のど底辺から<br class="pc-only">
-                SNS総フォロワー50万人超え！<br>
+                SNS総フォロワー50万人超え！<br class="pc-only">
                 副業収入2000円で脱サラを決意した3児のパパの<br class="pc-only">
-                ぶっ飛んだメンタル、SNS攻略法などをメールでお届け！<br>
+                ぶっ飛んだメンタル、SNS攻略法などをメールでお届け！<br class="pc-only">
                 会社に人生を握られたくないあなたへ。<br class="pc-only">
-                人生はもっと自由に生きられる。<br>
+                人生はもっと自由に生きられる。<br class="pc-only">
                 その一歩をここから。
             </div>
 
@@ -1311,8 +1441,7 @@
     <section class="section-value">
         <div class="container fade-up">
             <h2 class="section-title">
-                「なべの裏メルマガ」<br class="sp-only">
-                の内容
+                「なべの裏メルマガ」の内容
             </h2>
             <div class="value-grid">
                 <div class="value-card">
@@ -1320,9 +1449,9 @@
                     <h3 class="value-title" style="font-size: 1.8rem;">最新トレンド×SNS攻略術</h3>
                     <img src="images/value-sns.png" alt="SNS攻略イメージ" class="value-card-image">
                     <p class="value-desc">
-                        YouTube・Instagram・TikTok、<br>
-                        総フォロワー50万人の現場から見える「バズの本質」を共有します。<br>
-                        単なるテクニックではなく「今」何が伸びているのか、<br>
+                        YouTube・Instagram・TikTok、<br class="pc-only">
+                        総フォロワー50万人の現場から見える「バズの本質」を共有します。<br class="pc-only">
+                        単なるテクニックではなく「今」何が伸びているのか、<br class="pc-only">
                         最新トレンドを反映した最速の伸ばし方を伝授します。
                     </p>
                 </div>
@@ -1331,9 +1460,9 @@
                     <h3 class="value-title" style="font-size: 1.8rem;">凡人のための最強メンタル</h3>
                     <img src="images/value-mental.png" alt="メンタル強化イメージ" class="value-card-image">
                     <p class="value-desc">
-                        副業収入2,000円から脱サラした実体験。<br>
-                        半年で登録者80人の絶望をどう乗り越えたのか。<br>
-                        才能ゼロの凡人が「継続」という魔法を使いこなし、<br>
+                        副業収入2,000円から脱サラした実体験。<br class="pc-only">
+                        半年で登録者80人の絶望をどう乗り越えたのか。<br class="pc-only">
+                        才能ゼロの凡人が「継続」という魔法を使いこなし、<br class="pc-only">
                         世界を自由に生きるための思考法を公開します。
                     </p>
                 </div>
@@ -1342,10 +1471,10 @@
                     <h3 class="value-title" style="font-size: 1.8rem;">自分だけの「城」を築く</h3>
                     <img src="images/value-castle.png" alt="資産構築イメージ" class="value-card-image">
                     <p class="value-desc">
-                        会社に依存せず、5年後も10年後も<br>
-                        稼ぎ続ける「資産化」の全ステップ。<br>
-                        一過性の流行で終わらせない、<br>
-                        一生モノの「発信力」と「自分だけの居場所」を構築するための<br>
+                        会社に依存せず、5年後も10年後も<br class="pc-only">
+                        稼ぎ続ける「資産化」の全ステップ。<br class="pc-only">
+                        一過性の流行で終わらせない、<br class="pc-only">
+                        一生モノの「発信力」と「自分だけの居場所」を構築するための<br class="pc-only">
                         堅実なステップを網羅します。
                     </p>
                 </div>
@@ -1358,8 +1487,7 @@
     <section class="section-bonus">
         <div class="container fade-up">
             <h2 class="section-title">
-                期間限定<br class="sp-only">
-                登録特典
+                期間限定登録特典
             </h2>
 
             <div class="bonus-card-wrapper" style="display: flex; justify-content: center; margin-top: 3rem;">
@@ -1416,15 +1544,15 @@
                         font-family: var(--font-serif);
                         line-height: 1.8;
                     ">
-                        動画投稿1本でYouTubeとTikTokから得られた<br><span
-                            style="font-weight: 700; color: #fff;">生々しい収益額をすべて公開します！</span>
+                        動画投稿1本でYouTubeとTikTokから得られた<span style="font-weight: 700; color: #fff;">生々しい収益額をすべて公開します！</span>
                     <ul style="display: table; text-align: left; margin: 25px auto; padding: 0; list-style: none;">
                         <li>・SNSって本当に稼げるの？</li>
                         <li>・再生単価の現実は？</li>
                     </ul>
-                    そんな疑問を解消する期間限定の登録特典を用意しました。<br>
-                    情報が古くなれば予告なく削除するので<br>お早めにお受け取りください。<br><br>
-                    登録後の1通目にパスワード付きの限定記事をお送りします。<br>
+                    そんな疑問を解消する期間限定の登録特典を用意しました。<br class="pc-only">
+                    情報が古くなれば予告なく削除するので<br class="pc-only">お早めにお受け取りください。<br><br>
+                    登録後の1通目にパスワード付きの限定記事をお送りします。<br class="pc-only">
+                    <br>
                     <span style="font-weight: 700;">中身を読んで即解約しても全く問題ありません。（悲しいけどｗ）</span>
                     </p>
                 </div>
@@ -1465,9 +1593,8 @@
                 </div>
 
                 <p class="about-text" style="margin: 0 auto; text-align: center;">
-                    かつては半年間YouTubeを毎日投稿しても登録者80人という「絶望」を経験しました。<br>
+                    かつては半年間YouTubeを毎日投稿しても登録者80人という「絶望」を経験しました。<br class="pc-only">
                     しかし、センスや才能に頼るのをやめ、「戦略」と「知識」に全てを投資した結果、チャンネルは16万人を超える規模に成長しました。<br><br>
-
                     誰よりも失敗を重ねてきたので、失敗しないためのノウハウを日々発信中！！<br><br>
 
                     このメルマガは、過去の自分のように、暗闇の中で独り苦しんでいる未来のスターに向けた、私からの「答え」です。
@@ -1566,7 +1693,7 @@
     <section class="section-footer" id="register">
         <div class="container fade-up">
             <h2 style="margin-bottom: 2rem;">
-                人生を、<br class="sp-only">ここから変える。
+                人生を<br class="sp-only">ここから変える。
             </h2>
 
             <div class="form-wrapper">
