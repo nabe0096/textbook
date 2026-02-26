@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致命的なNG行動30選チェックリスト</title>
+    <!-- Google Fonts for modern typography -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #fca311;
+            /* なべさんの明るいオレンジ系のイメージ */
+            --dark-color: #14213d;
+            /* 深みのあるネイビー */
+            --bg-color: #ffffff;
+            --gray-light: #e5e5e5;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 印刷（PDF書き出し）時のA4サイズ設定 */
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        .container {
+            max-width: 800px;
+            /* A4 width roughly matches this visually */
+            margin: 0 auto;
+            background: var(--bg-color);
+            padding: 40px 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 10px solid var(--primary-color);
+        }
+
+        h1 {
+            color: var(--dark-color);
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 900;
+            line-height: 1.4;
+        }
+
+        h1 span {
+            color: var(--primary-color);
+            font-size: 20px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .intro {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: justify;
+            background: #fff8f0;
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .conclusion {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .section-title {
+            background-color: var(--dark-color);
+            color: #ffffff;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "■";
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--gray-light);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--dark-color);
+            border-radius: 4px;
+            margin-right: 15px;
+            margin-top: 3px;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+
+        .item-content {
+            flex-grow: 1;
+            min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .item-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin-bottom: 6px;
+        }
+
+        .item-desc {
+            font-size: 17px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid var(--gray-light);
+            padding-top: 20px;
+        }
+
+        /* 印刷時のみ適用されるレイアウトリセット */
+        @media print {
+            @page {
+                size: a4 portrait;
+                margin: 10mm;
+            }
+
+            html,
+            body {
+                width: 190mm !important;
+                /* 210mm - (2 * 10mm margins) */
+                max-width: 190mm !important;
+                background-color: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+            }
+
+            h1 {
+                font-size: 26px;
+                margin-bottom: 5px;
+            }
+
+            h1 span {
+                font-size: 18px;
+                margin-bottom: 2px;
+            }
+
+            .intro {
+                margin-bottom: 30px;
+                padding: 15px;
+                font-size: 18px;
+                line-height: 1.8;
+                font-weight: 700;
+            }
+
+            .section-title {
+                font-size: 20px;
+                padding: 10px 15px;
+            }
+
+            .item-title {
+                font-size: 18px;
+                font-weight: 800;
+            }
+
+            .item-desc {
+                font-size: 17px;
+                font-weight: 600;
+                line-height: 1.7;
+            }
+
+            .conclusion {
+                font-size: 18px;
+                font-weight: 800;
+                line-height: 1.8;
+                padding: 20px;
+            }
+
+            .section-title:first-of-type {
+                margin-top: 50px !important;
+            }
+
+            /* Restore proper vertical spacing around images in print */
+            .section-title+div {
+                margin-bottom: 20px !important;
+                margin-top: 15px !important;
+            }
+
+            h2.section-title {
+                page-break-after: avoid;
+            }
+
+            .checklist-item,
+            img {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <span>なべの裏メルマガ 期間限定特典</span>
+            これをやったら絶対伸びない！<br>SNS致命的NG行動30選チェックリスト
+        </h1>
+
+        <div style="text-align:center; margin-bottom: 30px; margin-top: 20px;">
+            <img src="images/SNS30.jpg" alt="SNS致命的NG行動30選"
+                style="width:100%; max-width:700px; border-radius:12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 1px solid var(--gray-light);">
+        </div>
+
+        <div class="intro">
+            SNS（YouTube・Instagram・TikTok）を本気で伸ばして収益化したいなら、「やるべきこと」と同じくらい「やってはいけないこと（NG行動）」を知っておくことが重要です。<br>
+            過去の私のように「半年間毎日投稿して登録者80人…」という絶望を味わわないために、以下の30個のNG行動をしていないか、今すぐチェックしてみましょう。
+        </div>
+
+        <!-- マインド編 -->
+        <h2 class="section-title">【マインド・スタンス編】（最も重要！）</h2>
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="images/mind.jpg" alt="マインド・スタンス編 インフォグラフィック"
+                style="width:100%; max-width:500px; border-radius:12px; border:3px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <ul class="checklist">
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">1. 「簡単に稼げる」と思っている</div>
+                    <div class="item-desc">SNSは立派なビジネスであり甘くないということに気づく。そんな簡単に成果がでる世界なら成功者だらけで逆に旨味はない</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">2. 失敗を極端に恐れている</div>
+                    <div class="item-desc">最初は誰も見ていません。どんどん挑戦して失敗から学ぶべきです。炎上が怖い･･･。という人もいましたが、安心してください。最初は絶対誰にも見られません。
+                    </div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">3. 他人の成功を妬む</div>
+                    <div class="item-desc">
+                        伸びている人からは「なぜ伸びているのか」を吸収しましょう。もう先人たちがSNSの正解をたくさんアップロードしてくれてます。嫉妬するのではなく学びの姿勢でチェック！！</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">4. 「自分には才能がない」と言い訳する</div>
+                    <div class="item-desc">SNSは才能ではなく「戦略」と「継続」です。私の過去動画みたければいつでも見せます！ひどすぎますｗ才能なんてなくてもここまでこれました</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">5. すぐに結果を求める</div>
+                    <div class="item-desc">最低でも半年〜1年は「種まき期間」だと覚悟しましょう。だれでも簡単。たった◯日で。こんなの全部ウソです。信じるだけ時間のムダです。</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">6. 視聴者ではなく「自分」にベクトルが向いている</div>
+                    <div class="item-desc">
+                        「私を見て！」ではなく「あなたに役立ちますよ」が基本です。発信を始めるとき99.999％の人は自分目線から始まります。それは当たり前ですが、それを相手目線に変えていくことこそがSNSを伸ばす大事な鍵
+                    </div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">7. 「花」を売ろうとしている</div>
+                    <div class="item-desc">
+                        ドリルを買う人は「穴」が欲しいのです。視聴者の「未来（ベネフィット）」を売りましょう。「花買ってください」ではなく「この花奥様にサプライズプレゼントすると喜ばれますよ」です</div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- コンセプト編 -->
+        <h2 class="section-title">【コンセプト・企画編】</h2>
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="images/concept.jpg" alt="コンセプト・企画編 インフォグラフィック"
+                style="width:100%; max-width:500px; border-radius:12px; border:3px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <ul class="checklist">
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">8. ターゲットが誰なのか決まっていない</div>
+                    <div class="item-desc">「みんなに見てほしい」は「誰にも刺さらない」と同義です。</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">9. コンセプトがブレブレ（浮気性）</div>
+                    <div class="item-desc">料理系なのに急にVlogを上げるなど、ジャンルを混ぜるのはNGです。あれもこれもやりたいならそれぞれチャンネルを作りましょう。</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">10. 自分が「作りたいもの」だけを作っている</div>
+                    <div class="item-desc">視聴者が「見たいもの」「求めているもの」を作らなければ伸びません。自己満足で伸ばせるのは芸能人と美女ぐらいですｗ</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">11. リサーチを全くしていない</div>
+                    <div class="item-desc">競合やトレンドを調べず、己の勘だけで戦うのは無謀です。というか時間のムダです</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">12. 「伸びた動画」を擦らない</div>
+                    <div class="item-desc">1つ当たったら、味付けを変えて何度も同じテーマをこすり倒すのが鉄則です。SNSは何度やっても伸びる企画は伸びます</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">13. 「チャンネル登録してください」と無意味にお願いする</div>
+                    <div class="item-desc">登録するメリットを提示せずに頼んでも誰も押しません。逆に登録したくなくなります。そうではなく相手に登録したいとおもわせるんです。</div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- サムネイル・タイトル編 -->
+        <h2 class="section-title">【サムネイル・タイトル編】</h2>
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="images/thumbnail.jpg" alt="サムネイル・タイトル編 インフォグラフィック"
+                style="width:100%; max-width:500px; border-radius:12px; border:3px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <ul class="checklist">
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">14. サムネイルに文字を詰め込みすぎている</div>
+                    <div class="item-desc">スマホで見た時に読めない文字はゴミと同じです。限界まで削りましょう。基本的にスマホ視聴です</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">15. タイトルとサムネイルの内容が被っている</div>
+                    <div class="item-desc">サムネで興味を引き、タイトルで補足・検索対策をするのが正解です</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">16. デザインにこだわりすぎて「何を伝えたいか」がわからない</div>
+                    <div class="item-desc">綺麗さよりも「クリックしたくなるか（感情が動くか）」が重要です</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">17. ターゲットに合っていないデザインをしている</div>
+                    <div class="item-desc">主婦向けなのにサイバーパンク風など、層に合わないトーンはクリックされません。ターゲットを明確にしてないとサムネイルもぶれまくります</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">18. 公開後、サムネやタイトルを変えまくる</div>
+                    <div class="item-desc">数日は我慢しましょう。伸びなかった動画も数日たって伸びることがあります。そしてなにより伸びなかったら「なぜ伸びなかったんだろう」というデータを取れます
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- 動画制作・編集編 -->
+        <h2 class="section-title">【動画制作・編集編】</h2>
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="images/video_editing.jpg" alt="動画制作・編集編 インフォグラフィック"
+                style="width:100%; max-width:500px; border-radius:12px; border:3px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <ul class="checklist">
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">19. 冒頭の3秒で視聴者の心を掴んでいない</div>
+                    <div class="item-desc">今の視聴者は最初の数秒で「見るか離脱するか」を決めます。最初の自己満は辞めて本気の数秒を！ここができてないとどんないい動画でも存在していないのと同じ
+                    </div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">20. 「えー」「あのー」などの無駄な間（無音）をカットしていない</div>
+                    <div class="item-desc">テンポが悪い動画は即ブラウザバックされます。無編集で伸ばせるのは芸能人と圧倒的美････笑</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">21. 音（BGMや効果音、環境音）にこだわっていない</div>
+                    <div class="item-desc">特に料理動画における「シズル感のある音」は画質以上に重要です。雑音や聞きにくい音は最強のストレスになります</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">22. スマホで見られることを想定していない</div>
+                    <div class="item-desc">テロップが小さすぎる、色が同化して読めないのは致命的です。パソコンで編集してると気づきにくいのでアップ前にスマホで必ずチェック</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">23. 完璧主義になりすぎて投稿頻度が落ちる</div>
+                    <div class="item-desc">70点の出来でも、まずは世に出して反応を見ることが大切です。何が伸びるか分からない</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">24. 編集の勉強をしない</div>
+                    <div class="item-desc">効率がとにかく大事です。編集技術を磨くだけで動画1本の完成度があがり時間も浮きます。とにかく自分が使ってる編集アプリの解説動画をチェックしよう！
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- 分析・運用編 -->
+        <h2 class="section-title">【分析・運用編】</h2>
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="images/analysis.jpg" alt="分析・運用編 インフォグラフィック"
+                style="width:100%; max-width:500px; border-radius:12px; border:3px solid var(--primary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <ul class="checklist">
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">25. アナリティクス（データ）を全く見ていない</div>
+                    <div class="item-desc">クリック率、視聴維持率など、数字は残酷な真実を教えてくれます。正解はすべてアナリティクスの中にあります</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">26. 数字が落ちた原因を分析しない</div>
+                    <div class="item-desc">「なぜダメだったのか」を考えないと、同じ失敗を繰り返します。正解を増やすのではなく失敗を減らしていくのがSNS発信の肝です</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">27. プラットフォームの規約や仕様変更を無視する</div>
+                    <div class="item-desc">突然の収益化停止などのリスクを避けるため、ルールは必ず把握しましょう。伸びるからってテレビの動画使ったり著作権無視は絶対NG･･･。人生終わります
+                    </div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">28. 1つのプラットフォーム（YouTubeのみ等）に依存しすぎている</div>
+                    <div class="item-desc">
+                        垢BANのリスクを考え、TikTokやInstagramへの横展開、メルマガ等の自社リスト構築が必須です。1つのコンテンツからどれだけコンテンツを増やせるかが大事！！</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">29. 視聴者のコメントを無視する</div>
+                    <div class="item-desc">コメント欄は宝の山です。次の企画のヒントや改善点が隠されています</div>
+                </div>
+            </li>
+            <li class="checklist-item">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">30. 途中で諦めてしまう</div>
+                    <div class="item-desc">継続さえできれば、ほとんどのライバルは勝手に脱落していきます。これが最大の真理です！</div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="conclusion">
+            以上が過去の自分に教えたいチェックリスト30選です。伸ばす秘密よりも伸びない理由を潰していく方が成功に近づいていきます。これから私のメルマガでは今回のチェックリストに入っていることをより詳細に伝えていきます。2日に1回メールが届くので楽しみにしておいてください。
+        </div>
+
+
+
+        <div class="footer">
+            &copy; 2026 なべの裏メルマガ All Rights Reserved.<br>
+            このPDFは登録者限定の非公開資料です。無断転載・再配布を禁じます。
+        </div>
+    </div>
+</body>
+
+</html>
