@@ -773,14 +773,22 @@
             font-weight: 900;
             letter-spacing: 0.25em;
             margin-bottom: 1.6rem;
-            background: linear-gradient(90deg, #f6d365 0%, #fda085 45%, #f093fb 100%);
+            background: linear-gradient(
+                105deg,
+                #fff 0%,
+                #fff 35%,
+                #f0f0f0 45%,
+                #ffffff 50%,
+                #e8e8ff 55%,
+                #fff 65%,
+                #fff 100%
+            );
+            background-size: 250% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            filter:
-                drop-shadow(0 0 6px rgba(253, 160, 133, 0.7))
-                drop-shadow(0 0 18px rgba(240, 147, 251, 0.25));
-            animation: elegant-float 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+            animation: elegant-float 3s ease-in-out infinite alternate, heading-shimmer 4s linear infinite;
         }
 
         .hero-sub::before,
