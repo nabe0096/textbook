@@ -2212,8 +2212,12 @@
                         動画投稿1本でYouTubeとTikTokから得られた<span style="font-weight: 700; color: #fff;">生々しい収益額をすべて公開します！</span><br>
                         「SNSって本当に稼げるの？」「再生単価の現実は？」そんなリアルな疑問に、数字でお答えします。
                     </p>
+                    <!-- Modal -->
+                    <div id="anari-modal" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center; cursor:zoom-out;">
+                        <img src="images/anari.png" alt="SNS収益公開" style="max-width:90%; max-height:90vh; border-radius:8px; box-shadow:0 0 40px rgba(0,0,0,0.8);">
+                    </div>
                     <div style="display: flex; justify-content: center; margin: 40px auto;">
-                        <img src="images/anari.png" alt="SNS収益公開" style="width: 75%; height: auto; border-radius: 8px;">
+                        <img src="images/anari.png" alt="SNS収益公開" onclick="const m=document.getElementById('anari-modal');m.style.display='flex';" style="width: 75%; height: auto; border-radius: 8px; cursor:zoom-in;">
                     </div>
                     <div style="
                         background: rgba(255,255,255,0.04);
@@ -2221,7 +2225,7 @@
                         border-radius: 0 8px 8px 0;
                         padding: 20px 24px;
                         margin: 16px auto 40px;
-                        max-width: 80%;
+                        max-width: 95%;
                         font-family: 'Noto Sans JP', sans-serif;
                     ">
                         <p style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.7;">
