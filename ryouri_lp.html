@@ -231,8 +231,12 @@
             border-bottom: 1px solid var(--border); padding: 18px 0; background: var(--white);
         }
         .marquee-track {
-            display: flex; gap: 48px;
-            animation: marquee 5s linear infinite; white-space: nowrap;
+            display: flex;
+            animation: marquee 8s linear infinite; white-space: nowrap;
+            width: max-content;
+        }
+        .marquee-group {
+            display: flex; flex-shrink: 0; gap: 48px; padding-right: 48px;
         }
         .marquee-item {
             font-size: var(--t-sm); letter-spacing: 0.18em;
@@ -849,22 +853,26 @@
     <!-- MARQUEE -->
     <div class="marquee-wrap">
         <div class="marquee-track">
-            <span class="marquee-item">料理動画の伸ばし方<span>—</span></span>
-            <span class="marquee-item">料理写真をプロ級に<span>—</span></span>
-            <span class="marquee-item">AI活用術<span>—</span></span>
-            <span class="marquee-item">バズる動画の法則<span>—</span></span>
-            <span class="marquee-item">料理系SNS生存戦略<span>—</span></span>
-            <span class="marquee-item">こすり方の技術<span>—</span></span>
-            <span class="marquee-item">サムネイルの作り方<span>—</span></span>
-            <span class="marquee-item">料理系発信者の稼ぎ方<span>—</span></span>
-            <span class="marquee-item">料理動画の伸ばし方<span>—</span></span>
-            <span class="marquee-item">料理写真をプロ級に<span>—</span></span>
-            <span class="marquee-item">AI活用術<span>—</span></span>
-            <span class="marquee-item">バズる動画の法則<span>—</span></span>
-            <span class="marquee-item">料理系SNS生存戦略<span>—</span></span>
-            <span class="marquee-item">こすり方の技術<span>—</span></span>
-            <span class="marquee-item">サムネイルの作り方<span>—</span></span>
-            <span class="marquee-item">料理系発信者の稼ぎ方<span>—</span></span>
+            <div class="marquee-group" aria-hidden="false">
+                <span class="marquee-item">料理動画の伸ばし方<span>—</span></span>
+                <span class="marquee-item">料理写真をプロ級に<span>—</span></span>
+                <span class="marquee-item">AI活用術<span>—</span></span>
+                <span class="marquee-item">バズる動画の法則<span>—</span></span>
+                <span class="marquee-item">料理系SNS生存戦略<span>—</span></span>
+                <span class="marquee-item">こすり方の技術<span>—</span></span>
+                <span class="marquee-item">サムネイルの作り方<span>—</span></span>
+                <span class="marquee-item">料理系発信者の稼ぎ方<span>—</span></span>
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+                <span class="marquee-item">料理動画の伸ばし方<span>—</span></span>
+                <span class="marquee-item">料理写真をプロ級に<span>—</span></span>
+                <span class="marquee-item">AI活用術<span>—</span></span>
+                <span class="marquee-item">バズる動画の法則<span>—</span></span>
+                <span class="marquee-item">料理系SNS生存戦略<span>—</span></span>
+                <span class="marquee-item">こすり方の技術<span>—</span></span>
+                <span class="marquee-item">サムネイルの作り方<span>—</span></span>
+                <span class="marquee-item">料理系発信者の稼ぎ方<span>—</span></span>
+            </div>
         </div>
     </div>
 
