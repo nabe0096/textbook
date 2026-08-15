@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <h1>なべのメルマガ登録</h1>
+  <h1>なべの料理系SNS発信メルマガ登録</h1>
   <form id="rondo-subscribe">
     <label for="rondo-email">メールアドレス</label>
     <input
@@ -58,7 +58,7 @@
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
               email: data.get('email'),
-              scenario: 'urame',
+              scenario: 'ryouri',
               website: data.get('website'),
               cfToken,
               source: 'web',
