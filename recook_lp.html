@@ -1631,7 +1631,7 @@
                 </div>
             </div>
 
-            <a href="https://nabenomail.com/p/r/VX6hGePf" class="cta-btn" target="_blank" rel="noopener">
+            <a href="#register" class="cta-btn">
                 今すぐ無料で受け取る →
             </a>
             <p class="cta-note">※登録も解約も30秒でできます</p>
@@ -1984,7 +1984,7 @@
                     </p>
 
                     <div style="margin-top: 2.5rem; text-align: center;">
-                        <a href="https://nabenomail.com/p/r/VX6hGePf" class="cta-btn" target="_blank" rel="noopener">
+                        <a href="#register" class="cta-btn">
                             無料で読み始める →
                         </a>
                         <p class="cta-note">※登録も解約も30秒でできます</p>
@@ -2150,9 +2150,14 @@
         <div class="container fade-up">
             <div class="final-cta-box">
                 <h2 class="final-cta-title">人生を<br class="sp-only">ここから変える。</h2>
-                <a href="https://nabenomail.com/p/r/VX6hGePf" class="cta-btn" target="_blank" rel="noopener">
-                    今すぐ登録する（完全無料）→
-                </a>
+                <form id="rondo-subscribe" style="max-width:480px;margin:0 auto;">
+                    <input type="email" name="email" required placeholder="メールアドレスを入力" autocomplete="email" spellcheck="false"
+                        style="width:100%;padding:15px 16px;font-size:16px;border:1px solid rgba(128,128,128,.45);border-radius:10px;box-sizing:border-box;display:block;">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAEP2o5_nFlmU-n16" style="margin:14px 0;display:flex;justify-content:center;"></div>
+                    <div aria-hidden="true" style="position:absolute;left:-10000px"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+                    <button type="submit" class="cta-btn" style="border:none;cursor:pointer;width:100%;">今すぐ登録する（完全無料）→</button>
+                    <p id="rondo-status" role="status" aria-live="polite" style="font-size:13px;margin-top:10px;min-height:1.4em;"></p>
+                </form>
                 <p class="cta-note">※登録も解約も30秒でできます</p>
             </div>
 
@@ -2313,6 +2318,47 @@
                 statsObserver.observe(statsGrid);
             }
         });
+    </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+    (function () {
+      var form = document.getElementById('rondo-subscribe');
+      if (!form) return;
+      var status = document.getElementById('rondo-status');
+      var button = form.querySelector('button[type="submit"]');
+      var defaultLabel = button.textContent;
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var data = new FormData(form);
+        var cfToken = data.get('cf-turnstile-response');
+        if (!cfToken) { status.textContent = 'bot確認を完了してから、もう一度お試しください。'; return; }
+        button.disabled = true;
+        button.textContent = '送信中…';
+        status.textContent = '';
+        fetch('https://rondo.jamaican0906.workers.dev/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            email: data.get('email'),
+            scenario: 'urame',
+            website: data.get('website'),
+            cfToken: cfToken,
+            source: 'lp'
+          })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          status.textContent = '確認メールを送りました。受信箱（迷惑メールフォルダも）のリンクを開くと登録完了です。';
+        }).catch(function () {
+          status.textContent = '送信できませんでした。通信状態を確認し、bot確認をやり直してください。';
+          if (window.turnstile) window.turnstile.reset();
+        }).finally(function () {
+          button.disabled = false;
+          button.textContent = defaultLabel;
+        });
+      });
+    })();
     </script>
 </body>
 

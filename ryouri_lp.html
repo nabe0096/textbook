@@ -846,7 +846,7 @@
             <span class="logo-pc">なべの料理系SNS攻略メルマガ</span>
             <span class="logo-sp">なべのメルマガ</span>
         </a>
-        <a href="https://nabenomail.com/p/r/PPtYHLX1" class="header-cta" target="_blank" rel="noopener">無料メルマガを購読する</a>
+        <a href="#register" class="header-cta">無料メルマガを購読する</a>
     </header>
 
     <!-- HERO -->
@@ -883,7 +883,7 @@
 
     <!-- MANGA -->
     <div style="text-align:center; background: var(--off-white); padding-top: 80px;">
-        <a href="https://nabenomail.com/p/r/PPtYHLX1" target="_blank" rel="noopener" style="display:block; max-width:860px; margin:0 auto;">
+        <a href="#register" style="display:block; max-width:860px; margin:0 auto;">
             <img src="レシピメルマガ用画像/メルマガ漫画.jpg" alt="メルマガ漫画" class="slide-left" style="width:100%; display:block;">
         </a>
     </div>
@@ -989,7 +989,7 @@
                     <p style="font-size:var(--t-sm); color:rgba(255,255,255,0.5); line-height:2; margin:0;">⚠️ &nbsp;<strong style="color:rgba(255,255,255,0.7);">特典に関するご注意</strong><br>これらのメルマガ無料登録特典（全3点）は期間限定のご提供となります。予告なく配布を終了する場合がございます。受け取りをご希望の方はお早めに登録ください。</p>
                 </div>
                 <div style="text-align:center; margin-top:36px;">
-                    <a href="https://nabenomail.com/p/r/PPtYHLX1" class="btn-white" target="_blank" rel="noopener">
+                    <a href="#register" class="btn-white">
                         無料メルマガを購読する &nbsp;→
                     </a>
                 </div>
@@ -1055,7 +1055,7 @@
                         <img src="レシピメルマガ用画像/kotukotu.png" alt="コツコツの話" class="slide-right" style="width:100%; display:block;">
                     </div>
                     <div style="margin-top: 36px; text-align: center;">
-                        <a href="https://nabenomail.com/p/r/PPtYHLX1" class="btn-primary" target="_blank" rel="noopener">
+                        <a href="#register" class="btn-primary">
                             無料メルマガを購読する &nbsp;→
                         </a>
                     </div>
@@ -1146,15 +1146,20 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta">
+    <section class="final-cta" id="register">
         <span class="final-eyebrow fade-up">Last Call</span>
         <h2 class="final-title fade-up">
             料理系SNSを<em>本気で</em>伸ばしたい人だけ、<br>ここから登録してください。
         </h2>
         <div class="fade-up">
-            <a href="https://nabenomail.com/p/r/PPtYHLX1" class="btn-primary" target="_blank" rel="noopener">
-                無料メルマガを購読する &nbsp;→
-            </a>
+            <form id="rondo-subscribe" style="max-width:480px;margin:0 auto;">
+                    <input type="email" name="email" required placeholder="メールアドレスを入力" autocomplete="email" spellcheck="false"
+                        style="width:100%;padding:15px 16px;font-size:16px;border:1px solid rgba(128,128,128,.45);border-radius:10px;box-sizing:border-box;display:block;">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAEP2o5_nFlmU-n16" style="margin:14px 0;display:flex;justify-content:center;"></div>
+                    <div aria-hidden="true" style="position:absolute;left:-10000px"><label>Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+                    <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;">無料メルマガを購読する →</button>
+                    <p id="rondo-status" role="status" aria-live="polite" style="font-size:13px;margin-top:10px;min-height:1.4em;"></p>
+                </form>
             <p class="final-note">登録も解約も30秒。完全無料。</p>
         </div>
     </section>
@@ -1239,6 +1244,47 @@
             });
         }, { threshold: 0.3 });
         odometers.forEach(el => odoObs.observe(el));
+    </script>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+    (function () {
+      var form = document.getElementById('rondo-subscribe');
+      if (!form) return;
+      var status = document.getElementById('rondo-status');
+      var button = form.querySelector('button[type="submit"]');
+      var defaultLabel = button.textContent;
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var data = new FormData(form);
+        var cfToken = data.get('cf-turnstile-response');
+        if (!cfToken) { status.textContent = 'bot確認を完了してから、もう一度お試しください。'; return; }
+        button.disabled = true;
+        button.textContent = '送信中…';
+        status.textContent = '';
+        fetch('https://rondo.jamaican0906.workers.dev/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            email: data.get('email'),
+            scenario: 'ryouri',
+            website: data.get('website'),
+            cfToken: cfToken,
+            source: 'lp'
+          })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          form.reset();
+          status.textContent = '確認メールを送りました。受信箱（迷惑メールフォルダも）のリンクを開くと登録完了です。';
+        }).catch(function () {
+          status.textContent = '送信できませんでした。通信状態を確認し、bot確認をやり直してください。';
+          if (window.turnstile) window.turnstile.reset();
+        }).finally(function () {
+          button.disabled = false;
+          button.textContent = defaultLabel;
+        });
+      });
+    })();
     </script>
 </body>
 </html>
