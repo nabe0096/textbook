@@ -2360,6 +2360,14 @@
       });
     })();
     </script>
+<script>
+(function(){try{
+  var k='rondo_lp_seen_urame';
+  var first=!localStorage.getItem(k);
+  if(first)localStorage.setItem(k,'1');
+  fetch('https://rondo.jamaican0906.workers.dev/api/lp/view',{method:'POST',mode:'no-cors',keepalive:true,body:JSON.stringify({page:'urame',first:first})});
+}catch(e){}})();
+</script>
 </body>
 
 </html>
